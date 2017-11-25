@@ -2,16 +2,20 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { MapView, Location, Permissions }  from 'expo';
 
+import MarkerList from './MarkerList'
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       location: null,
+      restaurants: null,
     }
   }
 
   componentWillMount() {
     this.getLocation();
+    this.getPlaces();
   }
 
 
@@ -19,14 +23,25 @@ export default class App extends React.Component {
     const { status } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
     let location = await Location.watchPositionAsync({}, (pos) => {
       this.setState({ location: pos });
-    })
+    }).then(this.getPlaces())
   }
+  getPlaces = async () => {
+    //DO MULTIPLE CALLS FOR THE PLACES, TRIANGLE
+    const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.39502262758671,2.1979764103889465&radius=1000&type=restaurant&key=AIzaSyCDpYpbNtmuNr3SMNtuDZDfjaYFdE7tVkk`
+    fetch(url, {method: 'GET',})
+      .then( data => data.json())
+      .then(data => {
+        this.setState({restaurants: data})
+      })
+  }
+
   handleRegionChangeComplete(e) {
-    console.log('changed', e);
+    setTimeout(() =>console.log('changed', e), 3000);
   }
   render() {
     let map = this.state.location ?
         <MapView
+          provider="google"
           style={styles.map}
           initialRegion={{
           latitude: this.state.location.coords.latitude,
@@ -37,7 +52,9 @@ export default class App extends React.Component {
           onRegionChangeComplete = {this.handleRegionChangeComplete}
           showsUserLocation={true}
           showsMyLocationButton={true}
-        /> : <Text> Loading </Text>
+        >
+          <MarkerList restaurants={this.state.restaurants}/>
+        </MapView> : <Text> Loading </Text>
     return (
       <View style = {styles.container}>
         {map}
