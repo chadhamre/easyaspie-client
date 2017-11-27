@@ -9,7 +9,7 @@ export default class MarkerList extends React.Component {
         let latlong = {latitude: el.geometry.location.lat, longitude: el.geometry.location.lng};
         return (
           <MapView.Marker
-          key={el.name}
+          key={el.id}
           title={el.name}
           coordinate={latlong}
           pinColor='fuchsia'
