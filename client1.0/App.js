@@ -30,11 +30,12 @@ export default class App extends React.Component {
     if (bool) {
       text = 'Search This Area'
     } else if (end) {
-      text = 'End of Results'
+      text = 'No More Results';
     } else {
       text = 'Load More Restaurants'
     }
-    return (this.state.fontLoaded
+    //IF BROKEN, check text below
+    return ((this.state.fontLoaded && text)
       ? <View style={styles.image_text_container}>
           {/* <Image style={styles.logo}
                 source={require('./assets/logo__easyaspie.png')}
