@@ -19,26 +19,26 @@ export default class App extends React.Component {
     this.setState({fontLoaded: true});
   }
 
-  triggerLogoChange = (bool) => {
-    this.setState({bool})
+  triggerLogoChange = (bool, end) => {
+    this.setState({bool, end})
   }
   triggerRerender = () => {
     this.refs.map.handleButtonClick(this.state.bool);
   }
-  renderLogo(bool, moreResults){
+  renderLogo(bool, end){
     let text;
     if (bool) {
       text = 'Search This Area'
-    } else if (moreResults) {
-      text = 'Load More Restaurants'
+    } else if (end) {
+      text = 'End of Results'
     } else {
-      text = 'No More Results'
+      text = 'Load More Restaurants'
     }
     return (this.state.fontLoaded
       ? <View style={styles.image_text_container}>
-          <Image style={styles.logo}
+          {/* <Image style={styles.logo}
                 source={require('./assets/logo__easyaspie.png')}
-          />
+          /> */}
           <Text style={styles.text}> {text} </Text>
         </View>
       : <View></View>
@@ -50,7 +50,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <View style={styles.logocontainer}>
           <TouchableHighlight onPress={this.triggerRerender}>
-            {this.renderLogo(this.state.bool)}
+            {this.renderLogo(this.state.bool, this.state.end)}
           </TouchableHighlight>
         </View>
         <Landing ref='map' triggerLogoChange={this.triggerLogoChange}/>
@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     display:'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    padding: 5,
   },
   text: {
     color: 'white',

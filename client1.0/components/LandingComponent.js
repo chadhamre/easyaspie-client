@@ -11,6 +11,7 @@ export default class App extends React.Component {
       location: null,
       initial: true,
       restaurants: null,
+      pagetoken: null,
     }
   }
 
@@ -23,11 +24,11 @@ export default class App extends React.Component {
   }
 
   handleButtonClick = (bool) => {
-    if (bool) {
+    if (bool || !this.state.pagetoken) {
       this.props.triggerLogoChange(false);
       this.getPlaces(this.state.location.coords.latitude, this.state.location.coords.longitude, this.state.location.coords.latitudeDelta);
     } else {
-      this.getPlaces(this.state.location.coords.latitude, this.state.location.coords.longitude, this.state.location.coords.latitudeDelta, this.state.restaurants.next_page_token);
+      this.getPlaces(this.state.location.coords.latitude, this.state.location.coords.longitude, this.state.location.coords.latitudeDelta, this.state.pagetoken);
     }
   }
 
@@ -37,30 +38,33 @@ export default class App extends React.Component {
       fetch(url, {method: 'GET',})
         .then( data => data.json())
         .then(data => {
-          this.setState({restaurants: data})
+          this.setState({restaurants: data, pagetoken: data.next_page_token})
         })
     } else {
       const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=${delta*50000}&pagetoken=${pagetoken}&type=restaurant&key=AIzaSyCDpYpbNtmuNr3SMNtuDZDfjaYFdE7tVkk`
       fetch(url, {method: 'GET',})
         .then( data => data.json())
         .then(data => {
-          this.setState({restaurants: data})
+          if (data.results.length !== 0) {
+            this.setState({restaurants: data, pagetoken: data.next_page_token})
+          } else {
+            console.log('here')
+            this.props.triggerLogoChange(false, true)
+          }
         })
     }
   }
 
   handleRegionChangeComplete = async (e) => {
-    const location = await Location.getCurrentPositionAsync( {}, (pos) => {
-    }).then(pos => {
-      if ((Math.floor(pos.coords.latitude * 500) !== Math.floor(e.latitude * 500)) ||
-         (Math.floor(pos.coords.longitude * 500) !== Math.floor(e.longitude * 500))) {
-           this.props.triggerLogoChange(true);
-           this.setState({location: {coords: e}})
-         }
-      else {
-        this.props.triggerLogoChange(false);
-      }
-    });
+    const pos = this.state.location
+    if ((Math.floor(pos.coords.latitude * 500) !== Math.floor(e.latitude * 500)) ||
+        (Math.floor(pos.coords.longitude * 500) !== Math.floor(e.longitude * 500))) {
+          this.props.triggerLogoChange(true);
+          this.setState({location: {coords: e}})
+        }
+    else {
+      this.props.triggerLogoChange(false);
+    }
   }
   render() {
     let map = this.state.location ?
