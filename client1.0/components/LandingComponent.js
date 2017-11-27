@@ -15,7 +15,7 @@ export default class App extends React.Component {
   }
 
   componentWillMount = async () => {
-    const { status } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
+    const { status } = await Permissions.askAsync(Permissions.LOCATION)
     let location = await Location.getCurrentPositionAsync({}, (pos) => {})
     .then( pos => {
       this.getPlaces(pos.coords.latitude, pos.coords.longitude, 0.005)
@@ -32,7 +32,6 @@ export default class App extends React.Component {
   }
 
   getPlaces = async (lat, long, delta, pagetoken) => {
-    console.log(pagetoken)
     if (!pagetoken) {
       const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=${delta*50000}&type=restaurant&key=AIzaSyCDpYpbNtmuNr3SMNtuDZDfjaYFdE7tVkk`
       fetch(url, {method: 'GET',})
