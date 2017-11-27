@@ -9,34 +9,59 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       location: null,
+      initial: true,
       restaurants: null,
     }
   }
 
-  componentWillMount() {
-    this.getLocation();
-    this.getPlaces();
-  }
-
-
-  getLocation = async () => {
+  componentWillMount = async () => {
     const { status } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
-    let location = await Location.watchPositionAsync({}, (pos) => {
-      this.setState({ location: pos });
-    }).then(this.getPlaces())
-  }
-  getPlaces = async () => {
-    //DO MULTIPLE CALLS FOR THE PLACES, TRIANGLE
-    const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.39502262758671,2.1979764103889465&radius=1000&type=restaurant&key=AIzaSyCDpYpbNtmuNr3SMNtuDZDfjaYFdE7tVkk`
-    fetch(url, {method: 'GET',})
-      .then( data => data.json())
-      .then(data => {
-        this.setState({restaurants: data})
-      })
+    let location = await Location.getCurrentPositionAsync({}, (pos) => {})
+    .then( pos => {
+      this.getPlaces(pos.coords.latitude, pos.coords.longitude, 0.005)
+      this.setState({ location: pos })});
   }
 
-  handleRegionChangeComplete(e) {
-    setTimeout(() =>console.log('changed', e), 3000);
+  handleButtonClick = (bool) => {
+    if (bool) {
+      this.props.triggerLogoChange(false);
+      this.getPlaces(this.state.location.coords.latitude, this.state.location.coords.longitude, this.state.location.coords.latitudeDelta);
+    } else {
+      this.getPlaces(this.state.location.coords.latitude, this.state.location.coords.longitude, this.state.location.coords.latitudeDelta, this.state.restaurants.next_page_token);
+    }
+  }
+
+  getPlaces = async (lat, long, delta, pagetoken) => {
+    console.log(pagetoken)
+    if (!pagetoken) {
+      const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=${delta*50000}&type=restaurant&key=AIzaSyCDpYpbNtmuNr3SMNtuDZDfjaYFdE7tVkk`
+      fetch(url, {method: 'GET',})
+        .then( data => data.json())
+        .then(data => {
+          this.setState({restaurants: data})
+        })
+    } else {
+      const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=${delta*50000}&pagetoken=${pagetoken}&type=restaurant&key=AIzaSyCDpYpbNtmuNr3SMNtuDZDfjaYFdE7tVkk`
+      fetch(url, {method: 'GET',})
+        .then( data => data.json())
+        .then(data => {
+          this.setState({restaurants: data})
+        })
+    }
+  }
+
+  handleRegionChangeComplete = async (e) => {
+    const location = await Location.getCurrentPositionAsync( {}, (pos) => {
+    }).then(pos => {
+      if ((Math.floor(pos.coords.latitude * 500) !== Math.floor(e.latitude * 500)) ||
+         (Math.floor(pos.coords.longitude * 500) !== Math.floor(e.longitude * 500))) {
+           this.props.triggerLogoChange(true);
+           this.setState({location: {coords: e}})
+         }
+      else {
+        this.props.triggerLogoChange(false);
+      }
+    });
   }
   render() {
     let map = this.state.location ?
@@ -49,7 +74,7 @@ export default class App extends React.Component {
           latitudeDelta: .005,
           longitudeDelta: .005
           }}
-          onRegionChangeComplete = {this.handleRegionChangeComplete}
+          onRegionChangeComplete = {this.handleRegionChangeComplete.bind(this)}
           showsUserLocation={true}
           showsMyLocationButton={true}
         >

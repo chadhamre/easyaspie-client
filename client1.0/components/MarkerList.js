@@ -4,7 +4,6 @@ import { MapView, Location, Permissions }  from 'expo';
 
 export default class MarkerList extends React.Component {
   render() {
-    console.log(list);
     let list = this.props.restaurants ?
       this.props.restaurants.results.map(el => {
         let latlong = {latitude: el.geometry.location.lat, longitude: el.geometry.location.lng};
@@ -13,7 +12,7 @@ export default class MarkerList extends React.Component {
           key={el.name}
           title={el.name}
           coordinate={latlong}
-          pinColor='blue'
+          pinColor='fuchsia'
           />
         )
       }) : <View></View>

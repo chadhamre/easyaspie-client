@@ -1,16 +1,59 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
 import Landing from './components/LandingComponent.js'
-import { MapView } from 'expo';
+import { MapView, Font } from 'expo';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      bool: false,
+      fontLoaded: false,
+    }
+  }
+
+  async componentWillMount() {
+    await Font.loadAsync({
+      'raleway': require('./assets/fonts/Raleway/Raleway-Regular.ttf')
+    })
+    this.setState({fontLoaded: true});
+  }
+
+  triggerLogoChange = (bool) => {
+    this.setState({bool})
+  }
+  triggerRerender = () => {
+    this.refs.map.handleButtonClick(this.state.bool);
+  }
+  renderLogo(bool, moreResults){
+    let text;
+    if (bool) {
+      text = 'Search This Area'
+    } else if (moreResults) {
+      text = 'Load More Restaurants'
+    } else {
+      text = 'No More Results'
+    }
+    return (this.state.fontLoaded
+      ? <View style={styles.image_text_container}>
+          <Image style={styles.logo}
+                source={require('./assets/logo__easyaspie.png')}
+          />
+          <Text style={styles.text}> {text} </Text>
+        </View>
+      : <View></View>
+    )
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.logocontainer}>
-          <Image style={styles.logo} source={require('./assets/logo__easyaspie.png')} />
+          <TouchableHighlight onPress={this.triggerRerender}>
+            {this.renderLogo(this.state.bool)}
+          </TouchableHighlight>
         </View>
-        <Landing />
+        <Landing ref='map' triggerLogoChange={this.triggerLogoChange}/>
     </View>
     );
   }
@@ -26,6 +69,8 @@ const styles = StyleSheet.create({
   logo: {
     height: 85,
     width: 85,
+    zIndex: 2,
+    // tintColor: 'yellow',
   },
   logocontainer: {
     backgroundColor: '#48B9D0',
@@ -40,5 +85,14 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     shadowOpacity: .3,
     borderRadius: 20,
+  },
+  image_text_container: {
+    display:'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  text: {
+    color: 'white',
+    fontFamily: 'raleway',
   }
 });
