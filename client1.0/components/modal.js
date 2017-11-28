@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from 'react-native-button';
 import Modal from 'react-native-modalbox';
+import {LinearGradient} from 'expo';
 
 import PhotoList from './photoList';
 
@@ -60,29 +61,31 @@ export default class RestaurantModal extends React.Component {
           ref={"modal1"}
           swipeToClose={this.state.swipeToClose}
           onClosed={this.onClose}
-          swipeArea={300}
+          swipeArea={250}
           onOpened={this.onOpen}
           onClosingState={this.onClosingState}>
-  {/* ///////////////////////////MODAL LAYOUT STARTS HERE///////////////////////// */}
-            {/* Restaurant bestPhoto */}
+          {/* Restaurant bestPhoto */}
           <View style={styles.image__wrapper}>
             <Image style={styles.image}
               source={{uri: this.state.restaurantInfo.bestPhoto}}
             />
+            <LinearGradient
+              colors={['rgba(0,0,0,0.0)', 'rgba(0,0,0,0.5)', 'rgba(0,0,0,0.8)']}
+              style={styles.infoList}>
+              <Text style={styles.title}>{this.state.restaurantInfo.name}</Text>
+              <Text style={styles.address}>{this.state.restaurantInfo.address}</Text>
+            </LinearGradient>
           </View>
-          {/* Restaurant Information */}
-          <View style={styles.infoList}>
-            <Text style={styles.title}>{this.state.restaurantInfo.name}</Text>
-            <Text style={styles.title}>{this.state.restaurantInfo.address}</Text>
-          </View>
-              {/* Restaurant Ratings */}
-          <View style={styles.ratingsList}>
-            <Text style={styles.easyRating}> EasyAsPie Rating: {this.state.restaurantInfo.rating}</Text>
-          </View>
-            {/* List of photos component */}
-          <PhotoList
-            pictures={this.state.restaurantInfo.photos}
-          />
+          <ScrollView style={styles.scrollview}>
+            <View style={styles.ratingsList}>
+              <Text style={styles.easyRating}> Easy as pie rating:</Text>
+              <Text style={styles.easyRatingNumber}>{this.state.restaurantInfo.rating}</Text>
+            </View>
+              {/* List of photos component */}
+            <PhotoList
+              pictures={this.state.restaurantInfo.photos}
+            />
+          </ScrollView>
         </Modal>
       </View>
     );
@@ -90,17 +93,45 @@ export default class RestaurantModal extends React.Component {
 
 }
 
-
-
 const styles = StyleSheet.create({
-
+  easyRatingNumber: {
+    color: '#5C91CA',
+    fontSize: 30,
+    paddingTop: 6,
+    // fontFamily: 'timmana'
+  },
+  infoList: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    paddingTop: 36,
+    paddingBottom: 12,
+    paddingHorizontal: 12
+  },
+  title: {
+    color: "#fff",
+    backgroundColor: 'transparent',
+    fontSize: 30,
+    // fontFamily: 'raleway'
+    // fontFamily: 'timmana'
+  },
+  address: {
+    color: "#fff",
+    backgroundColor: 'transparent',
+  },
+  infoListAddress: {
+    backgroundColor: "#3B5998",
+  },
+  scrollview: {
+    height: 400,
+    width: '100%'
+  },
   wrapper: {
     paddingTop: 50,
     flex: 1
   },
   modal: {
     alignItems: 'center',
-    backgroundColor: 'aquamarine'
   },
   btn: {
     margin: 10,
@@ -120,10 +151,6 @@ const styles = StyleSheet.create({
     color: "black",
     fontSize: 22
   },
-
-  title: {
-    fontSize: 16,
-  },
   modalButton: {
     alignSelf: 'center',
     justifyContent: 'center',
@@ -136,23 +163,20 @@ const styles = StyleSheet.create({
   },
   ratingsList: {
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingVertical: 36,
   },
   easyRating: {
     fontSize: 24
-  },
-  infoList: {
-    flexDirection: 'column',
-    backgroundColor: 'lime',
-    alignItems: 'center',
-    flexWrap: 'nowrap'
   },
   image__wrapper: {
     position: 'relative',
     overflow: 'hidden',
     alignSelf: 'flex-start',
-    height: 300,
+    height: '35%',
     width: '100%',
+    borderBottomWidth: 5,
+    borderBottomColor: '#FFF',
   },
   image: {
     position: 'absolute',
