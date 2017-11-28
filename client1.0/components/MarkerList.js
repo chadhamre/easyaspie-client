@@ -9,11 +9,12 @@ export default class MarkerList extends React.Component {
         let latlong = {latitude: el.geometry.location.lat, longitude: el.geometry.location.lng};
         return (
           <MapView.Marker
+          identifier={el.place_id}
           key={el.id}
           title={el.name}
           coordinate={latlong}
           pinColor='fuchsia'
-          /* onPress={() => console.log(this.props.key)} */
+          onPress={(e) => this.props.handelMarkerPress(e)}
           />
         )
       }) : <View></View>

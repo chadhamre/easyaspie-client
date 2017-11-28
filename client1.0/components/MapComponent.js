@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { MapView, Location, Permissions }  from 'expo';
 
-import MarkerList from './MarkerList'
+import MarkerList from './MarkerList';
+import RestaurantModal from './modal';
 
 export default class Map extends React.Component {
   constructor(props) {
@@ -67,6 +68,10 @@ export default class Map extends React.Component {
       this.props.triggerLogoChange(false);
     }
   }
+  handelMarkerPress = (e) => {
+    this.refs.modal.getId(e.nativeEvent.id);
+    this.refs.modal.refs.modal1.open();
+  }
   render() {
     let map = this.state.location ?
         <MapView
@@ -82,11 +87,12 @@ export default class Map extends React.Component {
           showsUserLocation={true}
           showsMyLocationButton={true}
         >
-          <MarkerList restaurants={this.state.restaurants}/>
+          <MarkerList restaurants={this.state.restaurants} handelMarkerPress={this.handelMarkerPress}/>
         </MapView> : <Text> Loading </Text>
     return (
       <View style = {styles.container}>
         {map}
+      <RestaurantModal ref={'modal'} triggerModal={this.props.triggerModal}/>
       </View>
     );
   }

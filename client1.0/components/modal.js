@@ -30,15 +30,23 @@ export default class RestaurantModal extends React.Component {
       swipeToClose: true,
       sliderValue: 0.3,
       restaurantInfo: {},
+      id: null,
     };
   }
 
-  componentDidMount () {
-    this.getRestaurant()
+  onOpened = () => {
+    this.props.triggerModal();
+    this.getRestaurant(this.state.id);
   }
-
-  getRestaurant (data) {
-   fetch('https://easy-as-pie-api.herokuapp.com/api/v1/places/ChIJuT9kTBKjpBIRNSy1Grt_ge4', {
+  onClosed = () => {
+    this.props.triggerModal();
+  }
+  getId = (id) => {
+    this.setState({id});
+  }
+  getRestaurant (id) {
+    console.log(`https://easy-as-pie-api.herokuapp.com/api/v1/places/${id}`)
+   fetch(`https://easy-as-pie-api.herokuapp.com/api/v1/places/${id}`, {
      method: 'GET',
      headers: {
        'Content-Type': 'application/json'
@@ -46,6 +54,7 @@ export default class RestaurantModal extends React.Component {
    })
    .then(data => data.json())
    .then(data => {
+     console.log(data, 'getting step 3')
      this.setState({restaurantInfo: data});
    })
   }
@@ -54,15 +63,13 @@ export default class RestaurantModal extends React.Component {
   render() {
 
     return (
-      <View style={styles.wrapper}>
-        <Button onPress={() => this.refs.modal1.open()} style={styles.btn}>ID TAP THAT</Button>
         <Modal
-          style={[styles.modal]}
+          style={styles.modal}
           ref={"modal1"}
           swipeToClose={this.state.swipeToClose}
-          onClosed={this.onClose}
+          onClosed={this.onClosed}
           swipeArea={250}
-          onOpened={this.onOpen}
+          onOpened={this.onOpened}
           onClosingState={this.onClosingState}>
           {/* Restaurant bestPhoto */}
           <View style={styles.image__wrapper}>
@@ -87,7 +94,6 @@ export default class RestaurantModal extends React.Component {
             />
           </ScrollView>
         </Modal>
-      </View>
     );
   }
 
@@ -126,12 +132,12 @@ const styles = StyleSheet.create({
     height: 400,
     width: '100%'
   },
-  wrapper: {
-    paddingTop: 50,
-    flex: 1
-  },
   modal: {
+    paddingTop: 50,
+    flex: 1,
     alignItems: 'center',
+    position: 'absolute',
+    zIndex: 3,
   },
   btn: {
     margin: 10,

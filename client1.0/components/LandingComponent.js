@@ -9,13 +9,14 @@ export default class Landing extends React.Component {
     this.state = {
       bool: false,
       fontLoaded: false,
+      modal: false,
     }
   }
 
   async componentWillMount() {
     await Font.loadAsync({
       'raleway': require('../assets/fonts/Raleway/Raleway-Regular.ttf'),
-      'timmana': require('..assets/fonts/Timmana/Timmana-Regular.ttf')
+      'timmana': require('../assets/fonts/Timmana/Timmana-Regular.ttf')
     })
     this.setState({fontLoaded: true});
   }
@@ -25,6 +26,9 @@ export default class Landing extends React.Component {
   }
   triggerRerender = () => {
     this.refs.map.handleButtonClick(this.state.bool);
+  }
+  triggerModal = () => {
+    this.setState({modal:!this.state.modal})
   }
   renderLogo(bool, end){
     let text;
@@ -46,16 +50,21 @@ export default class Landing extends React.Component {
       : <View></View>
     )
   }
-
+  renderContainer(){
+    return (!this.state.modal ?
+            <View style={styles.logocontainer}>
+              <TouchableHighlight onPress={this.triggerRerender}>
+                {this.renderLogo(this.state.bool, this.state.end)}
+              </TouchableHighlight>
+            </View> :
+            <View></View>
+    )
+  }
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.logocontainer}>
-          <TouchableHighlight onPress={this.triggerRerender}>
-            {this.renderLogo(this.state.bool, this.state.end)}
-          </TouchableHighlight>
-        </View>
-        <Map ref='map' triggerLogoChange={this.triggerLogoChange}/>
+        {this.renderContainer()}
+        <Map ref='map' triggerLogoChange={this.triggerLogoChange} triggerModal={this.triggerModal}/>
     </View>
     );
   }
@@ -71,7 +80,7 @@ const styles = StyleSheet.create({
   logo: {
     height: 85,
     width: 85,
-    zIndex: 2,
+    // zIndex: 2,
     // tintColor: 'yellow',
   },
   logocontainer: {

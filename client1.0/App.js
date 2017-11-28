@@ -1,6 +1,4 @@
 import React from 'react';
-import Landing from './components/LandingComponent'
-import { MapView, Font } from 'expo';
 import { View } from 'react-native';
 
 import Landing from './components/LandingComponent.js'
