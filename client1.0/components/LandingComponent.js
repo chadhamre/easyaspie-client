@@ -1,92 +1,61 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { MapView, Location, Permissions }  from 'expo';
+import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
+import Map from './MapComponent'
+import { MapView, Font } from 'expo';
 
-import MarkerList from './MarkerList'
-
-export default class App extends React.Component {
+export default class Landing extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: null,
-      initial: true,
-      restaurants: null,
-      pagetoken: null,
+      bool: false,
+      fontLoaded: false,
     }
   }
 
-  componentWillMount = async () => {
-    const { status } = await Permissions.askAsync(Permissions.LOCATION)
-    let location = await Location.getCurrentPositionAsync({}, (pos) => {})
-    .then( pos => {
-      this.getPlaces(pos.coords.latitude, pos.coords.longitude, 0.005)
-      this.setState({ location: pos })});
+  async componentWillMount() {
+    await Font.loadAsync({
+      'raleway': require('../assets/fonts/Raleway/Raleway-Regular.ttf')
+    })
+    this.setState({fontLoaded: true});
   }
 
-  handleButtonClick = (bool) => {
-    if (bool || !this.state.pagetoken) {
-      this.props.triggerLogoChange(false);
-      this.getPlaces(this.state.location.coords.latitude, this.state.location.coords.longitude, this.state.location.coords.latitudeDelta);
+  triggerLogoChange = (bool, end) => {
+    this.setState({bool, end})
+  }
+  triggerRerender = () => {
+    this.refs.map.handleButtonClick(this.state.bool);
+  }
+  renderLogo(bool, end){
+    let text;
+    if (bool) {
+      text = 'Search This Area'
+    } else if (end) {
+      text = 'No More Results';
     } else {
-      this.getPlaces(this.state.location.coords.latitude, this.state.location.coords.longitude, this.state.location.coords.latitudeDelta, this.state.pagetoken);
+      text = 'Load More Restaurants'
     }
+    //IF BROKEN, check text below
+    return ((this.state.fontLoaded && text)
+      ? <View style={styles.image_text_container}>
+          {/* <Image style={styles.logo}
+                source={require('./assets/logo__easyaspie.png')}
+          /> */}
+          <Text style={styles.text}> {text} </Text>
+        </View>
+      : <View></View>
+    )
   }
 
-  getPlaces = async (lat, long, delta, pagetoken) => {
-    if (!pagetoken) {
-      const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=${delta*50000}&type=restaurant&key=AIzaSyCDpYpbNtmuNr3SMNtuDZDfjaYFdE7tVkk`
-      fetch(url, {method: 'GET',})
-        .then( data => data.json())
-        .then(data => {
-          this.setState({restaurants: data, pagetoken: data.next_page_token})
-        })
-    } else {
-      const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=${delta*50000}&pagetoken=${pagetoken}&type=restaurant&key=AIzaSyCDpYpbNtmuNr3SMNtuDZDfjaYFdE7tVkk`
-      fetch(url, {method: 'GET',})
-        .then( data => data.json())
-        .then(data => {
-          if (data.results.length !== 0) {
-            let old = this.state.restaurants.results;
-            this.setState({restaurants: {results: [...old, ...data.results]}, pagetoken: data.next_page_token})
-          } else {
-            this.props.triggerLogoChange(false, true)
-          }
-        })
-    }
-  }
-
-  handleRegionChangeComplete = async (e) => {
-    const pos = this.state.location
-    if ((Math.floor(pos.coords.latitude * 500) !== Math.floor(e.latitude * 500)) ||
-        (Math.floor(pos.coords.longitude * 500) !== Math.floor(e.longitude * 500))) {
-          this.props.triggerLogoChange(true);
-          this.setState({location: {coords: e}})
-        }
-    else {
-      this.props.triggerLogoChange(false);
-    }
-  }
   render() {
-    let map = this.state.location ?
-        <MapView
-          provider="google"
-          style={styles.map}
-          initialRegion={{
-          latitude: this.state.location.coords.latitude,
-          longitude: this.state.location.coords.longitude,
-          latitudeDelta: .005,
-          longitudeDelta: .005
-          }}
-          onRegionChangeComplete = {this.handleRegionChangeComplete.bind(this)}
-          showsUserLocation={true}
-          showsMyLocationButton={true}
-        >
-          <MarkerList restaurants={this.state.restaurants}/>
-        </MapView> : <Text> Loading </Text>
     return (
-      <View style = {styles.container}>
-        {map}
-      </View>
+      <View style={styles.container}>
+        <View style={styles.logocontainer}>
+          <TouchableHighlight onPress={this.triggerRerender}>
+            {this.renderLogo(this.state.bool, this.state.end)}
+          </TouchableHighlight>
+        </View>
+        <Map ref='map' triggerLogoChange={this.triggerLogoChange}/>
+    </View>
     );
   }
 }
@@ -96,18 +65,36 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    height: '100%',
+    justifyContent: 'flex-start',
   },
-  map: {
-    flex: 1,
-    alignSelf: 'flex-end',
-    width: '100%',
-    height: '100%',
+  logo: {
+    height: 85,
+    width: 85,
+    zIndex: 2,
+    // tintColor: 'yellow',
   },
-  loader: {
-    flex: 1,
-    alignSelf: 'stretch',
+  logocontainer: {
+    backgroundColor: '#48B9D0',
+    position: 'absolute',
+    marginTop: 40,
+    zIndex: 1,
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowRadius: 5,
+    shadowOpacity: .3,
+    borderRadius: 20,
+  },
+  image_text_container: {
+    display:'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 5,
+  },
+  text: {
+    color: 'white',
+    fontFamily: 'raleway',
   }
 });
