@@ -45,7 +45,6 @@ export default class RestaurantModal extends React.Component {
     this.setState({id});
   }
   getRestaurant (id) {
-    console.log(`https://easy-as-pie-api.herokuapp.com/api/v1/places/${id}`)
    fetch(`https://easy-as-pie-api.herokuapp.com/api/v1/places/${id}`, {
      method: 'GET',
      headers: {
@@ -54,7 +53,6 @@ export default class RestaurantModal extends React.Component {
    })
    .then(data => data.json())
    .then(data => {
-     console.log(data, 'getting step 3')
      this.setState({restaurantInfo: data});
    })
   }
@@ -104,7 +102,7 @@ const styles = StyleSheet.create({
     color: '#5C91CA',
     fontSize: 30,
     paddingTop: 6,
-    // fontFamily: 'timmana'
+    fontFamily: 'timmana'
   },
   infoList: {
     position: 'absolute',
@@ -118,12 +116,14 @@ const styles = StyleSheet.create({
     color: "#fff",
     backgroundColor: 'transparent',
     fontSize: 30,
+    marginBottom: -15,
     // fontFamily: 'raleway'
-    // fontFamily: 'timmana'
+    fontFamily: 'timmana'
   },
   address: {
     color: "#fff",
     backgroundColor: 'transparent',
+    fontFamily: 'raleway',
   },
   infoListAddress: {
     backgroundColor: "#3B5998",

@@ -30,9 +30,7 @@ export default class PhotoList extends Component {
 
 
   render() {
-    console.log(this.props.pictures, "here");
     return (
-
       <View>
         {this.renderPictures()}
       </View>
