@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
-import Landing from './components/LandingComponent.js'
+import Button from 'react-native-button';
 import { MapView, Font } from 'expo';
+
+import Landing from './components/LandingComponent.js'
+import RestaurantModal from './components/modal'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -55,6 +58,7 @@ export default class App extends React.Component {
           </TouchableHighlight>
         </View>
         <Landing ref='map' triggerLogoChange={this.triggerLogoChange}/>
+        <RestaurantModal/>
     </View>
     );
   }

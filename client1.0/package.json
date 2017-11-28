@@ -20,9 +20,20 @@
   },
   "dependencies": {
     "expo": "^22.0.2",
-    "prop-types": "^15.6.0",
-    "react": "^16.1.1",
-    "react-native": "^0.49.3",
-    "react-native-cli": "^2.0.1"
+    "react": "16.0.0-beta.5",
+    "react-native": "^0.49.5",
+    "react-native-button": "^2.1.0",
+    "react-native-easy-grid": "^0.1.15",
+    "react-native-fast-image": "^1.0.0",
+    "react-native-masonry": "^0.4.4",
+    "react-native-modal": "^4.1.1",
+    "react-native-modalbox": "^1.4.2",
+    "react-native-nested-scrollview": "0.0.3",
+    "react-native-photo-grid-frame": "^2.0.1",
+    "react-native-responsive-grid": "^0.34.2",
+    "react-native-slider": "^0.11.0",
+    "react-native-stars": "^1.1.2",
+    "react-native-vector-icons": "^4.4.2",
+    "watchman": "^0.1.8"
   }
 }
