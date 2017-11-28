@@ -13,6 +13,7 @@ export default class MarkerList extends React.Component {
           title={el.name}
           coordinate={latlong}
           pinColor='fuchsia'
+          /* onPress={() => console.log(this.props.key)} */
           />
         )
       }) : <View></View>

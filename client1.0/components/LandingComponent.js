@@ -45,11 +45,9 @@ export default class App extends React.Component {
       fetch(url, {method: 'GET',})
         .then( data => data.json())
         .then(data => {
-          //ATTEMPT TO USE THE BELOW
           if (data.results.length !== 0) {
-            // let old = this.state.restaurants.results;
-            // this.setState({restaurants: {results: [...old, ...data.results]}, pagetoken: data.next_page_token})
-            this.setState({restaurants: data, pagetoken: data.next_page_token})
+            let old = this.state.restaurants.results;
+            this.setState({restaurants: {results: [...old, ...data.results]}, pagetoken: data.next_page_token})
           } else {
             this.props.triggerLogoChange(false, true)
           }
