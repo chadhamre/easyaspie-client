@@ -14,7 +14,8 @@ export default class Landing extends React.Component {
 
   async componentWillMount() {
     await Font.loadAsync({
-      'raleway': require('../assets/fonts/Raleway/Raleway-Regular.ttf')
+      'raleway': require('../assets/fonts/Raleway/Raleway-Regular.ttf'),
+      'timmana': require('..assets/fonts/Timmana/Timmana-Regular.ttf')
     })
     this.setState({fontLoaded: true});
   }
