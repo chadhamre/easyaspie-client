@@ -13,6 +13,7 @@ export default class Map extends React.Component {
       initial: true,
       restaurants: null,
       pagetoken: null,
+      locationChange: null,
     }
   }
 
@@ -24,9 +25,10 @@ export default class Map extends React.Component {
       this.setState({ location: pos })});
   }
 
-  handleButtonClick = (bool) => {
+  handleButtonClick = async (bool) => {
     //|| !this.state.page token below, might be useful?
     if (bool) {
+      await this.setState({location:this.state.locationChange, initial:true});
       this.props.triggerLogoChange(false);
       this.getPlaces(this.state.location.coords.latitude, this.state.location.coords.longitude, this.state.location.coords.latitudeDelta);
     } else {
@@ -35,12 +37,13 @@ export default class Map extends React.Component {
   }
 
   getPlaces = async (lat, long, delta, pagetoken) => {
-    if (!pagetoken) {
+    if (!delta) delta = 0.005;
+    if (!pagetoken && this.state.initial) {
       const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=${delta*50000}&type=restaurant&key=AIzaSyCDpYpbNtmuNr3SMNtuDZDfjaYFdE7tVkk`
       fetch(url, {method: 'GET',})
         .then( data => data.json())
         .then(data => {
-          this.setState({restaurants: data, pagetoken: data.next_page_token})
+          this.setState({restaurants: data, pagetoken: data.next_page_token, initial:false})
         })
     } else {
       const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=${delta*50000}&pagetoken=${pagetoken}&type=restaurant&key=AIzaSyCDpYpbNtmuNr3SMNtuDZDfjaYFdE7tVkk`
@@ -62,7 +65,7 @@ export default class Map extends React.Component {
     if ((Math.floor(pos.coords.latitude * 500) !== Math.floor(e.latitude * 500)) ||
         (Math.floor(pos.coords.longitude * 500) !== Math.floor(e.longitude * 500))) {
           this.props.triggerLogoChange(true);
-          this.setState({location: {coords: e}})
+          this.setState({locationChange: {coords: e}})
         }
     else {
       this.props.triggerLogoChange(false);
