@@ -6,6 +6,7 @@ export default class MarkerList extends React.Component {
   render() {
     let list = this.props.restaurants ?
       this.props.restaurants.results.map(el => {
+        console.log(el)
         let latlong = {latitude: el.geometry.location.lat, longitude: el.geometry.location.lng};
         if(el.opening_hours && el.opening_hours.open_now) {
           description = 'Open Now!'
@@ -22,11 +23,13 @@ export default class MarkerList extends React.Component {
           onPress={(e) => this.showCallout}
           >
             <MapView.Callout
-              style={{width: 100}}
               onPress={(e) => this.props.handelMarkerPress(e)}
+              tooltip={false}
             >
-              <Text>{el.name}</Text>
-              <Text>{description}</Text>
+            <View style={styles.callout}>
+              <Text style={styles.title}>{el.name}</Text>
+              <Text style={styles.description}>{description}</Text>
+            </View>
             </MapView.Callout>
           </MapView.Marker>
         )
@@ -36,3 +39,18 @@ export default class MarkerList extends React.Component {
     )
   }
 }
+const styles = StyleSheet.create({
+  callout: {
+    padding: 12,
+    maxWidth: 150,
+  },
+  title: {
+    fontFamily: 'raleway-blackitalic',
+    fontSize: 12
+  },
+  description: {
+    fontFamily: 'raleway',
+    fontSize: 12,
+    marginTop: 3,
+  }
+})

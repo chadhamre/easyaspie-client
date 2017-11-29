@@ -62,7 +62,6 @@ export default class RestaurantModal extends React.Component {
   }
 
   renderModal = () => {
-    console.log(this.state.restaurantInfo);
     return (
       this.state.restaurantInfo
       ?
@@ -121,7 +120,7 @@ const styles = StyleSheet.create({
     color: '#5C91CA',
     fontSize: 30,
     paddingTop: 6,
-    fontFamily: 'timmana'
+    fontFamily: 'raleway-blackitalic'
   },
   infoList: {
     position: 'absolute',
@@ -134,10 +133,9 @@ const styles = StyleSheet.create({
   title: {
     color: "#fff",
     backgroundColor: 'transparent',
-    fontSize: 30,
-    marginBottom: -15,
+    fontSize: 25,
     // fontFamily: 'raleway'
-    fontFamily: 'timmana'
+    fontFamily: 'raleway-blackitalic'
   },
   address: {
     color: "#fff",
