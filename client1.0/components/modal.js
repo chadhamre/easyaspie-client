@@ -29,7 +29,7 @@ export default class RestaurantModal extends React.Component {
       isDisabled: false,
       swipeToClose: true,
       sliderValue: 0.3,
-      restaurantInfo: {},
+      restaurantInfo: null,
       id: null,
     };
   }
@@ -39,6 +39,7 @@ export default class RestaurantModal extends React.Component {
     this.getRestaurant(this.state.id);
   }
   onClosed = () => {
+    this.setState({restaurantInfo: null})
     this.props.triggerModal();
   }
   getId = (id) => {
@@ -57,6 +58,39 @@ export default class RestaurantModal extends React.Component {
    })
   }
 
+  renderModal = () => {
+    return (
+      this.state.restaurantInfo
+      ?
+      <View style={styles.main__wrapper}>
+        <View style={styles.image__wrapper}>
+          <Image style={styles.image}
+            source={{uri: this.state.restaurantInfo.bestPhoto === null ? undefined : this.state.restaurantInfo.bestPhoto}}
+          />
+          <LinearGradient
+            colors={['rgba(0,0,0,0.0)', 'rgba(0,0,0,0.5)', 'rgba(0,0,0,0.8)']}
+            style={styles.infoList}>
+            <Text style={styles.title}>{this.state.restaurantInfo.name}</Text>
+            <Text style={styles.address}>{this.state.restaurantInfo.address}</Text>
+          </LinearGradient>
+        </View>
+        <ScrollView style={styles.scrollview}>
+          <View style={styles.ratingsList}>
+            <Text style={styles.easyRating}> Easy as pie rating:</Text>
+            <Text style={styles.easyRatingNumber}>{this.state.restaurantInfo.rating}</Text>
+          </View>
+            {/* List of photos component */}
+          <PhotoList
+            pictures={this.state.restaurantInfo.photos}
+          />
+        </ScrollView>
+      </View>
+      :
+      <View>
+        <Text>Fucking loading</Text>
+      </View>
+    )
+  }
 
   render() {
 
@@ -69,28 +103,7 @@ export default class RestaurantModal extends React.Component {
           swipeArea={250}
           onOpened={this.onOpened}
           onClosingState={this.onClosingState}>
-          {/* Restaurant bestPhoto */}
-          <View style={styles.image__wrapper}>
-            <Image style={styles.image}
-              source={{uri: this.state.restaurantInfo.bestPhoto}}
-            />
-            <LinearGradient
-              colors={['rgba(0,0,0,0.0)', 'rgba(0,0,0,0.5)', 'rgba(0,0,0,0.8)']}
-              style={styles.infoList}>
-              <Text style={styles.title}>{this.state.restaurantInfo.name}</Text>
-              <Text style={styles.address}>{this.state.restaurantInfo.address}</Text>
-            </LinearGradient>
-          </View>
-          <ScrollView style={styles.scrollview}>
-            <View style={styles.ratingsList}>
-              <Text style={styles.easyRating}> Easy as pie rating:</Text>
-              <Text style={styles.easyRatingNumber}>{this.state.restaurantInfo.rating}</Text>
-            </View>
-              {/* List of photos component */}
-            <PhotoList
-              pictures={this.state.restaurantInfo.photos}
-            />
-          </ScrollView>
+          {this.renderModal()}
         </Modal>
     );
   }
@@ -133,7 +146,6 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   modal: {
-    paddingTop: 50,
     flex: 1,
     alignItems: 'center',
     position: 'absolute',
@@ -183,6 +195,10 @@ const styles = StyleSheet.create({
     width: '100%',
     borderBottomWidth: 5,
     borderBottomColor: '#FFF',
+  },
+  main__wrapper: {
+    height: '100%',
+    width: '100%',
   },
   image: {
     position: 'absolute',

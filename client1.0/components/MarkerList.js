@@ -7,6 +7,11 @@ export default class MarkerList extends React.Component {
     let list = this.props.restaurants ?
       this.props.restaurants.results.map(el => {
         let latlong = {latitude: el.geometry.location.lat, longitude: el.geometry.location.lng};
+        if(el.opening_hours && el.opening_hours.open_now) {
+          description = 'Open Now!'
+        } else if (el.opening_hours) {
+          description = 'Closed!'
+        }
         return (
           <MapView.Marker
           identifier={el.place_id}
@@ -14,8 +19,16 @@ export default class MarkerList extends React.Component {
           title={el.name}
           coordinate={latlong}
           pinColor='fuchsia'
-          onPress={(e) => this.props.handelMarkerPress(e)}
-          />
+          onPress={(e) => this.showCallout}
+          >
+            <MapView.Callout
+              style={{width: 100}}
+              onPress={(e) => this.props.handelMarkerPress(e)}
+            >
+              <Text>{el.name}</Text>
+              <Text>{description}</Text>
+            </MapView.Callout>
+          </MapView.Marker>
         )
       }) : <View></View>
     return (

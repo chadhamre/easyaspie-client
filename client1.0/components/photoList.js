@@ -11,7 +11,7 @@ import {
 export default class PhotoList extends Component {
 
   renderPictures () {
-    if (this.props.pictures === undefined) return null;
+    if (!this.props.pictures) return null;
     let pics = this.props.pictures.slice(1,21);
     return pics.map((pic) => {
       return (
