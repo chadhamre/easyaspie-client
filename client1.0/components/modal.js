@@ -18,6 +18,9 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import * as Animatable from 'react-native-animatable';
+
+
 var screen = Dimensions.get('window');
 
 export default class RestaurantModal extends React.Component {
@@ -91,8 +94,24 @@ export default class RestaurantModal extends React.Component {
         </ScrollView>
       </View>
       :
-      <View>
-        <Text>Fucking loading</Text>
+      <View style={styles.loader__wrap}>
+        <Animatable.View
+          animation={{
+            0: {
+              opacity: 1,
+              bottom: 0,
+            },
+            1: {
+              opacity: 0,
+              bottom: 10,
+            },
+          }}
+          iterationCount="infinite"
+          direction="alternate">
+          <Image style={styles.loader__image__smoke} source={require('../assets/loader_smoke.png')}/>
+        </Animatable.View>
+        <Image style={styles.loader__image} source={require('../assets/loader_pie.png')}/>
+        <Text style={styles.loader__text}>Baking ...</Text>
       </View>
     )
   }
@@ -116,6 +135,27 @@ export default class RestaurantModal extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  loader__wrap: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+  },
+  loader__image: {
+    width: 150,
+    height: 75,
+  },
+  loader__image__smoke: {
+    width: 30,
+    height: 29,
+    marginBottom: 6,
+  },
+  loader__text: {
+    marginTop: 12,
+    fontFamily: "raleway"
+  },
   easyRatingNumber: {
     color: '#5C91CA',
     fontSize: 30,
