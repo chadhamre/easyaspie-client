@@ -68,8 +68,8 @@ export default class Map extends React.Component {
       this.props.triggerLogoChange(false);
     }
   }
-  handelMarkerPress = (e) => {
-    this.refs.modal.getId(e.nativeEvent.id);
+  handelMarkerPress = (id) => {
+    this.refs.modal.getId(id);
     this.refs.modal.refs.modal1.open();
   }
   render() {

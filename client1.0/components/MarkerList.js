@@ -3,10 +3,15 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import { MapView, Location, Permissions }  from 'expo';
 
 export default class MarkerList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id:null
+    }
+  }
   render() {
     let list = this.props.restaurants ?
       this.props.restaurants.results.map(el => {
-        console.log(el)
         let latlong = {latitude: el.geometry.location.lat, longitude: el.geometry.location.lng};
         if(el.opening_hours && el.opening_hours.open_now) {
           description = 'Open Now!'
@@ -20,10 +25,10 @@ export default class MarkerList extends React.Component {
           title={el.name}
           coordinate={latlong}
           pinColor='fuchsia'
-          onPress={(e) => this.showCallout}
+          onPress={(e) => this.setState({id:e.nativeEvent.id})}
           >
             <MapView.Callout
-              onPress={(e) => this.props.handelMarkerPress(e)}
+              onPress={(e) => this.props.handelMarkerPress(this.state.id)}
               tooltip={false}
             >
             <View style={styles.callout}>
