@@ -46,26 +46,32 @@ export default class RestaurantModal extends React.Component {
     this.setState({id});
   }
   getRestaurant (id) {
-   fetch(`https://easy-as-pie-api.herokuapp.com/api/v1/places/${id}`, {
-     method: 'GET',
-     headers: {
-       'Content-Type': 'application/json'
-     }
-   })
-   .then(data => data.json())
-   .then(data => {
-     this.setState({restaurantInfo: data});
-   })
+      fetch(`https://easy-as-pie-api.herokuapp.com/api/v1/places/${id}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(data => {
+        if(data.ok) return data.json()
+        return placeHolderData;
+      })
+      .then(data => {
+        this.setState({restaurantInfo: data});
+      })
   }
 
   renderModal = () => {
+    console.log(this.state.restaurantInfo);
     return (
       this.state.restaurantInfo
       ?
       <View style={styles.main__wrapper}>
         <View style={styles.image__wrapper}>
           <Image style={styles.image}
-            source={{uri: this.state.restaurantInfo.bestPhoto === null ? undefined : this.state.restaurantInfo.bestPhoto}}
+            source={{uri: this.state.restaurantInfo.bestPhoto === null ?
+              "http://chcdigital.com/wp-content/uploads/2015/02/Screen-Shot-2015-02-09-at-10.49.57.png" :
+              this.state.restaurantInfo.bestPhoto}}
           />
           <LinearGradient
             colors={['rgba(0,0,0,0.0)', 'rgba(0,0,0,0.5)', 'rgba(0,0,0,0.8)']}
@@ -209,3 +215,56 @@ const styles = StyleSheet.create({
     bottom: 0
   },
 });
+
+const placeHolderData = {
+    "address": "Not Available!",
+    "bestPhoto": "https://memegenerator.net/img/instances/500x/67453856/you-know-what-really-grinds-our-gears-too-muchtoo-little-information.jpg",
+    "categories": [
+      "none",
+    ],
+    "counts": {},
+    "hours": [
+      "never",
+    ],
+    "location": {
+      "lat": 0,
+      "lng": 0,
+    },
+    "name": "Unknown",
+    "names": {
+      "foursquare": "",
+      "google": "",
+    },
+    "phone": "+66 66 66 66",
+    "photos": [
+      {
+        "checkin": {
+          "createdAt": 0,
+          "id": "0",
+          "timeZoneOffset": 0,
+          "type": "none",
+        },
+        "suffix": "/12013472_j0-aWZubfISESmExbsVFpBWX8GMUupXDghjVJj70Duc.jpg",
+        "user": {
+          "firstName": "Dan",
+          "gender": "male",
+          "id": "12013472",
+          "lastName": "Ciocoiu",
+          "photo": {
+            "prefix": "https://igx.4sqi.net/img/user/",
+            "suffix": "/ZQJNY12VTHWG4D1M.jpg",
+          },
+        },
+        "width": 720,
+      },
+    ],
+    "place_id": "None",
+    "price": 0,
+    "prices": {
+      "foursquare": 9999,
+    },
+    "rating": 11,
+    "ratings": {
+      "google": 0,
+    },
+  }
