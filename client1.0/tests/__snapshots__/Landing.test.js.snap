@@ -1,0 +1,590 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LandingComponent renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#48B9D0",
+        "borderRadius": 20,
+        "marginTop": 40,
+        "position": "absolute",
+        "shadowColor": "#000000",
+        "shadowOffset": Object {
+          "height": 3,
+          "width": 0,
+        },
+        "shadowOpacity": 0.3,
+        "shadowRadius": 5,
+        "zIndex": 1,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+        ]
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fff",
+        "flex": 1,
+        "height": "100%",
+        "justifyContent": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+    >
+       Loading 
+    </Text>
+    <View />
+  </View>
+</View>
+`;
+
+exports[`LandingComponent should not be affected by props 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Landing
+    foo="bar"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <View
+          style={
+                    Object {
+                              "backgroundColor": "#48B9D0",
+                              "borderRadius": 20,
+                              "marginTop": 40,
+                              "position": "absolute",
+                              "shadowColor": "#000000",
+                              "shadowOffset": Object {
+                                "height": 3,
+                                "width": 0,
+                              },
+                              "shadowOpacity": 0.3,
+                              "shadowRadius": 5,
+                              "zIndex": 1,
+                            }
+          }
+>
+          <TouchableHighlight
+                    activeOpacity={0.85}
+                    onPress={[Function]}
+                    underlayColor="black"
+          >
+                    <View />
+          </TouchableHighlight>
+</View>,
+        <Map
+          triggerLogoChange={[Function]}
+          triggerModal={[Function]}
+/>,
+      ],
+      "style": Object {
+        "alignItems": "center",
+        "backgroundColor": "#fff",
+        "flex": 1,
+        "justifyContent": "flex-start",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <TouchableHighlight
+            activeOpacity={0.85}
+            onPress={[Function]}
+            underlayColor="black"
+>
+            <View />
+</TouchableHighlight>,
+          "style": Object {
+            "backgroundColor": "#48B9D0",
+            "borderRadius": 20,
+            "marginTop": 40,
+            "position": "absolute",
+            "shadowColor": "#000000",
+            "shadowOffset": Object {
+              "height": 3,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 5,
+            "zIndex": 1,
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "activeOpacity": 0.85,
+            "children": <View />,
+            "onPress": [Function],
+            "underlayColor": "black",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "triggerLogoChange": [Function],
+          "triggerModal": [Function],
+        },
+        "ref": "map",
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <View
+            style={
+                        Object {
+                                    "backgroundColor": "#48B9D0",
+                                    "borderRadius": 20,
+                                    "marginTop": 40,
+                                    "position": "absolute",
+                                    "shadowColor": "#000000",
+                                    "shadowOffset": Object {
+                                      "height": 3,
+                                      "width": 0,
+                                    },
+                                    "shadowOpacity": 0.3,
+                                    "shadowRadius": 5,
+                                    "zIndex": 1,
+                                  }
+            }
+>
+            <TouchableHighlight
+                        activeOpacity={0.85}
+                        onPress={[Function]}
+                        underlayColor="black"
+            >
+                        <View />
+            </TouchableHighlight>
+</View>,
+          <Map
+            triggerLogoChange={[Function]}
+            triggerModal={[Function]}
+/>,
+        ],
+        "style": Object {
+          "alignItems": "center",
+          "backgroundColor": "#fff",
+          "flex": 1,
+          "justifyContent": "flex-start",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <TouchableHighlight
+              activeOpacity={0.85}
+              onPress={[Function]}
+              underlayColor="black"
+>
+              <View />
+</TouchableHighlight>,
+            "style": Object {
+              "backgroundColor": "#48B9D0",
+              "borderRadius": 20,
+              "marginTop": 40,
+              "position": "absolute",
+              "shadowColor": "#000000",
+              "shadowOffset": Object {
+                "height": 3,
+                "width": 0,
+              },
+              "shadowOpacity": 0.3,
+              "shadowRadius": 5,
+              "zIndex": 1,
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "activeOpacity": 0.85,
+              "children": <View />,
+              "onPress": [Function],
+              "underlayColor": "black",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "triggerLogoChange": [Function],
+            "triggerModal": [Function],
+          },
+          "ref": "map",
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`LandingComponent should not be affected by props 2`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Landing
+    foo="bar"
+    random="prop"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <View
+          style={
+                    Object {
+                              "backgroundColor": "#48B9D0",
+                              "borderRadius": 20,
+                              "marginTop": 40,
+                              "position": "absolute",
+                              "shadowColor": "#000000",
+                              "shadowOffset": Object {
+                                "height": 3,
+                                "width": 0,
+                              },
+                              "shadowOpacity": 0.3,
+                              "shadowRadius": 5,
+                              "zIndex": 1,
+                            }
+          }
+>
+          <TouchableHighlight
+                    activeOpacity={0.85}
+                    onPress={[Function]}
+                    underlayColor="black"
+          >
+                    <View />
+          </TouchableHighlight>
+</View>,
+        <Map
+          triggerLogoChange={[Function]}
+          triggerModal={[Function]}
+/>,
+      ],
+      "style": Object {
+        "alignItems": "center",
+        "backgroundColor": "#fff",
+        "flex": 1,
+        "justifyContent": "flex-start",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <TouchableHighlight
+            activeOpacity={0.85}
+            onPress={[Function]}
+            underlayColor="black"
+>
+            <View />
+</TouchableHighlight>,
+          "style": Object {
+            "backgroundColor": "#48B9D0",
+            "borderRadius": 20,
+            "marginTop": 40,
+            "position": "absolute",
+            "shadowColor": "#000000",
+            "shadowOffset": Object {
+              "height": 3,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 5,
+            "zIndex": 1,
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "activeOpacity": 0.85,
+            "children": <View />,
+            "onPress": [Function],
+            "underlayColor": "black",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "triggerLogoChange": [Function],
+          "triggerModal": [Function],
+        },
+        "ref": "map",
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <View
+            style={
+                        Object {
+                                    "backgroundColor": "#48B9D0",
+                                    "borderRadius": 20,
+                                    "marginTop": 40,
+                                    "position": "absolute",
+                                    "shadowColor": "#000000",
+                                    "shadowOffset": Object {
+                                      "height": 3,
+                                      "width": 0,
+                                    },
+                                    "shadowOpacity": 0.3,
+                                    "shadowRadius": 5,
+                                    "zIndex": 1,
+                                  }
+            }
+>
+            <TouchableHighlight
+                        activeOpacity={0.85}
+                        onPress={[Function]}
+                        underlayColor="black"
+            >
+                        <View />
+            </TouchableHighlight>
+</View>,
+          <Map
+            triggerLogoChange={[Function]}
+            triggerModal={[Function]}
+/>,
+        ],
+        "style": Object {
+          "alignItems": "center",
+          "backgroundColor": "#fff",
+          "flex": 1,
+          "justifyContent": "flex-start",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <TouchableHighlight
+              activeOpacity={0.85}
+              onPress={[Function]}
+              underlayColor="black"
+>
+              <View />
+</TouchableHighlight>,
+            "style": Object {
+              "backgroundColor": "#48B9D0",
+              "borderRadius": 20,
+              "marginTop": 40,
+              "position": "absolute",
+              "shadowColor": "#000000",
+              "shadowOffset": Object {
+                "height": 3,
+                "width": 0,
+              },
+              "shadowOpacity": 0.3,
+              "shadowRadius": 5,
+              "zIndex": 1,
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "activeOpacity": 0.85,
+              "children": <View />,
+              "onPress": [Function],
+              "underlayColor": "black",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "triggerLogoChange": [Function],
+            "triggerModal": [Function],
+          },
+          "ref": "map",
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

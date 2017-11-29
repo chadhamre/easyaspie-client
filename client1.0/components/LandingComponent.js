@@ -65,7 +65,7 @@ export default class Landing extends React.Component {
       <View style={styles.container}>
         {this.renderContainer()}
         <Map ref='map' triggerLogoChange={this.triggerLogoChange} triggerModal={this.triggerModal}/>
-    </View>
+      </View>
     );
   }
 }
