@@ -7,11 +7,10 @@ import PercentageCircle from 'react-native-percentage-circle';
 export default class Ratings extends Component {
 
   renderIfRatings () {
-
     if (!this.props.ratings.rating){
       return (
         <View>
-              <Text style={styles.easyRatingNumber}>Sorry!! No ratings online</Text>
+          <Text style={styles.easyRatingNumber}>Sorry!! No ratings online</Text>
         </View>
       )
     }
@@ -26,6 +25,7 @@ export default class Ratings extends Component {
       )
     }
   }
+
   renderSources () {
     if (this.props.rating) {
       return (
@@ -79,10 +79,7 @@ export default class Ratings extends Component {
           </View>
         )
       }
-
-
     })
-
   }
 
   render() {
@@ -98,10 +95,6 @@ export default class Ratings extends Component {
         </View>
         <View style={styles.rating}>
           {this.renderIfRatings()}
-            {/* <Text style={styles.title}>Easy as pie rating</Text>
-            <PercentageCircle  style={styles.roundthingy} radius={50} borderWidth={7} percent={this.props.ratings.rating} color={"#5C91CA"}>
-                <Text style={styles.easyRatingNumber}>{!hasRating  ? {this.props.ratings.rating / 10} : 'Sorry No Ratings available'}</Text>
-            </PercentageCircle> */}
         </View>
       </View>
     );
