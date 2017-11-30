@@ -7,6 +7,10 @@ import Landing from '../components/LandingComponent'
 const landing = renderer.create(<Landing />)
 const landingInstance = landing.root;
 const rendered = landing.toJSON();
+const landShallow = shallow(
+  <Landing />
+);
+const landRender = landShallow.dive();
 
 
 it('LandingComponent renders without crashing', () => {
@@ -25,3 +29,11 @@ it('LandingComponent should not be affected by props', () => {
   landShallow.setProps({random:'prop'});
   expect(landShallow).toMatchSnapshot();
 });
+
+it('has a Map subcomponent', () => {
+  expect(landRender.find('Map').length).toBe(1);
+});
+
+it('has a TouchableHighlight subcomponent', () => {
+  expect(landRender.find('TouchableHighlight').length).toBe(1);
+})
