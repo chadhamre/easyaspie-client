@@ -17,7 +17,7 @@ renderTimetable () {
 
   })
 }
-  
+
   render() {
     const tableHead = ['Day', 'Opening', 'Closing'];
     const tableData = [
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 24
   },
-  head: { height: 40, backgroundColor: '#f1f8ff' },
+  head: { height: 40, backgroundColor: '#f1f8ff'},
   text: { marginLeft: 5 },
   row: { height: 30 },
   table: {paddingHorizontal: 18, marginBottom: 24}

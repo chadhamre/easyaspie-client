@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {View, Button, Text, StyleSheet} from 'react-native';
+import {View, Image, TouchableOpacity, Button, Text, StyleSheet} from 'react-native';
 
 import { MapView, Location, Permissions }  from 'expo';
 import call from 'react-native-phone-call';
@@ -56,9 +56,17 @@ export default class GmapsDirections extends Component {
   render() {
     return (
       <View style={styles.wrapper}>
-        <Button onPress={this.handleGetDirections} title="Get Directions" />
+        <TouchableOpacity style={styles.opacities} onPress={this.callThePlace}>
+          <Image source={{uri: 'http://freevector.co/wp-content/uploads/2011/01/88447-phone-call.png'}}  style={{width: 50, height: 50}}/>
+          <Text>Call Now!</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.opacities} onPress={this.handleGetDirections}>
+          <Image source={{uri: 'https://lh3.googleusercontent.com/58TrfmPMd69WnW6hVs5LJALlfUsATZogysNg7ck8jNIPfeOBu4mtEXfz79pLsoU64Zg=w300'}}  style={{width: 50, height: 50}}/>
+          <Text>Get Directions</Text>
+        </TouchableOpacity>
+        {/* <Button onPress={this.handleGetDirections} title="Get Directions" />
         <Text>WRITING THIS TO SPACE OUT THE BUTTONS</Text>
-        <Button onPress={this.callThePlace} title="call the place" />
+        <Button onPress={this.callThePlace} title="call the place" /> */}
       </View>
     );
   }
@@ -66,6 +74,12 @@ export default class GmapsDirections extends Component {
 
 const styles = StyleSheet.create({
   wrapper: {
-    marginTop: 12
+    marginTop: 12,
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
+  opacities: {
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
