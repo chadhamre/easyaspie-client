@@ -6,8 +6,36 @@ import PercentageCircle from 'react-native-percentage-circle';
 
 export default class Ratings extends Component {
 
+  renderIfRatings () {
+
+    if (!this.props.ratings.rating){
+      return (
+        <View>
+              <Text style={styles.easyRatingNumber}>Sorry!! No ratings online</Text>
+        </View>
+      )
+    }
+    else {
+      return (
+        <View style={styles.rating}>
+          <Text style={styles.title}>Easy as pie rating</Text>
+          <PercentageCircle  style={styles.roundthingy} radius={50} borderWidth={7} percent={this.props.ratings.rating} color={"#5C91CA"}>
+              <Text style={styles.easyRatingNumber}>{this.props.ratings.rating / 10}</Text>
+          </PercentageCircle>
+        </View>
+      )
+    }
+  }
+  renderSources () {
+    if (this.props.rating) {
+      return (
+        <Text style={styles.title}>Our sources</Text>
+      )
+    }
+  }
+
   renderIcons () {
-    let providers = Object.keys(this.props.ratings.ratings);
+    const providers = Object.keys(this.props.ratings.ratings);
     return providers.map((el, i) => {
       if (el === "facebook"){
         return (
@@ -23,7 +51,7 @@ export default class Ratings extends Component {
           </View>
         )
       }
-      if (el === "google"){
+      if (el === "google" && this.props.ratings.rating){
         return (
           <View key={i}>
           <Image style={{width: 35, height: 35, marginLeft: 6}} source={{uri: 'https://avatars2.githubusercontent.com/u/12502296?s=400&v=4'}}/>
@@ -58,19 +86,22 @@ export default class Ratings extends Component {
   }
 
   render() {
+    console.log("HERE", this.props.ratings.rating, "hereeee");
+    const hasRating = this.props.ratings.rating;
     return (
       <View style={styles.ratingsList}>
         <View style={styles.sources}>
-          <Text style={styles.title}>Our sources</Text>
+          {this.renderSources()}
             <View style={styles.logos}>
               {this.renderIcons()}
             </View>
         </View>
         <View style={styles.rating}>
-          <Text style={styles.title}>Easy as pie rating</Text>
-          <PercentageCircle  style={styles.roundthingy} radius={50} borderWidth={7} percent={this.props.ratings.rating} color={"#5C91CA"}>
-              <Text style={styles.easyRatingNumber}>{this.props.ratings.rating / 10}</Text>
-          </PercentageCircle>
+          {this.renderIfRatings()}
+            {/* <Text style={styles.title}>Easy as pie rating</Text>
+            <PercentageCircle  style={styles.roundthingy} radius={50} borderWidth={7} percent={this.props.ratings.rating} color={"#5C91CA"}>
+                <Text style={styles.easyRatingNumber}>{!hasRating  ? {this.props.ratings.rating / 10} : 'Sorry No Ratings available'}</Text>
+            </PercentageCircle> */}
         </View>
       </View>
     );

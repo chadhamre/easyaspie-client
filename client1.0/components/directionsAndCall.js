@@ -64,9 +64,6 @@ export default class GmapsDirections extends Component {
           <Image source={{uri: 'https://lh3.googleusercontent.com/58TrfmPMd69WnW6hVs5LJALlfUsATZogysNg7ck8jNIPfeOBu4mtEXfz79pLsoU64Zg=w300'}}  style={{width: 50, height: 50}}/>
           <Text>Get Directions</Text>
         </TouchableOpacity>
-        {/* <Button onPress={this.handleGetDirections} title="Get Directions" />
-        <Text>WRITING THIS TO SPACE OUT THE BUTTONS</Text>
-        <Button onPress={this.callThePlace} title="call the place" /> */}
       </View>
     );
   }
