@@ -3,6 +3,11 @@ import Button from 'react-native-button';
 import Modal from 'react-native-modalbox';
 import {LinearGradient} from 'expo';
 
+import Ratings from './ratings'
+import Timetable from './timetable'
+import GmapsDirections from './directionsAndCall'
+
+
 import PhotoList from './photoList';
 
 import {
@@ -45,8 +50,7 @@ export default class RestaurantModal extends React.Component {
   getId = (id) => {
     this.setState({id});
   }
-  // fetch(`http://192.168.0.83:4000/api/v1/places/${id}`
-  // fetch(`https://easy-as-pie-api.herokuapp.com/api/v1/places/${id}`
+
   getRestaurant (id) {
     console.log('getRest', id);
     fetch(`https://easy-as-pie-api.herokuapp.com/api/v1/places/${id}` ,{
@@ -69,6 +73,7 @@ export default class RestaurantModal extends React.Component {
   }
 
   renderModal = () => {
+
     return (
       this.state.restaurantInfo
       ?
@@ -87,10 +92,18 @@ export default class RestaurantModal extends React.Component {
           </LinearGradient>
         </View>
         <ScrollView style={styles.scrollview}>
-          <View style={styles.ratingsList}>
-            <Text style={styles.easyRating}> Easy as pie rating:</Text>
-            <Text style={styles.easyRatingNumber}>{this.state.restaurantInfo.rating}</Text>
+          <View>
+          <GmapsDirections
+            phone={this.state.restaurantInfo.phone}
+            destination={this.state.restaurantInfo.location}
+          />
           </View>
+          <Ratings
+            ratings={this.state.restaurantInfo}
+          />
+          <Timetable
+            hours={this.state.restaurantInfo.hours}
+          />
             {/* List of photos component */}
           <PhotoList
             pictures={this.state.restaurantInfo.photos}
@@ -105,7 +118,7 @@ export default class RestaurantModal extends React.Component {
   }
 
   render() {
-
+    console.log(this.state);
     return (
         <Modal
           style={styles.modal}
@@ -123,12 +136,6 @@ export default class RestaurantModal extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  easyRatingNumber: {
-    color: '#5C91CA',
-    fontSize: 30,
-    paddingTop: 6,
-    fontFamily: 'raleway-blackitalic'
-  },
   infoList: {
     position: 'absolute',
     bottom: 0,
@@ -189,14 +196,6 @@ const styles = StyleSheet.create({
   button__wrapper: {
     alignItems: 'center',
     justifyContent: 'center'
-  },
-  ratingsList: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    paddingVertical: 36,
-  },
-  easyRating: {
-    fontSize: 24
   },
   image__wrapper: {
     position: 'relative',
