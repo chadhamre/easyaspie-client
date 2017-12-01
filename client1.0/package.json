@@ -26,6 +26,8 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "expo": "^22.0.2",
+    "geodist": "^0.2.1",
+    "geolib": "^2.0.24",
     "jest-serializer-enzyme": "^1.0.0",
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0",

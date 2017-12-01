@@ -8,7 +8,6 @@ import {
   TouchableOpacity
 } from "react-native";
 import Map from "./MapComponent";
-import RestoList from "./ListComponent";
 import { MapView, Font } from "expo";
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -87,9 +86,9 @@ export default class Landing extends React.Component {
   renderMapButtonContainer() {
     return !this.state.modal ? (
       <View style={styles.mapbuttoncontainer}>
-        <TouchableHighlight onPress={this.triggerRerender}>
+        <TouchableOpacity onPress={this.triggerRerender}>
           <View>{this.renderMapButton(this.state.moved, this.state.end)}</View>
-        </TouchableHighlight>
+        </TouchableOpacity>
       </View>
     ) : (
       <View />

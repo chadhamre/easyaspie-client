@@ -127,7 +127,12 @@ export default class Map extends React.Component {
         </MapView>
       );
     } else {
-      return <List restaurants={this.state.restaurants} />;
+      return (
+        <List
+          restaurants={this.state.restaurants}
+          location={this.state.location}
+        />
+      );
     }
   }
   // final render --------------------------------------------------------------

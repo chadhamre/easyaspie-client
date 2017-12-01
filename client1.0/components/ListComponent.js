@@ -1,28 +1,46 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { List, ListItem } from "react-native-elements";
+import geodist from "geodist";
 
 export default class RestoList extends React.Component {
   render() {
     return (
-      <View style={styles.listContainer}>
+      <ScrollView style={styles.listContainer}>
         <List>
-          {this.props.restaurants.results.map((l, i) => (
+          {this.props.restaurants.results.map((item, key) => (
             <ListItem
-              key={i}
-              title={l.name}
-              subtitle={`google rating ${l.rating}`}
-              avatar={l.icon}
+              key={key}
+              title={(l = item.name)}
+              subtitle={
+                Math.round(
+                  100 *
+                    geodist(
+                      {
+                        lat: item.geometry.location.lat,
+                        lon: item.geometry.location.lng
+                      },
+                      {
+                        lat: this.props.location.coords.latitude,
+                        lon: this.props.location.coords.longitude
+                      },
+                      { exact: true, unit: "km" }
+                    )
+                ) /
+                  1 +
+                " meters away"
+              }
             />
           ))}
         </List>
-      </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   listContainer: {
+    marginTop: 80,
     width: "100%"
   }
 });
