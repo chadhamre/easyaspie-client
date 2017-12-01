@@ -1,70 +1,117 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
-import Map from './MapComponent'
-import { MapView, Font } from 'expo';
+import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableHighlight,
+  TouchableOpacity
+} from "react-native";
+import Map from "./MapComponent";
+import RestoList from "./ListComponent";
+import { MapView, Font } from "expo";
+import Icon from "react-native-vector-icons/Ionicons";
 
 export default class Landing extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bool: false,
+      moved: false,
       fontLoaded: false,
       modal: false,
-    }
+      map: true
+    };
   }
 
   async componentWillMount() {
     await Font.loadAsync({
-      'raleway': require('../assets/fonts/Raleway/Raleway-Regular.ttf'),
-      'raleway-blackitalic': require('../assets/fonts/Raleway/Raleway-BlackItalic.ttf')
-    })
-    this.setState({fontLoaded: true});
+      raleway: require("../assets/fonts/Raleway/Raleway-Regular.ttf"),
+      "raleway-blackitalic": require("../assets/fonts/Raleway/Raleway-BlackItalic.ttf")
+    });
+    this.setState({ fontLoaded: true });
   }
 
-  triggerLogoChange = (bool, end) => {
-    this.setState({bool, end})
-  }
+  triggerLogoChange = (moved, end) => {
+    this.setState({ moved, end });
+  };
   triggerRerender = () => {
-    this.refs.map.handleButtonClick(this.state.bool);
-  }
-  triggerModal = () => {
-    this.setState({modal:!this.state.modal})
-  }
-  renderLogo(bool, end){
-    let text;
-    if (bool) {
-      text = 'Search This Area'
-    } else if (end) {
-      text = 'No More Results';
+    this.refs.map.handleButtonClick(this.state.moved);
+  };
+
+  // show list view
+  toggleList = () => {
+    if (this.state.map === true) {
+      this.setState({ map: false });
     } else {
-      text = 'Load More Restaurants'
+      this.setState({ map: true });
+    }
+  };
+
+  triggerModal = () => {
+    this.setState({ modal: !this.state.modal });
+  };
+  // render a toggle to swtich to list view
+  renderListToggle() {
+    return (
+      <TouchableOpacity
+        style={styles.togglecontainer}
+        onPress={this.toggleList}
+      >
+        <Icon
+          name={this.state.map === true ? "ios-list" : "ios-globe-outline"}
+          size={30}
+          style={{ color: "black", backgroundColor: "transparent" }}
+        />
+      </TouchableOpacity>
+    );
+  }
+  // render map action button
+  renderMapButton(moved, end) {
+    let text;
+    if (moved) {
+      text = "Search Again";
+    } else if (end) {
+      text = "No More Places";
+    } else {
+      text = "Load More";
     }
     //IF BROKEN, check text below
-    return ((this.state.fontLoaded && text)
-      ? <View style={styles.image_text_container}>
-          {/* <Image style={styles.logo}
-                source={require('./assets/logo__easyaspie.png')}
-          /> */}
-          <Text style={styles.text}> {text} </Text>
-        </View>
-      : <View></View>
-    )
+    return this.state.fontLoaded && text ? (
+      <View style={styles.image_text_container}>
+        <Text style={styles.text}> {text} </Text>
+      </View>
+    ) : (
+      <View />
+    );
   }
-  renderContainer(){
-    return (!this.state.modal ?
-            <View style={styles.logocontainer}>
-              <TouchableHighlight onPress={this.triggerRerender}>
-                {this.renderLogo(this.state.bool, this.state.end)}
-              </TouchableHighlight>
-            </View> :
-            <View></View>
-    )
+  renderMapButtonContainer() {
+    return !this.state.modal ? (
+      <View style={styles.mapbuttoncontainer}>
+        <TouchableHighlight onPress={this.triggerRerender}>
+          <View>{this.renderMapButton(this.state.moved, this.state.end)}</View>
+        </TouchableHighlight>
+      </View>
+    ) : (
+      <View />
+    );
   }
+  renderMainContent() {
+    return (
+      <Map
+        ref="map"
+        triggerLogoChange={this.triggerLogoChange}
+        triggerModal={this.triggerModal}
+        renderWhat={this.state.map}
+      />
+    );
+  }
+  // final render -------------------------------------------------
   render() {
     return (
       <View style={styles.container}>
-        {this.renderContainer()}
-        <Map ref='map' triggerLogoChange={this.triggerLogoChange} triggerModal={this.triggerModal}/>
+        {this.renderListToggle()}
+        {this.renderMapButtonContainer()}
+        {this.renderMainContent()}
       </View>
     );
   }
@@ -73,38 +120,56 @@ export default class Landing extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "column"
   },
   logo: {
     height: 85,
-    width: 85,
-    // zIndex: 2,
-    // tintColor: 'yellow',
+    width: 85
   },
-  logocontainer: {
-    backgroundColor: '#48B9D0',
-    position: 'absolute',
-    marginTop: 40,
+  mapbuttoncontainer: {
+    backgroundColor: "white",
+    position: "absolute",
+    marginTop: 38,
     zIndex: 1,
-    shadowColor: '#000000',
+    shadowColor: "#000000",
     shadowOffset: {
       width: 0,
       height: 3
     },
     shadowRadius: 5,
-    shadowOpacity: .3,
-    borderRadius: 20,
+    shadowOpacity: 0.3,
+    borderRadius: 20
+  },
+  togglecontainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    right: 10,
+    top: 30,
+    height: 50,
+    width: 50,
+    position: "absolute",
+    zIndex: 1,
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowRadius: 5,
+    shadowOpacity: 0.3,
+    borderRadius: 50,
+    padding: 0
   },
   image_text_container: {
-    display:'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 5,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 8
   },
   text: {
-    color: 'white',
-    fontFamily: 'raleway',
+    color: "black",
+    fontFamily: "raleway"
   }
 });

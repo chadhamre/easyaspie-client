@@ -1,5 +1,10 @@
 {
   "expo": {
-    "sdkVersion": "22.0.0"
+    "name": "Easy As Pie",
+    "version": "1.0.0",
+    "description": "Restaurant ratings aggregated from the cosmos",
+    "slug": "easy-as-pie",
+    "sdkVersion": "22.0.0",
+    "privacy": "public"
   }
 }
