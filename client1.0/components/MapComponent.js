@@ -138,6 +138,7 @@ export default class Map extends React.Component {
   }
   // final render --------------------------------------------------------------
   render() {
+    console.log(this.state.location);
     let map = this.state.location ? (
       this.renderMapOrList()
     ) : (

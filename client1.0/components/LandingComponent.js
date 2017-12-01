@@ -51,7 +51,7 @@ export default class Landing extends React.Component {
   };
   // render a toggle to swtich to list view
   renderListToggle() {
-    return (
+    return !this.state.modal ? (
       <TouchableOpacity
         style={styles.togglecontainer}
         onPress={this.toggleList}
@@ -62,7 +62,7 @@ export default class Landing extends React.Component {
           style={{ color: "black", backgroundColor: "transparent" }}
         />
       </TouchableOpacity>
-    );
+    ) : null;
   }
   // render map action button
   renderMapButton(moved, end) {
@@ -84,7 +84,7 @@ export default class Landing extends React.Component {
     );
   }
   renderMapButtonContainer() {
-    return !this.state.modal ? (
+    return !this.state.modal && this.state.map ? (
       <View style={styles.mapbuttoncontainer}>
         <TouchableOpacity onPress={this.triggerRerender}>
           <View>{this.renderMapButton(this.state.moved, this.state.end)}</View>
