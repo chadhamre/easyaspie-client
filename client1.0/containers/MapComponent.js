@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { MapView, Location, Permissions } from "expo";
-import List from "./ListComponent";
-import MarkerList from "./MarkerList";
-import RestaurantModal from "./modal";
+import List from "../components/ListComponent";
+import MarkerList from "../components/MarkerList";
+import RestaurantModal from "./Modal";
 
 export default class Map extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ export default class Map extends React.Component {
     const { status } = await Permissions.askAsync(Permissions.LOCATION);
     let location = await Location.getCurrentPositionAsync({}, pos => {}).then(
       pos => {
-        this.getPlaces(pos.coords.latitude, pos.coords.longitude, 0.005);
+        this.getPlaces(pos.coords.latitude, pos.coords.longitude, 0.015);
         this.setState({ location: pos });
       }
     );
@@ -51,7 +51,7 @@ export default class Map extends React.Component {
   };
 
   getPlaces = async (lat, long, delta, pagetoken) => {
-    if (!delta) delta = 0.005;
+    if (!delta) delta = 0.015;
     if (!pagetoken && this.state.initial) {
       const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${
         lat
@@ -113,8 +113,8 @@ export default class Map extends React.Component {
           initialRegion={{
             latitude: this.state.location.coords.latitude,
             longitude: this.state.location.coords.longitude,
-            latitudeDelta: 0.005,
-            longitudeDelta: 0.005
+            latitudeDelta: 0.015,
+            longitudeDelta: 0.015
           }}
           onRegionChangeComplete={this.handleRegionChangeComplete.bind(this)}
           showsUserLocation={true}

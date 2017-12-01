@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
-import Landing from '../components/LandingComponent'
+import Landing from '../containers/LandingComponent'
 
 const landing = renderer.create(<Landing />)
 const landingInstance = landing.root;

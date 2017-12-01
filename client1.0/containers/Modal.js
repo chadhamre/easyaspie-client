@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import Button from "react-native-button";
 import Modal from "react-native-modalbox";
 import { LinearGradient } from "expo";
+import Icon from "react-native-vector-icons/Ionicons";
 
-import Ratings from "./ratings";
-import Timetable from "./timetable";
-import GmapsDirections from "./directionsAndCall";
-
-import PhotoList from "./photoList";
+import Ratings from "../components/Ratings";
+import Timetable from "../components/Timetable";
+import GmapsDirections from "../components/Actions";
+import PhotoList from "../components/PhotoList";
+import Price from "../components/Price";
+import Categories from "../components/Categories";
+import OpenNow from "../components/OpenNow";
 
 import {
   Slider,
@@ -79,7 +82,7 @@ export default class RestaurantModal extends React.Component {
             source={{
               uri:
                 this.state.restaurantInfo.bestPhoto === null
-                  ? "http://chcdigital.com/wp-content/uploads/2015/02/Screen-Shot-2015-02-09-at-10.49.57.png"
+                  ? "http://chcdigital.com/wp-content/uploads/2015/02/Screen-Shot-2015-02-09-at-5.49.57.png"
                   : this.state.restaurantInfo.bestPhoto
             }}
           />
@@ -94,14 +97,17 @@ export default class RestaurantModal extends React.Component {
           </LinearGradient>
         </View>
         <ScrollView style={styles.scrollview}>
+          <OpenNow open={this.state.isOpen} />
+          <Ratings ratings={this.state.restaurantInfo} />
+          <Price price={this.state.restaurantInfo.price} />
+          <Categories categories={this.state.restaurantInfo.categories} />
           <View>
             <GmapsDirections
               phone={this.state.restaurantInfo.phone}
               destination={this.state.restaurantInfo.location}
             />
           </View>
-          <Ratings ratings={this.state.restaurantInfo} />
-          <Timetable hours={this.state.restaurantInfo.hours} />
+          {/* <Timetable hours={this.state.restaurantInfo.hours} /> */}
           {/* List of photos component */}
           <PhotoList pictures={this.state.restaurantInfo.photos} />
         </ScrollView>
@@ -131,7 +137,7 @@ export default class RestaurantModal extends React.Component {
           style={styles.loader__image}
           source={require("../assets/loader_pie.png")}
         />
-        <Text style={styles.loader__text}>Baking ...</Text>
+        <Text style={styles.loader__text}>baking ...</Text>
       </View>
     );
   };
@@ -173,11 +179,12 @@ const styles = StyleSheet.create({
   },
   loader__text: {
     marginTop: 12,
-    fontFamily: "raleway"
+    fontFamily: "raleway",
+    color: "#4eb9ce"
   },
   easyRatingNumber: {
     color: "#5C91CA",
-    fontSize: 30,
+    fontSize: 15,
     paddingTop: 6,
     fontFamily: "raleway-blackitalic"
   },
@@ -252,6 +259,7 @@ const styles = StyleSheet.create({
     borderBottomColor: "#FFF"
   },
   main__wrapper: {
+    paddingTop: 20,
     height: "100%",
     width: "100%"
   },

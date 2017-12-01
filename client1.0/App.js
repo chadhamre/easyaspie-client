@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import Landing from './components/LandingComponent.js'
-import RestaurantModal from './components/modal'
+import Landing from './containers/LandingComponent.js'
+import RestaurantModal from './containers/Modal'
 
 export default class App extends React.Component {
 

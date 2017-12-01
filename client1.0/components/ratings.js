@@ -1,26 +1,29 @@
 import React, { Component } from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
-
+import Icon from "react-native-vector-icons/Ionicons";
 import PercentageCircle from "react-native-percentage-circle";
+
+import SourceIcons from "./SourceIcons";
 
 export default class Ratings extends Component {
   renderIfRatings() {
     if (!this.props.ratings.rating) {
       return (
         <View>
-          <Text style={styles.easyRatingNumber}>Sorry!! No ratings online</Text>
+          <Text style={styles.easyRatingNumber}>
+            Sorry. There are no ratings for this location.
+          </Text>
         </View>
       );
     } else {
       return (
         <View style={styles.rating}>
-          <Text style={styles.title}>Easy as pie rating</Text>
           <PercentageCircle
             style={styles.roundthingy}
-            radius={50}
-            borderWidth={7}
+            radius={60}
+            borderWidth={10}
             percent={this.props.ratings.rating}
-            color={"#5C91CA"}
+            color={"#4eb9ce"}
           >
             <Text style={styles.easyRatingNumber}>
               {this.props.ratings.rating / 10}
@@ -37,99 +40,32 @@ export default class Ratings extends Component {
     }
   }
 
-  renderIcons() {
-    const providers = Object.keys(this.props.ratings.ratings);
-    return providers.map((el, i) => {
-      if (el === "facebook") {
-        return (
-          <View key={i}>
-            <Image
-              style={{ width: 35, height: 35, marginLeft: 6 }}
-              source={{
-                uri:
-                  "https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png"
-              }}
-            />
-          </View>
-        );
-      }
-      if (el === "foursquare") {
-        return (
-          <View key={i}>
-            <Image
-              style={{ width: 35, height: 35, marginLeft: 6 }}
-              source={{
-                uri:
-                  "https://images.vexels.com/media/users/3/137279/isolated/preview/e489b2b3639a9179cf9caa168ca24911-foursquare-icon-logo-by-vexels.png"
-              }}
-            />
-          </View>
-        );
-      }
-      if (el === "google" && this.props.ratings.rating) {
-        return (
-          <View key={i}>
-            <Image
-              style={{ width: 35, height: 35, marginLeft: 6 }}
-              source={{
-                uri:
-                  "https://avatars2.githubusercontent.com/u/12502296?s=400&v=4"
-              }}
-            />
-          </View>
-        );
-      }
-      if (el === "happycow") {
-        return (
-          <View key={i}>
-            <Image
-              style={{ width: 35, height: 35, marginLeft: 6 }}
-              source={{
-                uri:
-                  "https://www.worldwideinsure.com/travel-blog/wp-content/uploads/2016/02/happy-cow-logo.png"
-              }}
-            />
-          </View>
-        );
-      }
-      if (el === "tripadvisor") {
-        return (
-          <View key={i}>
-            <Image
-              style={{ width: 35, height: 35, marginLeft: 6 }}
-              source={{
-                uri:
-                  "http://www.ritmanlibrary.com/wp-content/uploads/2015/06/tripadvisor.png"
-              }}
-            />
-          </View>
-        );
-      }
-      if (el === "yelp") {
-        return (
-          <View key={i}>
-            <Image
-              style={{ width: 30, height: 30, marginLeft: 6 }}
-              source={{
-                uri:
-                  "https://s3-media2.fl.yelpcdn.com/assets/srv0/styleguide/1ea40efd80f5/assets/img/brand_guidelines/yelp_fullcolor.png"
-              }}
-            />
-          </View>
-        );
-      }
-    });
-  }
-
   render() {
+    let count = 0;
+    Object.keys(this.props.ratings.counts).forEach(
+      key => (count += this.props.ratings.counts[key])
+    );
     const hasRating = this.props.ratings.rating;
     return (
       <View style={styles.ratingsList}>
-        <View style={styles.sources}>
-          {this.renderSources()}
-          <View style={styles.logos}>{this.renderIcons()}</View>
-        </View>
         <View style={styles.rating}>{this.renderIfRatings()}</View>
+        <View>
+          <View style={styles.sourcecounts}>
+            <Icon
+              name="ios-arrow-round-back-outline"
+              size={30}
+              style={{
+                paddingRight: 10,
+                color: "grey",
+                backgroundColor: "transparent"
+              }}
+            />
+            <Text style={styles.countText}>{count} ratings from</Text>
+          </View>
+          <View style={styles.sources}>
+            <SourceIcons sources={this.props.ratings.ratings} />
+          </View>
+        </View>
       </View>
     );
   }
@@ -148,30 +84,43 @@ const styles = StyleSheet.create({
   rating: {
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 24
+    marginRight: 10
   },
   sources: {
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 20,
-    marginTop: 24
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    flexDirection: "row"
+  },
+  sourcecounts: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "flex-start"
   },
   ratingsList: {
-    flexDirection: "column",
-    alignItems: "center"
+    flexDirection: "row",
+    alignItems: "flex-end",
+    padding: 20,
+    paddingTop: 0
   },
   easyRating: {
     fontSize: 24
   },
   easyRatingNumber: {
-    color: "#5C91CA",
-    fontSize: 30,
+    color: "#4eb9ce",
+    fontSize: 40,
     fontFamily: "raleway-blackitalic",
     marginBottom: 8
   },
   logos: {
     flexDirection: "row",
-    paddingHorizontal: 2,
-    marginBottom: 12
+    paddingHorizontal: -5
+  },
+  countText: {
+    paddingTop: 5
+  },
+  icon: {
+    height: 20,
+    width: 20
   }
 });
