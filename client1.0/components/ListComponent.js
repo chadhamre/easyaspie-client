@@ -58,7 +58,8 @@ export default class RestoList extends React.Component {
 
 const styles = StyleSheet.create({
   listContainer: {
-    marginTop: 80,
-    width: "100%"
+    width: "100%",
+    backgroundColor: "#4eb9ce",
+    paddingTop: 80
   }
 });

@@ -129,6 +129,7 @@ export default class Map extends React.Component {
     } else {
       return (
         <List
+          style={styles.container}
           restaurants={this.state.restaurants}
           location={this.state.location}
           handelPress={this.handelMarkerPress}
@@ -138,7 +139,6 @@ export default class Map extends React.Component {
   }
   // final render --------------------------------------------------------------
   render() {
-    console.log(this.state.location);
     let map = this.state.location ? (
       this.renderMapOrList()
     ) : (
@@ -174,7 +174,6 @@ const styles = StyleSheet.create({
   },
   list: {
     flex: 1,
-    width: "100%",
-    paddingTop: 100
+    width: "100%"
   }
 });
