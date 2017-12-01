@@ -131,6 +131,7 @@ export default class Map extends React.Component {
         <List
           restaurants={this.state.restaurants}
           location={this.state.location}
+          handelPress={this.handelMarkerPress}
         />
       );
     }

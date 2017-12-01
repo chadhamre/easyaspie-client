@@ -4,12 +4,14 @@ import { List, ListItem } from "react-native-elements";
 import geodist from "geodist";
 
 export default class RestoList extends React.Component {
+  pressed = (id) => this.props.handelPress(id);
   render() {
     return (
       <ScrollView style={styles.listContainer}>
         <List>
           {this.props.restaurants.results.map((item, key) => (
             <ListItem
+              onPress={() => this.pressed(item.place_id)}
               key={key}
               title={(l = item.name)}
               subtitle={
