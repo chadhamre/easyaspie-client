@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
+import sinon from 'sinon';
 
 import Map from '../components/MapComponent'
 
@@ -62,9 +63,23 @@ describe('Testing functions', () => {
     fetch.mockResponse(JSON.stringify(mockPlaces))
     expect(instance.getPlaces(41.390205, 2.154007, 0.003)).toMatchSnapshot();
     expect(instance.getPlaces(41.390205, 2.154007, 0.003, mockPageToken)).toMatchSnapshot();
+  });
+  it('calls getPlaces when region changes', () => {
+    // instance.setState({location: mockStateLocation});
+    // console.log(instance.state)
+    const regionChangeSpy = sinon.spy(instance, 'handleRegionChangeComplete');
+    const stateSpy = sinon.spy(instance, 'setState');
+    instance.handleRegionChangeComplete(mockLocation);
+    expect(regionChangeSpy.calledOnce).toBe(true);
+    expect(stateSpy.calledOnce).toBe(false);
+    // instance.handleRegionChangeComplete(mockLocationDiff);
+    // expect(stateSpy.calledOnce).toBe(true);
   })
 });
 
+const mockStateLocation = {coords: {"latitude": 41.390891, "longitude": 2.152048}}
+const mockLocation = {latitude: 41.390891, longitude: 2.152048};
+const mockLocationDiff = {latitude: 43.390891, longitude: 4.152048};
 const mockPageToken = 'CqQCGwEAAEhnE7xgqGaX8izyyX6fPTL2K6GIon6ltuIiwYIXElHeMfVFSwV8iBIy-sY0NGi8g5kuizD2KcqG2IuaTVt9N5AksILM0ASxNqHAAkYNLORBwvZqSAlxGAHZGYGMOIXKQHGZcIpA1gBEw-auO4rxaXcQuzu-pu7ok_kmdbwYPvQoB7aFgCmkqP8m5xsCLTW-WqYFQCiLPfF2XFWlbtxEBve4BkIaDoN4CM1AQis6VYGSraZafjkvd4weH3f_DPFUBnbSlH_V7pHAw4S0JUslsEM5EmTCq23A7H9c0bLFNpCKMqhd8Nm-0Ivr6AELKmGOcxbVkC2ZV1uiZgdYUb4jIcR5JAx1SihCkCG_eb9sSKmGFtPVcvIbA692oD42jb7u4RIQMuP11qIxchtDSmrbhtye7xoUnZDi-CLOfOccybSb9IpBWalIaPQ'
 const mockPlaces = {
   "html_attributions": [],

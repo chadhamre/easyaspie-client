@@ -310,7 +310,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`Testing functions correctly calls the api once the state is set 1`] = `
+exports[`Testing functions getPlaces correctly calls the api once the state is set 1`] = `
 Promise {
   "_40": 0,
   "_55": null,
@@ -319,7 +319,7 @@ Promise {
 }
 `;
 
-exports[`Testing functions correctly calls the api once the state is set 2`] = `
+exports[`Testing functions getPlaces correctly calls the api once the state is set 2`] = `
 Promise {
   "_40": 0,
   "_55": null,
@@ -328,7 +328,7 @@ Promise {
 }
 `;
 
-exports[`Testing functions doesn't get places if a state is not set 1`] = `
+exports[`Testing functions getPlaces doesn't get places if a state is not set 1`] = `
 Promise {
   "_40": 0,
   "_55": null,
@@ -337,7 +337,7 @@ Promise {
 }
 `;
 
-exports[`Testing functions doesn't get places if a state is not set 2`] = `
+exports[`Testing functions getPlaces doesn't get places if a state is not set 2`] = `
 Promise {
   "_40": 0,
   "_55": null,
@@ -346,7 +346,7 @@ Promise {
 }
 `;
 
-exports[`Testing functions doesn't get places if a state is not set 3`] = `
+exports[`Testing functions getPlaces doesn't get places if a state is not set 3`] = `
 Promise {
   "_40": 0,
   "_55": null,
