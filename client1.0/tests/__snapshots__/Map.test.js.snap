@@ -309,3 +309,66 @@ ShallowWrapper {
   },
 }
 `;
+
+exports[`Testing functions correctly calls the api once the state is set 1`] = `
+Promise {
+  "_40": 0,
+  "_55": null,
+  "_65": 0,
+  "_72": null,
+}
+`;
+
+exports[`Testing functions correctly calls the api once the state is set 2`] = `
+Promise {
+  "_40": 0,
+  "_55": null,
+  "_65": 0,
+  "_72": null,
+}
+`;
+
+exports[`Testing functions doesn't get places if a state is not set 1`] = `
+Promise {
+  "_40": 0,
+  "_55": null,
+  "_65": 0,
+  "_72": null,
+}
+`;
+
+exports[`Testing functions doesn't get places if a state is not set 2`] = `
+Promise {
+  "_40": 0,
+  "_55": null,
+  "_65": 0,
+  "_72": null,
+}
+`;
+
+exports[`Testing functions doesn't get places if a state is not set 3`] = `
+Promise {
+  "_40": 0,
+  "_55": null,
+  "_65": 0,
+  "_72": null,
+}
+`;
+
+exports[`Testing functions handleButtonClick changes the state when calledd 1`] = `
+Promise {
+  "_40": 0,
+  "_55": null,
+  "_65": 0,
+  "_72": null,
+}
+`;
+
+exports[`Testing functions handleButtonClick changes the state when calledd 2`] = `
+Promise {
+  "_40": 0,
+  "_55": null,
+  "_65": 0,
+  "_72": null,
+}
+`;
