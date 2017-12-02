@@ -100,8 +100,9 @@ export default class Map extends React.Component {
       this.props.triggerLogoChange(false);
     }
   };
-  handelMarkerPress = id => {
-    this.refs.modal.getId(id);
+  handelMarkerPress = (id, open) => {
+    console.log(open);
+    this.refs.modal.getId(id, open);
     this.refs.modal.refs.modal1.open();
   };
   handleOceanView = async () => {
