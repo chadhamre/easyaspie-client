@@ -22,7 +22,15 @@ export default class Map extends React.Component {
     let location = await Location.getCurrentPositionAsync({}, pos => {}).then(
       pos => {
         this.getPlaces(pos.coords.latitude, pos.coords.longitude, 0.015);
-        this.setState({ location: pos });
+        this.setState({
+          location: {
+            coords: {
+              ...pos.coords,
+              latitudeDelta: 0.015,
+              longitudeDelta: 0.015
+            }
+          }
+        });
       }
     );
   };
@@ -105,21 +113,13 @@ export default class Map extends React.Component {
     this.refs.modal.refs.modal1.open();
   };
   handleOceanView = async () => {
-    const { status } = await Permissions.askAsync(Permissions.LOCATION);
-    let location = await Location.getCurrentPositionAsync({}, pos => {}).then(
-      pos => {
-        this.getPlaces(pos.coords.latitude, pos.coords.longitude, 0.015);
-        this.setState({ location: pos });
-        let region = {...pos.coords, latitudeDelta: 0.015, longitudeDelta: 0.015}
-        this.refs.mapRef.animateToRegion(region);
-      }
-    );
-  }
+    this.refs.mapRef.animateToRegion(this.state.location.coords);
+  };
   renderMapOrList() {
     if (this.props.renderWhat === true) {
       return (
         <MapView
-          ref='mapRef'
+          ref="mapRef"
           provider="google"
           style={styles.map}
           initialRegion={{
@@ -131,7 +131,7 @@ export default class Map extends React.Component {
           onRegionChangeComplete={this.handleRegionChangeComplete.bind(this)}
           showsUserLocation={true}
           showsMyLocationButton={true}
-          onLayout = {this.handleOceanView.bind(this)}
+          onLayout={this.handleOceanView.bind(this)}
         >
           <MarkerList
             restaurants={this.state.restaurants}
