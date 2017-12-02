@@ -7,7 +7,6 @@ export default class Price extends Component {
   render() {
     let string1 = "";
     let string2 = "$$$$$";
-    console.log(this.props);
     for (let i = this.props.price; i > 0; i--) {
       string1 += "$";
       string2 = string2.slice(0, -1);
