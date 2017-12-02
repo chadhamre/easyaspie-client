@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
-import RestaurantModal from '../components/modal'
+import RestaurantModal from '../containers/Modal.js'
 
 const restaurantModal = renderer.create(<RestaurantModal />)
 const RestaurantModalInstance = restaurantModal.root;

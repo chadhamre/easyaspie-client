@@ -91,12 +91,13 @@ ShallowWrapper {
                 ellipsizeMode="tail"
                 style={
                         Object {
+                                "color": "#4eb9ce",
                                 "fontFamily": "raleway",
                                 "marginTop": 12,
                               }
                 }
         >
-                Baking ...
+                baking ...
         </Text>
 </View>,
       "coverScreen": false,
@@ -175,12 +176,13 @@ ShallowWrapper {
             ellipsizeMode="tail"
             style={
                         Object {
+                                    "color": "#4eb9ce",
                                     "fontFamily": "raleway",
                                     "marginTop": 12,
                                   }
             }
 >
-            Baking ...
+            baking ...
 </Text>,
         ],
         "style": Object {
@@ -271,16 +273,17 @@ ShallowWrapper {
           "props": Object {
             "accessible": true,
             "allowFontScaling": true,
-            "children": "Baking ...",
+            "children": "baking ...",
             "disabled": false,
             "ellipsizeMode": "tail",
             "style": Object {
+              "color": "#4eb9ce",
               "fontFamily": "raleway",
               "marginTop": 12,
             },
           },
           "ref": null,
-          "rendered": "Baking ...",
+          "rendered": "baking ...",
           "type": [Function],
         },
       ],
@@ -364,12 +367,13 @@ ShallowWrapper {
                     ellipsizeMode="tail"
                     style={
                               Object {
+                                        "color": "#4eb9ce",
                                         "fontFamily": "raleway",
                                         "marginTop": 12,
                                       }
                     }
           >
-                    Baking ...
+                    baking ...
           </Text>
 </View>,
         "coverScreen": false,
@@ -448,12 +452,13 @@ ShallowWrapper {
               ellipsizeMode="tail"
               style={
                             Object {
+                                          "color": "#4eb9ce",
                                           "fontFamily": "raleway",
                                           "marginTop": 12,
                                         }
               }
 >
-              Baking ...
+              baking ...
 </Text>,
           ],
           "style": Object {
@@ -544,16 +549,17 @@ ShallowWrapper {
             "props": Object {
               "accessible": true,
               "allowFontScaling": true,
-              "children": "Baking ...",
+              "children": "baking ...",
               "disabled": false,
               "ellipsizeMode": "tail",
               "style": Object {
+                "color": "#4eb9ce",
                 "fontFamily": "raleway",
                 "marginTop": 12,
               },
             },
             "ref": null,
-            "rendered": "Baking ...",
+            "rendered": "baking ...",
             "type": [Function],
           },
         ],
@@ -662,12 +668,13 @@ ShallowWrapper {
                 ellipsizeMode="tail"
                 style={
                         Object {
+                                "color": "#4eb9ce",
                                 "fontFamily": "raleway",
                                 "marginTop": 12,
                               }
                 }
         >
-                Baking ...
+                baking ...
         </Text>
 </View>,
       "coverScreen": false,
@@ -746,12 +753,13 @@ ShallowWrapper {
             ellipsizeMode="tail"
             style={
                         Object {
+                                    "color": "#4eb9ce",
                                     "fontFamily": "raleway",
                                     "marginTop": 12,
                                   }
             }
 >
-            Baking ...
+            baking ...
 </Text>,
         ],
         "style": Object {
@@ -842,16 +850,17 @@ ShallowWrapper {
           "props": Object {
             "accessible": true,
             "allowFontScaling": true,
-            "children": "Baking ...",
+            "children": "baking ...",
             "disabled": false,
             "ellipsizeMode": "tail",
             "style": Object {
+              "color": "#4eb9ce",
               "fontFamily": "raleway",
               "marginTop": 12,
             },
           },
           "ref": null,
-          "rendered": "Baking ...",
+          "rendered": "baking ...",
           "type": [Function],
         },
       ],
@@ -935,12 +944,13 @@ ShallowWrapper {
                     ellipsizeMode="tail"
                     style={
                               Object {
+                                        "color": "#4eb9ce",
                                         "fontFamily": "raleway",
                                         "marginTop": 12,
                                       }
                     }
           >
-                    Baking ...
+                    baking ...
           </Text>
 </View>,
         "coverScreen": false,
@@ -1019,12 +1029,13 @@ ShallowWrapper {
               ellipsizeMode="tail"
               style={
                             Object {
+                                          "color": "#4eb9ce",
                                           "fontFamily": "raleway",
                                           "marginTop": 12,
                                         }
               }
 >
-              Baking ...
+              baking ...
 </Text>,
           ],
           "style": Object {
@@ -1115,16 +1126,17 @@ ShallowWrapper {
             "props": Object {
               "accessible": true,
               "allowFontScaling": true,
-              "children": "Baking ...",
+              "children": "baking ...",
               "disabled": false,
               "ellipsizeMode": "tail",
               "style": Object {
+                "color": "#4eb9ce",
                 "fontFamily": "raleway",
                 "marginTop": 12,
               },
             },
             "ref": null,
-            "rendered": "Baking ...",
+            "rendered": "baking ...",
             "type": [Function],
           },
         ],

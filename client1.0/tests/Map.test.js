@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import Map from '../components/MapComponent'
+import Map from '../containers/MapComponent'
 
 const map = renderer.create(<Map />)
 const mapInstance = map.root;
@@ -33,10 +33,6 @@ it('MapComponent should not be affected by props', () => {
 describe('Testing render of MapView', () => {
   it('should not render a MapView if no initial location', () => {
     expect(mapRender.find('MapView').length).toBe(0)
-  })
-  it('should render a MapView if there is a location', () => {
-    mapShallow.setState({location: {coords: {longitude: 1, latitude: 1}}})
-    expect(mapShallow.dive().find('MapView').length).toBe(1);
   })
 });
 

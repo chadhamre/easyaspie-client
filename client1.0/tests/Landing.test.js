@@ -25,9 +25,6 @@ it('has a Map subcomponent', () => {
   expect(landRender.find('Map').length).toBe(1);
 });
 
-it('has a TouchableHighlight subcomponent', () => {
-  expect(landRender.find('TouchableHighlight').length).toBe(1);
-});
 
 it('LandingComponent should not be affected by props', () => {
   const landingShallow = shallow(
