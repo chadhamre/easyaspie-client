@@ -7,16 +7,65 @@ exports[`LandingComponent renders correctly 1`] = `
       "alignItems": "center",
       "backgroundColor": "#fff",
       "flex": 1,
-      "justifyContent": "flex-start",
+      "flexDirection": "column",
+      "justifyContent": "space-between",
     }
   }
 >
   <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "backgroundColor": "#48B9D0",
+        "alignItems": "center",
+        "borderRadius": 50,
+        "display": "flex",
+        "height": 50,
+        "justifyContent": "center",
+        "opacity": 1,
+        "padding": 0,
+        "position": "absolute",
+        "right": 10,
+        "shadowOffset": Object {
+          "height": 3,
+          "width": 0,
+        },
+        "shadowOpacity": 0.3,
+        "shadowRadius": 5,
+        "top": 30,
+        "width": 50,
+        "zIndex": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
         "borderRadius": 20,
-        "marginTop": 40,
+        "marginTop": 38,
         "position": "absolute",
         "shadowColor": "#000000",
         "shadowOffset": Object {
@@ -34,7 +83,7 @@ exports[`LandingComponent renders correctly 1`] = `
       accessibilityLabel={undefined}
       accessibilityTraits={undefined}
       accessible={true}
-      hasTVPreferredFocus={undefined}
+      collapsable={undefined}
       hitSlop={undefined}
       isTVSelectable={true}
       nativeID={undefined}
@@ -46,17 +95,16 @@ exports[`LandingComponent renders correctly 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {
-            "backgroundColor": "transparent",
-          },
-          undefined,
-        ]
+        Object {
+          "opacity": 1,
+        }
       }
       testID={undefined}
       tvParallaxProperties={undefined}
     >
-      <View />
+      <View>
+        <View />
+      </View>
     </View>
   </View>
   <View
@@ -104,12 +152,49 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
+          style={
+                    Object {
+                              "alignItems": "center",
+                              "borderRadius": 50,
+                              "display": "flex",
+                              "height": 50,
+                              "justifyContent": "center",
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 10,
+                              "shadowOffset": Object {
+                                "height": 3,
+                                "width": 0,
+                              },
+                              "shadowOpacity": 0.3,
+                              "shadowRadius": 5,
+                              "top": 30,
+                              "width": 50,
+                              "zIndex": 1,
+                            }
+          }
+>
+          <Icon
+                    allowFontScaling={false}
+                    name="ios-list"
+                    size={30}
+                    style={
+                              Object {
+                                        "backgroundColor": "transparent",
+                                        "color": "black",
+                                      }
+                    }
+          />
+</TouchableOpacity>,
         <View
           style={
                     Object {
-                              "backgroundColor": "#48B9D0",
+                              "backgroundColor": "white",
                               "borderRadius": 20,
-                              "marginTop": 40,
+                              "marginTop": 38,
                               "position": "absolute",
                               "shadowColor": "#000000",
                               "shadowOffset": Object {
@@ -122,15 +207,17 @@ ShallowWrapper {
                             }
           }
 >
-          <TouchableHighlight
-                    activeOpacity={0.85}
+          <TouchableOpacity
+                    activeOpacity={0.2}
                     onPress={[Function]}
-                    underlayColor="black"
           >
-                    <View />
-          </TouchableHighlight>
+                    <View>
+                              <View />
+                    </View>
+          </TouchableOpacity>
 </View>,
         <Map
+          renderWhat={true}
           triggerLogoChange={[Function]}
           triggerModal={[Function]}
 />,
@@ -139,7 +226,8 @@ ShallowWrapper {
         "alignItems": "center",
         "backgroundColor": "#fff",
         "flex": 1,
-        "justifyContent": "flex-start",
+        "flexDirection": "column",
+        "justifyContent": "space-between",
       },
     },
     "ref": null,
@@ -149,17 +237,76 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <TouchableHighlight
-            activeOpacity={0.85}
-            onPress={[Function]}
-            underlayColor="black"
->
-            <View />
-</TouchableHighlight>,
+          "activeOpacity": 0.2,
+          "children": <Icon
+            allowFontScaling={false}
+            name="ios-list"
+            size={30}
+            style={
+                        Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "black",
+                                  }
+            }
+/>,
+          "onPress": [Function],
           "style": Object {
-            "backgroundColor": "#48B9D0",
+            "alignItems": "center",
+            "borderRadius": 50,
+            "display": "flex",
+            "height": 50,
+            "justifyContent": "center",
+            "padding": 0,
+            "position": "absolute",
+            "right": 10,
+            "shadowOffset": Object {
+              "height": 3,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 5,
+            "top": 30,
+            "width": 50,
+            "zIndex": 1,
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "allowFontScaling": false,
+            "name": "ios-list",
+            "size": 30,
+            "style": Object {
+              "backgroundColor": "transparent",
+              "color": "black",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <TouchableOpacity
+            activeOpacity={0.2}
+            onPress={[Function]}
+>
+            <View>
+                        <View />
+            </View>
+</TouchableOpacity>,
+          "style": Object {
+            "backgroundColor": "white",
             "borderRadius": 20,
-            "marginTop": 40,
+            "marginTop": 38,
             "position": "absolute",
             "shadowColor": "#000000",
             "shadowOffset": Object {
@@ -177,19 +324,30 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "activeOpacity": 0.85,
-            "children": <View />,
+            "activeOpacity": 0.2,
+            "children": <View>
+              <View />
+</View>,
             "onPress": [Function],
-            "underlayColor": "black",
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
             "nodeType": "class",
-            "props": Object {},
+            "props": Object {
+              "children": <View />,
+            },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
             "type": [Function],
           },
           "type": [Function],
@@ -201,6 +359,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "renderWhat": true,
           "triggerLogoChange": [Function],
           "triggerModal": [Function],
         },
@@ -218,12 +377,49 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
+          <TouchableOpacity
+            activeOpacity={0.2}
+            onPress={[Function]}
+            style={
+                        Object {
+                                    "alignItems": "center",
+                                    "borderRadius": 50,
+                                    "display": "flex",
+                                    "height": 50,
+                                    "justifyContent": "center",
+                                    "padding": 0,
+                                    "position": "absolute",
+                                    "right": 10,
+                                    "shadowOffset": Object {
+                                      "height": 3,
+                                      "width": 0,
+                                    },
+                                    "shadowOpacity": 0.3,
+                                    "shadowRadius": 5,
+                                    "top": 30,
+                                    "width": 50,
+                                    "zIndex": 1,
+                                  }
+            }
+>
+            <Icon
+                        allowFontScaling={false}
+                        name="ios-list"
+                        size={30}
+                        style={
+                                    Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "black",
+                                              }
+                        }
+            />
+</TouchableOpacity>,
           <View
             style={
                         Object {
-                                    "backgroundColor": "#48B9D0",
+                                    "backgroundColor": "white",
                                     "borderRadius": 20,
-                                    "marginTop": 40,
+                                    "marginTop": 38,
                                     "position": "absolute",
                                     "shadowColor": "#000000",
                                     "shadowOffset": Object {
@@ -236,15 +432,17 @@ ShallowWrapper {
                                   }
             }
 >
-            <TouchableHighlight
-                        activeOpacity={0.85}
+            <TouchableOpacity
+                        activeOpacity={0.2}
                         onPress={[Function]}
-                        underlayColor="black"
             >
-                        <View />
-            </TouchableHighlight>
+                        <View>
+                                    <View />
+                        </View>
+            </TouchableOpacity>
 </View>,
           <Map
+            renderWhat={true}
             triggerLogoChange={[Function]}
             triggerModal={[Function]}
 />,
@@ -253,7 +451,8 @@ ShallowWrapper {
           "alignItems": "center",
           "backgroundColor": "#fff",
           "flex": 1,
-          "justifyContent": "flex-start",
+          "flexDirection": "column",
+          "justifyContent": "space-between",
         },
       },
       "ref": null,
@@ -263,17 +462,76 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <TouchableHighlight
-              activeOpacity={0.85}
-              onPress={[Function]}
-              underlayColor="black"
->
-              <View />
-</TouchableHighlight>,
+            "activeOpacity": 0.2,
+            "children": <Icon
+              allowFontScaling={false}
+              name="ios-list"
+              size={30}
+              style={
+                            Object {
+                                          "backgroundColor": "transparent",
+                                          "color": "black",
+                                        }
+              }
+/>,
+            "onPress": [Function],
             "style": Object {
-              "backgroundColor": "#48B9D0",
+              "alignItems": "center",
+              "borderRadius": 50,
+              "display": "flex",
+              "height": 50,
+              "justifyContent": "center",
+              "padding": 0,
+              "position": "absolute",
+              "right": 10,
+              "shadowOffset": Object {
+                "height": 3,
+                "width": 0,
+              },
+              "shadowOpacity": 0.3,
+              "shadowRadius": 5,
+              "top": 30,
+              "width": 50,
+              "zIndex": 1,
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "allowFontScaling": false,
+              "name": "ios-list",
+              "size": 30,
+              "style": Object {
+                "backgroundColor": "transparent",
+                "color": "black",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <TouchableOpacity
+              activeOpacity={0.2}
+              onPress={[Function]}
+>
+              <View>
+                            <View />
+              </View>
+</TouchableOpacity>,
+            "style": Object {
+              "backgroundColor": "white",
               "borderRadius": 20,
-              "marginTop": 40,
+              "marginTop": 38,
               "position": "absolute",
               "shadowColor": "#000000",
               "shadowOffset": Object {
@@ -291,19 +549,30 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "activeOpacity": 0.85,
-              "children": <View />,
+              "activeOpacity": 0.2,
+              "children": <View>
+                <View />
+</View>,
               "onPress": [Function],
-              "underlayColor": "black",
             },
             "ref": null,
             "rendered": Object {
               "instance": null,
               "key": undefined,
               "nodeType": "class",
-              "props": Object {},
+              "props": Object {
+                "children": <View />,
+              },
               "ref": null,
-              "rendered": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
               "type": [Function],
             },
             "type": [Function],
@@ -315,6 +584,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "renderWhat": true,
             "triggerLogoChange": [Function],
             "triggerModal": [Function],
           },
@@ -357,12 +627,49 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
+          style={
+                    Object {
+                              "alignItems": "center",
+                              "borderRadius": 50,
+                              "display": "flex",
+                              "height": 50,
+                              "justifyContent": "center",
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 10,
+                              "shadowOffset": Object {
+                                "height": 3,
+                                "width": 0,
+                              },
+                              "shadowOpacity": 0.3,
+                              "shadowRadius": 5,
+                              "top": 30,
+                              "width": 50,
+                              "zIndex": 1,
+                            }
+          }
+>
+          <Icon
+                    allowFontScaling={false}
+                    name="ios-list"
+                    size={30}
+                    style={
+                              Object {
+                                        "backgroundColor": "transparent",
+                                        "color": "black",
+                                      }
+                    }
+          />
+</TouchableOpacity>,
         <View
           style={
                     Object {
-                              "backgroundColor": "#48B9D0",
+                              "backgroundColor": "white",
                               "borderRadius": 20,
-                              "marginTop": 40,
+                              "marginTop": 38,
                               "position": "absolute",
                               "shadowColor": "#000000",
                               "shadowOffset": Object {
@@ -375,15 +682,17 @@ ShallowWrapper {
                             }
           }
 >
-          <TouchableHighlight
-                    activeOpacity={0.85}
+          <TouchableOpacity
+                    activeOpacity={0.2}
                     onPress={[Function]}
-                    underlayColor="black"
           >
-                    <View />
-          </TouchableHighlight>
+                    <View>
+                              <View />
+                    </View>
+          </TouchableOpacity>
 </View>,
         <Map
+          renderWhat={true}
           triggerLogoChange={[Function]}
           triggerModal={[Function]}
 />,
@@ -392,7 +701,8 @@ ShallowWrapper {
         "alignItems": "center",
         "backgroundColor": "#fff",
         "flex": 1,
-        "justifyContent": "flex-start",
+        "flexDirection": "column",
+        "justifyContent": "space-between",
       },
     },
     "ref": null,
@@ -402,17 +712,76 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <TouchableHighlight
-            activeOpacity={0.85}
-            onPress={[Function]}
-            underlayColor="black"
->
-            <View />
-</TouchableHighlight>,
+          "activeOpacity": 0.2,
+          "children": <Icon
+            allowFontScaling={false}
+            name="ios-list"
+            size={30}
+            style={
+                        Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "black",
+                                  }
+            }
+/>,
+          "onPress": [Function],
           "style": Object {
-            "backgroundColor": "#48B9D0",
+            "alignItems": "center",
+            "borderRadius": 50,
+            "display": "flex",
+            "height": 50,
+            "justifyContent": "center",
+            "padding": 0,
+            "position": "absolute",
+            "right": 10,
+            "shadowOffset": Object {
+              "height": 3,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 5,
+            "top": 30,
+            "width": 50,
+            "zIndex": 1,
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "allowFontScaling": false,
+            "name": "ios-list",
+            "size": 30,
+            "style": Object {
+              "backgroundColor": "transparent",
+              "color": "black",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <TouchableOpacity
+            activeOpacity={0.2}
+            onPress={[Function]}
+>
+            <View>
+                        <View />
+            </View>
+</TouchableOpacity>,
+          "style": Object {
+            "backgroundColor": "white",
             "borderRadius": 20,
-            "marginTop": 40,
+            "marginTop": 38,
             "position": "absolute",
             "shadowColor": "#000000",
             "shadowOffset": Object {
@@ -430,19 +799,30 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "activeOpacity": 0.85,
-            "children": <View />,
+            "activeOpacity": 0.2,
+            "children": <View>
+              <View />
+</View>,
             "onPress": [Function],
-            "underlayColor": "black",
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
             "nodeType": "class",
-            "props": Object {},
+            "props": Object {
+              "children": <View />,
+            },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
             "type": [Function],
           },
           "type": [Function],
@@ -454,6 +834,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "renderWhat": true,
           "triggerLogoChange": [Function],
           "triggerModal": [Function],
         },
@@ -471,12 +852,49 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
+          <TouchableOpacity
+            activeOpacity={0.2}
+            onPress={[Function]}
+            style={
+                        Object {
+                                    "alignItems": "center",
+                                    "borderRadius": 50,
+                                    "display": "flex",
+                                    "height": 50,
+                                    "justifyContent": "center",
+                                    "padding": 0,
+                                    "position": "absolute",
+                                    "right": 10,
+                                    "shadowOffset": Object {
+                                      "height": 3,
+                                      "width": 0,
+                                    },
+                                    "shadowOpacity": 0.3,
+                                    "shadowRadius": 5,
+                                    "top": 30,
+                                    "width": 50,
+                                    "zIndex": 1,
+                                  }
+            }
+>
+            <Icon
+                        allowFontScaling={false}
+                        name="ios-list"
+                        size={30}
+                        style={
+                                    Object {
+                                                "backgroundColor": "transparent",
+                                                "color": "black",
+                                              }
+                        }
+            />
+</TouchableOpacity>,
           <View
             style={
                         Object {
-                                    "backgroundColor": "#48B9D0",
+                                    "backgroundColor": "white",
                                     "borderRadius": 20,
-                                    "marginTop": 40,
+                                    "marginTop": 38,
                                     "position": "absolute",
                                     "shadowColor": "#000000",
                                     "shadowOffset": Object {
@@ -489,15 +907,17 @@ ShallowWrapper {
                                   }
             }
 >
-            <TouchableHighlight
-                        activeOpacity={0.85}
+            <TouchableOpacity
+                        activeOpacity={0.2}
                         onPress={[Function]}
-                        underlayColor="black"
             >
-                        <View />
-            </TouchableHighlight>
+                        <View>
+                                    <View />
+                        </View>
+            </TouchableOpacity>
 </View>,
           <Map
+            renderWhat={true}
             triggerLogoChange={[Function]}
             triggerModal={[Function]}
 />,
@@ -506,7 +926,8 @@ ShallowWrapper {
           "alignItems": "center",
           "backgroundColor": "#fff",
           "flex": 1,
-          "justifyContent": "flex-start",
+          "flexDirection": "column",
+          "justifyContent": "space-between",
         },
       },
       "ref": null,
@@ -516,17 +937,76 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <TouchableHighlight
-              activeOpacity={0.85}
-              onPress={[Function]}
-              underlayColor="black"
->
-              <View />
-</TouchableHighlight>,
+            "activeOpacity": 0.2,
+            "children": <Icon
+              allowFontScaling={false}
+              name="ios-list"
+              size={30}
+              style={
+                            Object {
+                                          "backgroundColor": "transparent",
+                                          "color": "black",
+                                        }
+              }
+/>,
+            "onPress": [Function],
             "style": Object {
-              "backgroundColor": "#48B9D0",
+              "alignItems": "center",
+              "borderRadius": 50,
+              "display": "flex",
+              "height": 50,
+              "justifyContent": "center",
+              "padding": 0,
+              "position": "absolute",
+              "right": 10,
+              "shadowOffset": Object {
+                "height": 3,
+                "width": 0,
+              },
+              "shadowOpacity": 0.3,
+              "shadowRadius": 5,
+              "top": 30,
+              "width": 50,
+              "zIndex": 1,
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "allowFontScaling": false,
+              "name": "ios-list",
+              "size": 30,
+              "style": Object {
+                "backgroundColor": "transparent",
+                "color": "black",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <TouchableOpacity
+              activeOpacity={0.2}
+              onPress={[Function]}
+>
+              <View>
+                            <View />
+              </View>
+</TouchableOpacity>,
+            "style": Object {
+              "backgroundColor": "white",
               "borderRadius": 20,
-              "marginTop": 40,
+              "marginTop": 38,
               "position": "absolute",
               "shadowColor": "#000000",
               "shadowOffset": Object {
@@ -544,19 +1024,30 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "activeOpacity": 0.85,
-              "children": <View />,
+              "activeOpacity": 0.2,
+              "children": <View>
+                <View />
+</View>,
               "onPress": [Function],
-              "underlayColor": "black",
             },
             "ref": null,
             "rendered": Object {
               "instance": null,
               "key": undefined,
               "nodeType": "class",
-              "props": Object {},
+              "props": Object {
+                "children": <View />,
+              },
               "ref": null,
-              "rendered": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
               "type": [Function],
             },
             "type": [Function],
@@ -568,6 +1059,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "renderWhat": true,
             "triggerLogoChange": [Function],
             "triggerModal": [Function],
           },
