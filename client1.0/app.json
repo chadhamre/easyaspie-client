@@ -1,10 +1,17 @@
 {
   "expo": {
-    "name": "Easy As Pie",
+    "name": "Condensed",
+    "icon": "./assets/logo__easyaspie.png",
     "version": "1.0.0",
-    "description": "Restaurant ratings aggregated from the cosmos",
-    "slug": "easy-as-pie",
+    "description": "Restaurant ratings condensed from the cosmos",
+    "slug": "condensed",
     "sdkVersion": "22.0.0",
-    "privacy": "public"
+    "privacy": "public",
+    "ios": {
+      "bundleIdentifier": "com.condensed.condensed"
+    },
+    "android": {
+      "package": "com.condensed.condensed"
+    }
   }
 }
