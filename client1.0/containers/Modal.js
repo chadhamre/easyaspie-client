@@ -38,7 +38,8 @@ export default class RestaurantModal extends React.Component {
       swipeToClose: true,
       sliderValue: 0.3,
       restaurantInfo: null,
-      id: null
+      id: null,
+      open: false,
     };
   }
 
@@ -50,8 +51,8 @@ export default class RestaurantModal extends React.Component {
     this.setState({ restaurantInfo: null });
     this.props.triggerModal();
   };
-  getId = id => {
-    this.setState({ id });
+  getId = (id,open) => {
+    this.setState({ id, open });
   };
 
   getRestaurant(id) {
@@ -97,7 +98,7 @@ export default class RestaurantModal extends React.Component {
           </LinearGradient>
         </View>
         <ScrollView style={styles.scrollview}>
-          <OpenNow open={this.state.isOpen} />
+          <OpenNow open={this.state.open} />
           <Ratings ratings={this.state.restaurantInfo} />
           <Price price={this.state.restaurantInfo.price} />
           <Categories categories={this.state.restaurantInfo.categories} />
