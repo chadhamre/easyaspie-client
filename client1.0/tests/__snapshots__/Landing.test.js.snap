@@ -588,3 +588,15 @@ ShallowWrapper {
   },
 }
 `;
+
+exports[`Testing functions triggerLogoChange changes the logo, when the function is called 1`] = `undefined`;
+
+exports[`Testing functions triggerLogoChange changes the logo, when the function is called 2`] = `undefined`;
+
+exports[`Testing functions triggerLogoChange changes the logo, when the function is called 3`] = `undefined`;
+
+exports[`Testing functions triggerLogoChange changes the logo, when the function is called 4`] = `undefined`;
+
+exports[`Testing functions triggers a rerender 1`] = `undefined`;
+
+exports[`Testing functions triggers the modal when caled 1`] = `undefined`;

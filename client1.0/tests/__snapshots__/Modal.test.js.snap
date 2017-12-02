@@ -1,0 +1,1144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalComponent renders correctly 1`] = `<View />`;
+
+exports[`ModalComponent should not be affected by props 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <RestaurantModal
+    foo="bar"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "animationDuration": 400,
+      "backButtonClose": false,
+      "backdrop": true,
+      "backdropColor": "black",
+      "backdropContent": null,
+      "backdropOpacity": 0.5,
+      "backdropPressToClose": true,
+      "children": <View
+        style={
+                Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "justifyContent": "center",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+        }
+>
+        <withAnimatable(View)
+                animation={
+                        Object {
+                                "0": Object {
+                                  "bottom": 0,
+                                  "opacity": 1,
+                                },
+                                "1": Object {
+                                  "bottom": 10,
+                                  "opacity": 0,
+                                },
+                              }
+                }
+                delay={0}
+                direction="alternate"
+                duration={undefined}
+                easing={undefined}
+                iterationCount="infinite"
+                onAnimationBegin={[Function]}
+                onAnimationEnd={[Function]}
+                style={undefined}
+                transition={undefined}
+                useNativeDriver={false}
+        >
+                <Image
+                        source={1}
+                        style={
+                                Object {
+                                        "height": 29,
+                                        "marginBottom": 6,
+                                        "width": 30,
+                                      }
+                        }
+                />
+        </withAnimatable(View)>
+        <Image
+                source={1}
+                style={
+                        Object {
+                                "height": 75,
+                                "width": 150,
+                              }
+                }
+        />
+        <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                        Object {
+                                "fontFamily": "raleway",
+                                "marginTop": 12,
+                              }
+                }
+        >
+                Baking ...
+        </Text>
+</View>,
+      "coverScreen": false,
+      "easing": [Function],
+      "keyboardTopOffset": 22,
+      "onClosed": [Function],
+      "onClosingState": undefined,
+      "onOpened": [Function],
+      "position": "center",
+      "startOpen": false,
+      "style": Object {
+        "alignItems": "center",
+        "flex": 1,
+        "position": "absolute",
+        "zIndex": 3,
+      },
+      "swipeArea": 250,
+      "swipeThreshold": 50,
+      "swipeToClose": true,
+    },
+    "ref": "modal1",
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <withAnimatable(View)
+            animation={
+                        Object {
+                                    "0": Object {
+                                      "bottom": 0,
+                                      "opacity": 1,
+                                    },
+                                    "1": Object {
+                                      "bottom": 10,
+                                      "opacity": 0,
+                                    },
+                                  }
+            }
+            delay={0}
+            direction="alternate"
+            duration={undefined}
+            easing={undefined}
+            iterationCount="infinite"
+            onAnimationBegin={[Function]}
+            onAnimationEnd={[Function]}
+            style={undefined}
+            transition={undefined}
+            useNativeDriver={false}
+>
+            <Image
+                        source={1}
+                        style={
+                                    Object {
+                                                "height": 29,
+                                                "marginBottom": 6,
+                                                "width": 30,
+                                              }
+                        }
+            />
+</withAnimatable(View)>,
+          <Image
+            source={1}
+            style={
+                        Object {
+                                    "height": 75,
+                                    "width": 150,
+                                  }
+            }
+/>,
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+                        Object {
+                                    "fontFamily": "raleway",
+                                    "marginTop": 12,
+                                  }
+            }
+>
+            Baking ...
+</Text>,
+        ],
+        "style": Object {
+          "alignItems": "center",
+          "display": "flex",
+          "height": "100%",
+          "justifyContent": "center",
+          "position": "relative",
+          "width": "100%",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "animation": Object {
+              "0": Object {
+                "bottom": 0,
+                "opacity": 1,
+              },
+              "1": Object {
+                "bottom": 10,
+                "opacity": 0,
+              },
+            },
+            "children": <Image
+              source={1}
+              style={
+                            Object {
+                                          "height": 29,
+                                          "marginBottom": 6,
+                                          "width": 30,
+                                        }
+              }
+/>,
+            "delay": 0,
+            "direction": "alternate",
+            "duration": undefined,
+            "easing": undefined,
+            "iterationCount": "infinite",
+            "onAnimationBegin": [Function],
+            "onAnimationEnd": [Function],
+            "style": undefined,
+            "transition": undefined,
+            "useNativeDriver": false,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "source": 1,
+              "style": Object {
+                "height": 29,
+                "marginBottom": 6,
+                "width": 30,
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "source": 1,
+            "style": Object {
+              "height": 75,
+              "width": 150,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "accessible": true,
+            "allowFontScaling": true,
+            "children": "Baking ...",
+            "disabled": false,
+            "ellipsizeMode": "tail",
+            "style": Object {
+              "fontFamily": "raleway",
+              "marginTop": 12,
+            },
+          },
+          "ref": null,
+          "rendered": "Baking ...",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "animationDuration": 400,
+        "backButtonClose": false,
+        "backdrop": true,
+        "backdropColor": "black",
+        "backdropContent": null,
+        "backdropOpacity": 0.5,
+        "backdropPressToClose": true,
+        "children": <View
+          style={
+                    Object {
+                              "alignItems": "center",
+                              "display": "flex",
+                              "height": "100%",
+                              "justifyContent": "center",
+                              "position": "relative",
+                              "width": "100%",
+                            }
+          }
+>
+          <withAnimatable(View)
+                    animation={
+                              Object {
+                                        "0": Object {
+                                          "bottom": 0,
+                                          "opacity": 1,
+                                        },
+                                        "1": Object {
+                                          "bottom": 10,
+                                          "opacity": 0,
+                                        },
+                                      }
+                    }
+                    delay={0}
+                    direction="alternate"
+                    duration={undefined}
+                    easing={undefined}
+                    iterationCount="infinite"
+                    onAnimationBegin={[Function]}
+                    onAnimationEnd={[Function]}
+                    style={undefined}
+                    transition={undefined}
+                    useNativeDriver={false}
+          >
+                    <Image
+                              source={1}
+                              style={
+                                        Object {
+                                                  "height": 29,
+                                                  "marginBottom": 6,
+                                                  "width": 30,
+                                                }
+                              }
+                    />
+          </withAnimatable(View)>
+          <Image
+                    source={1}
+                    style={
+                              Object {
+                                        "height": 75,
+                                        "width": 150,
+                                      }
+                    }
+          />
+          <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    disabled={false}
+                    ellipsizeMode="tail"
+                    style={
+                              Object {
+                                        "fontFamily": "raleway",
+                                        "marginTop": 12,
+                                      }
+                    }
+          >
+                    Baking ...
+          </Text>
+</View>,
+        "coverScreen": false,
+        "easing": [Function],
+        "keyboardTopOffset": 22,
+        "onClosed": [Function],
+        "onClosingState": undefined,
+        "onOpened": [Function],
+        "position": "center",
+        "startOpen": false,
+        "style": Object {
+          "alignItems": "center",
+          "flex": 1,
+          "position": "absolute",
+          "zIndex": 3,
+        },
+        "swipeArea": 250,
+        "swipeThreshold": 50,
+        "swipeToClose": true,
+      },
+      "ref": "modal1",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <withAnimatable(View)
+              animation={
+                            Object {
+                                          "0": Object {
+                                            "bottom": 0,
+                                            "opacity": 1,
+                                          },
+                                          "1": Object {
+                                            "bottom": 10,
+                                            "opacity": 0,
+                                          },
+                                        }
+              }
+              delay={0}
+              direction="alternate"
+              duration={undefined}
+              easing={undefined}
+              iterationCount="infinite"
+              onAnimationBegin={[Function]}
+              onAnimationEnd={[Function]}
+              style={undefined}
+              transition={undefined}
+              useNativeDriver={false}
+>
+              <Image
+                            source={1}
+                            style={
+                                          Object {
+                                                        "height": 29,
+                                                        "marginBottom": 6,
+                                                        "width": 30,
+                                                      }
+                            }
+              />
+</withAnimatable(View)>,
+            <Image
+              source={1}
+              style={
+                            Object {
+                                          "height": 75,
+                                          "width": 150,
+                                        }
+              }
+/>,
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                            Object {
+                                          "fontFamily": "raleway",
+                                          "marginTop": 12,
+                                        }
+              }
+>
+              Baking ...
+</Text>,
+          ],
+          "style": Object {
+            "alignItems": "center",
+            "display": "flex",
+            "height": "100%",
+            "justifyContent": "center",
+            "position": "relative",
+            "width": "100%",
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "animation": Object {
+                "0": Object {
+                  "bottom": 0,
+                  "opacity": 1,
+                },
+                "1": Object {
+                  "bottom": 10,
+                  "opacity": 0,
+                },
+              },
+              "children": <Image
+                source={1}
+                style={
+                                Object {
+                                                "height": 29,
+                                                "marginBottom": 6,
+                                                "width": 30,
+                                              }
+                }
+/>,
+              "delay": 0,
+              "direction": "alternate",
+              "duration": undefined,
+              "easing": undefined,
+              "iterationCount": "infinite",
+              "onAnimationBegin": [Function],
+              "onAnimationEnd": [Function],
+              "style": undefined,
+              "transition": undefined,
+              "useNativeDriver": false,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "source": 1,
+                "style": Object {
+                  "height": 29,
+                  "marginBottom": 6,
+                  "width": 30,
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "source": 1,
+              "style": Object {
+                "height": 75,
+                "width": 150,
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "accessible": true,
+              "allowFontScaling": true,
+              "children": "Baking ...",
+              "disabled": false,
+              "ellipsizeMode": "tail",
+              "style": Object {
+                "fontFamily": "raleway",
+                "marginTop": 12,
+              },
+            },
+            "ref": null,
+            "rendered": "Baking ...",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`ModalComponent should not be affected by props 2`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <RestaurantModal
+    foo="bar"
+    random="prop"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "animationDuration": 400,
+      "backButtonClose": false,
+      "backdrop": true,
+      "backdropColor": "black",
+      "backdropContent": null,
+      "backdropOpacity": 0.5,
+      "backdropPressToClose": true,
+      "children": <View
+        style={
+                Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "justifyContent": "center",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+        }
+>
+        <withAnimatable(View)
+                animation={
+                        Object {
+                                "0": Object {
+                                  "bottom": 0,
+                                  "opacity": 1,
+                                },
+                                "1": Object {
+                                  "bottom": 10,
+                                  "opacity": 0,
+                                },
+                              }
+                }
+                delay={0}
+                direction="alternate"
+                duration={undefined}
+                easing={undefined}
+                iterationCount="infinite"
+                onAnimationBegin={[Function]}
+                onAnimationEnd={[Function]}
+                style={undefined}
+                transition={undefined}
+                useNativeDriver={false}
+        >
+                <Image
+                        source={1}
+                        style={
+                                Object {
+                                        "height": 29,
+                                        "marginBottom": 6,
+                                        "width": 30,
+                                      }
+                        }
+                />
+        </withAnimatable(View)>
+        <Image
+                source={1}
+                style={
+                        Object {
+                                "height": 75,
+                                "width": 150,
+                              }
+                }
+        />
+        <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                        Object {
+                                "fontFamily": "raleway",
+                                "marginTop": 12,
+                              }
+                }
+        >
+                Baking ...
+        </Text>
+</View>,
+      "coverScreen": false,
+      "easing": [Function],
+      "keyboardTopOffset": 22,
+      "onClosed": [Function],
+      "onClosingState": undefined,
+      "onOpened": [Function],
+      "position": "center",
+      "startOpen": false,
+      "style": Object {
+        "alignItems": "center",
+        "flex": 1,
+        "position": "absolute",
+        "zIndex": 3,
+      },
+      "swipeArea": 250,
+      "swipeThreshold": 50,
+      "swipeToClose": true,
+    },
+    "ref": "modal1",
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <withAnimatable(View)
+            animation={
+                        Object {
+                                    "0": Object {
+                                      "bottom": 0,
+                                      "opacity": 1,
+                                    },
+                                    "1": Object {
+                                      "bottom": 10,
+                                      "opacity": 0,
+                                    },
+                                  }
+            }
+            delay={0}
+            direction="alternate"
+            duration={undefined}
+            easing={undefined}
+            iterationCount="infinite"
+            onAnimationBegin={[Function]}
+            onAnimationEnd={[Function]}
+            style={undefined}
+            transition={undefined}
+            useNativeDriver={false}
+>
+            <Image
+                        source={1}
+                        style={
+                                    Object {
+                                                "height": 29,
+                                                "marginBottom": 6,
+                                                "width": 30,
+                                              }
+                        }
+            />
+</withAnimatable(View)>,
+          <Image
+            source={1}
+            style={
+                        Object {
+                                    "height": 75,
+                                    "width": 150,
+                                  }
+            }
+/>,
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+                        Object {
+                                    "fontFamily": "raleway",
+                                    "marginTop": 12,
+                                  }
+            }
+>
+            Baking ...
+</Text>,
+        ],
+        "style": Object {
+          "alignItems": "center",
+          "display": "flex",
+          "height": "100%",
+          "justifyContent": "center",
+          "position": "relative",
+          "width": "100%",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "animation": Object {
+              "0": Object {
+                "bottom": 0,
+                "opacity": 1,
+              },
+              "1": Object {
+                "bottom": 10,
+                "opacity": 0,
+              },
+            },
+            "children": <Image
+              source={1}
+              style={
+                            Object {
+                                          "height": 29,
+                                          "marginBottom": 6,
+                                          "width": 30,
+                                        }
+              }
+/>,
+            "delay": 0,
+            "direction": "alternate",
+            "duration": undefined,
+            "easing": undefined,
+            "iterationCount": "infinite",
+            "onAnimationBegin": [Function],
+            "onAnimationEnd": [Function],
+            "style": undefined,
+            "transition": undefined,
+            "useNativeDriver": false,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "source": 1,
+              "style": Object {
+                "height": 29,
+                "marginBottom": 6,
+                "width": 30,
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "source": 1,
+            "style": Object {
+              "height": 75,
+              "width": 150,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "accessible": true,
+            "allowFontScaling": true,
+            "children": "Baking ...",
+            "disabled": false,
+            "ellipsizeMode": "tail",
+            "style": Object {
+              "fontFamily": "raleway",
+              "marginTop": 12,
+            },
+          },
+          "ref": null,
+          "rendered": "Baking ...",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "animationDuration": 400,
+        "backButtonClose": false,
+        "backdrop": true,
+        "backdropColor": "black",
+        "backdropContent": null,
+        "backdropOpacity": 0.5,
+        "backdropPressToClose": true,
+        "children": <View
+          style={
+                    Object {
+                              "alignItems": "center",
+                              "display": "flex",
+                              "height": "100%",
+                              "justifyContent": "center",
+                              "position": "relative",
+                              "width": "100%",
+                            }
+          }
+>
+          <withAnimatable(View)
+                    animation={
+                              Object {
+                                        "0": Object {
+                                          "bottom": 0,
+                                          "opacity": 1,
+                                        },
+                                        "1": Object {
+                                          "bottom": 10,
+                                          "opacity": 0,
+                                        },
+                                      }
+                    }
+                    delay={0}
+                    direction="alternate"
+                    duration={undefined}
+                    easing={undefined}
+                    iterationCount="infinite"
+                    onAnimationBegin={[Function]}
+                    onAnimationEnd={[Function]}
+                    style={undefined}
+                    transition={undefined}
+                    useNativeDriver={false}
+          >
+                    <Image
+                              source={1}
+                              style={
+                                        Object {
+                                                  "height": 29,
+                                                  "marginBottom": 6,
+                                                  "width": 30,
+                                                }
+                              }
+                    />
+          </withAnimatable(View)>
+          <Image
+                    source={1}
+                    style={
+                              Object {
+                                        "height": 75,
+                                        "width": 150,
+                                      }
+                    }
+          />
+          <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    disabled={false}
+                    ellipsizeMode="tail"
+                    style={
+                              Object {
+                                        "fontFamily": "raleway",
+                                        "marginTop": 12,
+                                      }
+                    }
+          >
+                    Baking ...
+          </Text>
+</View>,
+        "coverScreen": false,
+        "easing": [Function],
+        "keyboardTopOffset": 22,
+        "onClosed": [Function],
+        "onClosingState": undefined,
+        "onOpened": [Function],
+        "position": "center",
+        "startOpen": false,
+        "style": Object {
+          "alignItems": "center",
+          "flex": 1,
+          "position": "absolute",
+          "zIndex": 3,
+        },
+        "swipeArea": 250,
+        "swipeThreshold": 50,
+        "swipeToClose": true,
+      },
+      "ref": "modal1",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <withAnimatable(View)
+              animation={
+                            Object {
+                                          "0": Object {
+                                            "bottom": 0,
+                                            "opacity": 1,
+                                          },
+                                          "1": Object {
+                                            "bottom": 10,
+                                            "opacity": 0,
+                                          },
+                                        }
+              }
+              delay={0}
+              direction="alternate"
+              duration={undefined}
+              easing={undefined}
+              iterationCount="infinite"
+              onAnimationBegin={[Function]}
+              onAnimationEnd={[Function]}
+              style={undefined}
+              transition={undefined}
+              useNativeDriver={false}
+>
+              <Image
+                            source={1}
+                            style={
+                                          Object {
+                                                        "height": 29,
+                                                        "marginBottom": 6,
+                                                        "width": 30,
+                                                      }
+                            }
+              />
+</withAnimatable(View)>,
+            <Image
+              source={1}
+              style={
+                            Object {
+                                          "height": 75,
+                                          "width": 150,
+                                        }
+              }
+/>,
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                            Object {
+                                          "fontFamily": "raleway",
+                                          "marginTop": 12,
+                                        }
+              }
+>
+              Baking ...
+</Text>,
+          ],
+          "style": Object {
+            "alignItems": "center",
+            "display": "flex",
+            "height": "100%",
+            "justifyContent": "center",
+            "position": "relative",
+            "width": "100%",
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "animation": Object {
+                "0": Object {
+                  "bottom": 0,
+                  "opacity": 1,
+                },
+                "1": Object {
+                  "bottom": 10,
+                  "opacity": 0,
+                },
+              },
+              "children": <Image
+                source={1}
+                style={
+                                Object {
+                                                "height": 29,
+                                                "marginBottom": 6,
+                                                "width": 30,
+                                              }
+                }
+/>,
+              "delay": 0,
+              "direction": "alternate",
+              "duration": undefined,
+              "easing": undefined,
+              "iterationCount": "infinite",
+              "onAnimationBegin": [Function],
+              "onAnimationEnd": [Function],
+              "style": undefined,
+              "transition": undefined,
+              "useNativeDriver": false,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "source": 1,
+                "style": Object {
+                  "height": 29,
+                  "marginBottom": 6,
+                  "width": 30,
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "source": 1,
+              "style": Object {
+                "height": 75,
+                "width": 150,
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "accessible": true,
+              "allowFontScaling": true,
+              "children": "Baking ...",
+              "disabled": false,
+              "ellipsizeMode": "tail",
+              "style": Object {
+                "fontFamily": "raleway",
+                "marginTop": 12,
+              },
+            },
+            "ref": null,
+            "rendered": "Baking ...",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
