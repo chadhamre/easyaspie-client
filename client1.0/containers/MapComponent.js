@@ -109,7 +109,6 @@ export default class Map extends React.Component {
     }
   };
   handelMarkerPress = (id, open) => {
-    console.log(open);
     this.refs.modal.getId(id, open);
     this.refs.modal.refs.modal1.open();
   };

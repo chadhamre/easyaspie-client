@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   red: {
     width: 10,
     height: 10,
-    backgroundColor: "#888888",
+    backgroundColor: "#b44316",
     marginRight: 10,
     borderRadius: 10,
     marginTop: 4
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   yellow: {
     width: 10,
     height: 10,
-    backgroundColor: "#ffff00",
+    backgroundColor: "#888888",
     marginRight: 10,
     borderRadius: 10,
     marginTop: 4

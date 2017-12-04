@@ -14,6 +14,7 @@ export default class RestoList extends React.Component {
   componentWillMount() {
     // calculate distance for each location
     this.props.restaurants.results.forEach(item => {
+      // console.log('============', item.photos[0].photo_reference)
       item.distance = Math.round(
         100 *
           geodist(
@@ -44,6 +45,8 @@ export default class RestoList extends React.Component {
         <List>
           {this.state.restaurants.map((item, key) => (
             <ListItem
+              roundAvatar
+              avatar={{uri:`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${item.photos ? item.photos[0].photo_reference : ''}&key=AIzaSyCDpYpbNtmuNr3SMNtuDZDfjaYFdE7tVkk`}}
               onPress={() => this.pressed(item.place_id)}
               key={key}
               title={(l = item.name)}

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableHighlight } from "react-native";
 import { MapView, Location, Permissions } from "expo";
 
 export default class MarkerList extends React.Component {
@@ -19,12 +19,15 @@ export default class MarkerList extends React.Component {
         if (el.opening_hours && el.opening_hours.open_now) {
           description = "Open Now";
           open = true;
+          styleCallout = styles.descriptionOpen;
         } else if (el.opening_hours) {
           description = "Closed";
           open = false;
+          styleCallout = styles.descriptionClosed;
         } else {
           description ="Opening Hours Not Available";
           open = 'Unknown';
+          styleCallout = styles.descriptionUnknown;
         }
         return (
           <MapView.Marker
@@ -46,7 +49,7 @@ export default class MarkerList extends React.Component {
             >
               <View style={styles.callout}>
                 <Text style={styles.title}>{el.name}</Text>
-                <Text style={styles.description}>{description}</Text>
+                <Text style={styleCallout}>{description}</Text>
               </View>
             </MapView.Callout>
           </MapView.Marker>
@@ -61,15 +64,34 @@ export default class MarkerList extends React.Component {
 const styles = StyleSheet.create({
   callout: {
     padding: 12,
-    maxWidth: 150
+    maxWidth: 150,
+    backgroundColor: '#ffffff',
+  },
+  calloutPressed: {
+    padding: 12,
+    maxWidth: 150,
+    backgroundColor: '#ffffff'
   },
   title: {
     fontFamily: "raleway-blackitalic",
     fontSize: 12
   },
-  description: {
+  descriptionOpen: {
     fontFamily: "raleway",
     fontSize: 12,
-    marginTop: 3
+    marginTop: 3,
+    color: '#4eb9ce',
+  },
+  descriptionClosed: {
+    fontFamily: "raleway",
+    fontSize: 12,
+    marginTop: 3,
+    color: '#b44316'
+  },
+  descriptionUnknown: {
+    fontFamily: "raleway",
+    fontSize: 12,
+    marginTop: 3,
+    color: '#888888'
   }
 });
