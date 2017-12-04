@@ -31,6 +31,7 @@ export default class MarkerList extends React.Component {
         }
         return (
           <MapView.Marker
+            image={require('../assets/pin-easyaspie-final.png')}
             identifier={`${el.place_id} ${open}`}
             open = {open}
             key={el.id}

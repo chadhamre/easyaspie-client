@@ -51,17 +51,33 @@ export default class Landing extends React.Component {
   };
   // render a toggle to swtich to list view
   renderListToggle() {
+
     return !this.state.modal ? (
-      <TouchableOpacity
-        style={styles.togglecontainer}
-        onPress={this.toggleList}
-      >
-        <Icon
-          name={this.state.map === true ? "ios-list" : "ios-globe-outline"}
-          size={30}
-          style={{ color: "black", backgroundColor: "transparent" }}
-        />
-      </TouchableOpacity>
+      <View style={styles.header}>
+        <View style={styles.iconContainer}>
+          <TouchableOpacity
+            style={styles.togglecontainer}
+            onPress={this.state.map ? this.toggleList : null}
+          >
+            <Icon
+              name={"ios-list-outline"}
+              size={40}
+              style={!this.state.map ? styles.iconBlue : styles.iconGrey}
+            />
+          </TouchableOpacity>
+          <View style={styles.greyBar} />
+          <TouchableOpacity
+            style={styles.togglecontainer}
+            onPress={!this.state.map ? this.toggleList : null}
+          >
+            <Icon
+              name={"ios-pin"}
+              size={40}
+              style={this.state.map ? styles.iconBlue : styles.iconGrey}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
     ) : null;
   }
   // render map action button
@@ -124,6 +140,37 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "column"
   },
+  iconContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '30%',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  iconGrey: {
+    color: "#888888",
+    backgroundColor: "transparent"
+  },
+  iconBlue: {
+    color: "#48B9D0",
+    backgroundColor: "transparent"
+  },
+  greyBar: {
+    width: 2,
+    height: 40,
+    top: '25%',
+    left: '20%',
+    backgroundColor: '#f2f2f2',
+    zIndex: 55
+  },
+  header: {
+    display: 'flex',
+    height: 100,
+    width: '100%',
+    backgroundColor: '#ffffff',
+    borderBottomWidth: 1.5,
+    borderBottomColor: '#48B9D0'
+  },
   logo: {
     height: 85,
     width: 85
@@ -131,7 +178,7 @@ const styles = StyleSheet.create({
   mapbuttoncontainer: {
     backgroundColor: "white",
     position: "absolute",
-    marginTop: 38,
+    marginTop: 84,
     zIndex: 1,
     shadowColor: "#000000",
     shadowOffset: {
@@ -140,25 +187,21 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 5,
     shadowOpacity: 0.3,
-    borderRadius: 20
+    borderRadius: 10,
+    borderColor: '#48B9D0',
+    borderWidth: 1.5,
   },
   togglecontainer: {
+    backgroundColor: "white",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    right: 10,
+    left: 10,
     top: 30,
     height: 50,
     width: 50,
-    position: "absolute",
+    alignSelf: 'flex-start',
     zIndex: 1,
-    shadowOffset: {
-      width: 0,
-      height: 3
-    },
-    shadowRadius: 5,
-    shadowOpacity: 0.3,
-    borderRadius: 50,
     padding: 0
   },
   image_text_container: {
@@ -168,7 +211,7 @@ const styles = StyleSheet.create({
     padding: 8
   },
   text: {
-    color: "black",
-    fontFamily: "raleway"
+    color: "#333",
+    fontFamily: "raleway-blackitalic"
   }
 });

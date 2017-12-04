@@ -524,6 +524,12 @@ babel-plugin-check-es2015-constants@^6.5.0, babel-plugin-check-es2015-constants@
   dependencies:
     babel-runtime "^6.22.0"
 
+babel-plugin-dotenv@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-dotenv/-/babel-plugin-dotenv-0.1.0.tgz#dd769175a5a913c940ad18316c36621fc04598b2"
+  dependencies:
+    dotenv "^2.0.0"
+
 babel-plugin-external-helpers@^6.18.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-external-helpers/-/babel-plugin-external-helpers-6.22.0.tgz#2285f48b02bd5dede85175caf8c62e86adccefa1"
@@ -1795,6 +1801,14 @@ dot-case@^1.1.0:
   dependencies:
     sentence-case "^1.1.2"
 
+dotenv@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-2.0.0.tgz#bd759c357aaa70365e01c96b7b0bec08a6e0d949"
+
+dotenv@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
+
 duplexer2@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/duplexer2/-/duplexer2-0.0.2.tgz#c614dcf67e2fb14995a91711e5a617e8a60a31db"
@@ -2438,10 +2452,6 @@ gauge@~2.7.3:
 geodist@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/geodist/-/geodist-0.2.1.tgz#9619a5d935529335716faafad32228c29dc0b920"
-
-geolib@^2.0.24:
-  version "2.0.24"
-  resolved "https://registry.yarnpkg.com/geolib/-/geolib-2.0.24.tgz#eb3d7fbc65f5ea3354a5af6054563ebe9f33e5f4"
 
 get-caller-file@^1.0.1:
   version "1.0.2"
@@ -4857,6 +4867,12 @@ react-native-button@^2.1.0:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-dotenv@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-dotenv/-/react-native-dotenv-0.1.0.tgz#201de3b47a514476bfd33117a54ddb4cf90b00d8"
+  dependencies:
+    babel-plugin-dotenv "0.1.0"
+
 react-native-easy-grid@^0.1.15:
   version "0.1.15"
   resolved "https://registry.yarnpkg.com/react-native-easy-grid/-/react-native-easy-grid-0.1.15.tgz#02939ae032d74662b50c9540d902c79866ba638a"
@@ -4994,9 +5010,9 @@ react-native-vector-icons@4.4.2, react-native-vector-icons@^4.4.2:
     prop-types "^15.5.10"
     yargs "^8.0.2"
 
-react-native@^0.49.5:
-  version "0.49.5"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.49.5.tgz#89f0fe93a8da4db2670c4bd0d81131a2ff617f27"
+"react-native@https://github.com/expo/react-native/archive/sdk-22.0.0.tar.gz":
+  version "0.49.3"
+  resolved "https://github.com/expo/react-native/archive/sdk-22.0.0.tar.gz#0b36c1bc71f3620273362c83a3934bb01d69563f"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"
