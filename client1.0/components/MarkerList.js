@@ -9,7 +9,7 @@ export default class MarkerList extends React.Component {
       id: null,
     };
   }
-  render() {
+  render () {
     let list = this.props.restaurants ? (
       this.props.restaurants.results.map(el => {
         let latlong = {
