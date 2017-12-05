@@ -57,7 +57,7 @@ export default class RestaurantModal extends React.Component {
   };
 
   getRestaurant(id) {
-    fetch(`http://192.168.0.83:4000/api/v1/places/${id}`, {
+    fetch(`https://easy-as-pie-api.herokuapp.com/api/v1/places/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
