@@ -64,7 +64,7 @@ export default class Map extends React.Component {
       const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${
         lat
       },${long}&radius=${delta *
-        50000}&type=restaurant&key=`;
+        50000}&type=restaurant&key=AIzaSyB235UiNw1Uvl6qKDdTQmkpbB4BUuTkX5M`;
       fetch(url, { method: "GET" })
         .then(data => data.json())
         .then(data => {
@@ -79,7 +79,7 @@ export default class Map extends React.Component {
         lat
       },${long}&radius=${delta * 50000}&pagetoken=${
         pagetoken
-      }&type=restaurant&key=`;
+      }&type=restaurant&key=AIzaSyB235UiNw1Uvl6qKDdTQmkpbB4BUuTkX5M`;
       fetch(url, { method: "GET" })
         .then(data => data.json())
         .then(data => {

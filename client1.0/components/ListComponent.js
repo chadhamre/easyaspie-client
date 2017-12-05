@@ -65,6 +65,7 @@ export default class RestoList extends React.Component {
   render() {
     return (
       <ScrollView style={styles.listContainer} contentContainerStyle={{alignItems:'center'}}>
+        <Text style={styles.explanation}> Ordered by distance </Text>
         <List containerStyle={{backgroundColor:"#F2F2F2", borderColor:"#F2F2F2"}}>
           {this.state.restaurants.map((item, key) => (
             <ListItem
@@ -72,7 +73,8 @@ export default class RestoList extends React.Component {
               avatar={<Avatar
                        rounded
                        large
-                       source={item.photos ? {uri: `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${item.photos[0].photo_reference}&key=`} : require('../assets/logo_easyaspie_bw.png')}/>}
+                       source={item.photos ? {uri: `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${item.photos[0].photo_reference}&key=AIzaSyB235UiNw1Uvl6qKDdTQmkpbB4BUuTkX5M`} :
+                                                      require('../assets/logo_easyaspie_bw.png')}/>}
               avatarStyle={styles.avatar}
               onPress={() => this.pressed(item.place_id)}
               key={key}
@@ -91,8 +93,7 @@ export default class RestoList extends React.Component {
 const styles = StyleSheet.create({
   listContainer: {
     width: "100%",
-    backgroundColor: "#F2F2F2",
-    paddingTop: 80
+    backgroundColor: "#F2F2F2"
   },
   listItemContainer: {
     backgroundColor: '#ffffff',
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderBottomColor: '#48B9D0',
     borderBottomWidth: 1.5,
-    borderRadius: 10,
+    borderRadius: 7,
     borderColor: '#48B9D0',
     shadowColor: "#000000",
     shadowOffset: {
@@ -114,6 +115,13 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 7,
     shadowOpacity: 0.2
+  },
+  explanation: {
+    fontFamily: 'raleway-blackitalic',
+    paddingTop: "7%",
+    marginBottom: "-1.5%",
+    fontSize: 20,
+    color: '#333'
   },
   subtitleContainer: {
     display: 'flex',

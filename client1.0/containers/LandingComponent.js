@@ -61,7 +61,7 @@ export default class Landing extends React.Component {
           >
             <Icon
               name={"ios-list-outline"}
-              size={40}
+              size={30}
               style={!this.state.map ? styles.iconBlue : styles.iconGrey}
             />
           </TouchableOpacity>
@@ -72,11 +72,12 @@ export default class Landing extends React.Component {
           >
             <Icon
               name={"ios-pin"}
-              size={40}
+              size={30}
               style={this.state.map ? styles.iconBlue : styles.iconGrey}
             />
           </TouchableOpacity>
         </View>
+        <Image source={require('../assets/logo_easyaspie_blue_small.png')}></Image>
       </View>
     ) : null;
   }
@@ -145,7 +146,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '30%',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    top: "3%"
   },
   iconGrey: {
     color: "#888888",
@@ -165,6 +167,7 @@ const styles = StyleSheet.create({
   },
   header: {
     display: 'flex',
+    flexDirection: 'row',
     height: 100,
     width: '100%',
     backgroundColor: '#ffffff',
@@ -177,7 +180,9 @@ const styles = StyleSheet.create({
   },
   mapbuttoncontainer: {
     backgroundColor: "white",
+    alignItems: 'center',
     position: "absolute",
+    minWidth: "33%",
     marginTop: 84,
     zIndex: 1,
     shadowColor: "#000000",
@@ -187,7 +192,7 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 5,
     shadowOpacity: 0.3,
-    borderRadius: 10,
+    borderRadius: 7,
     borderColor: '#48B9D0',
     borderWidth: 1.5,
   },
