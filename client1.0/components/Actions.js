@@ -67,37 +67,36 @@ export default class GmapsDirections extends Component {
     return (
       <View style={styles.wrapper}>
         <View style={styles.container}>
-        <View style={styles.first}>
-        <TouchableOpacity style={styles.opacities} onPress={this.callThePlace}>
-          <Icon
-            name="ios-call"
-            size={30}
-            style={{
-              // paddingRight: 10,
-              color: "black",
-              backgroundColor: "transparent"
-            }}
-          />
-
-        </TouchableOpacity>
-        </View>
-        <View style={styles.second}>
-        <TouchableOpacity
-          style={styles.opacities}
-          onPress={this.handleGetDirections}
-        >
-          <Icon
-            name="ios-navigate-outline"
-            size={30}
-            style={{
-              // paddingRight: 10,
-              color: "black",
-              backgroundColor: "transparent"
-            }}
-          />
-
-        </TouchableOpacity>
-        </View>
+          <View style={styles.first}>
+            <TouchableOpacity
+              style={styles.opacities}
+              onPress={this.callThePlace}
+            >
+              <Icon
+                name="ios-call"
+                size={40}
+                style={{
+                  color: "black",
+                  backgroundColor: "transparent"
+                }}
+              />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.second}>
+            <TouchableOpacity
+              style={styles.opacities}
+              onPress={this.handleGetDirections}
+            >
+              <Icon
+                name="ios-map"
+                size={40}
+                style={{
+                  color: "black",
+                  backgroundColor: "transparent"
+                }}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );
@@ -127,7 +126,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "80%",
     height: "100%",
-    shadowColor: '#000000',
+    shadowColor: "#000000",
     shadowOffset: {
       width: 0,
       height: 1
@@ -140,8 +139,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    marginTop: 20,
-
+    marginTop: 20
   },
   opacities: {
     flexDirection: "row",

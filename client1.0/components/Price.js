@@ -37,6 +37,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     fontStyle: "italic",
-    color: "#5C91CA"
+    color: "#48B9D0"
   }
 });

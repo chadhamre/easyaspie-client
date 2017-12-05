@@ -203,7 +203,7 @@ export default class RestaurantModal extends React.Component {
 const styles = StyleSheet.create({
   openprice: {
     marginTop: 20,
-    width: '100%',
+    width: "100%",
     flexDirection: "row",
     justifyContent: "space-around"
   },
@@ -222,12 +222,11 @@ const styles = StyleSheet.create({
     width: 150,
     height: 75
   },
-  priceandopen : {
+  priceandopen: {
     flexDirection: "row",
     backgroundColor: "coral",
     width: "100%",
     height: 200
-
   },
   loader__image__smoke: {
     width: 30,
@@ -310,7 +309,7 @@ const styles = StyleSheet.create({
     position: "relative",
     overflow: "hidden",
     flexDirection: "column",
-    height: "50%",
+    height: "30%",
     width: "100%"
   },
   main__wrapper: {
@@ -319,7 +318,7 @@ const styles = StyleSheet.create({
   },
   image: {
     position: "absolute",
-    maxHeight: 300,
+    maxHeight: 200,
     top: 0,
     left: 0,
     right: 0,
