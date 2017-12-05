@@ -1,5 +1,6 @@
 import Modal from "react-native-modalbox";
 import React from "react";
+import Icon from "react-native-vector-icons/Ionicons";
 
 import {
   StyleSheet,
@@ -42,22 +43,14 @@ export default class ModalSearch extends React.Component {
         onOpened={this.onOpened}
         onClosingState={this.onClosingState}
       >
-        <View>
-          <Text>Modal Search</Text>
-          <Text>Modal Search</Text>
-          <Text>Modal Search</Text>
-          <Text>Modal Search</Text>
-          <Text>Modal Search</Text>
-          <Text>Modal Search</Text>
-          <Text>Modal Search</Text>
-          <Text>Modal Search</Text>
-          <Text>Modal Search</Text>
-          <Text>Modal Search</Text>
-          <Text>Modal Search</Text>
-          <Text>Modal Search</Text>
-          <Text>Modal Search</Text>
-          <Text>Modal Search</Text>
-          <TextInput placeholder={"HELLO WORLD"} onSubmitEditing={(e) => {this.triggerFilter(e.nativeEvent.text)}}></TextInput>
+        <View style={styles.wrap}>
+          <Icon
+            name={"ios-search"}
+            size={50}
+            style={styles.iconBlue}
+          />
+          <Text style={styles.text}>Type the kind of food that you would like to eat</Text>
+          <TextInput  style={styles.input} placeholder={"Type here"} onSubmitEditing={(e) => {this.triggerFilter(e.nativeEvent.text)}}></TextInput>
         </View>
       </Modal>
 
@@ -66,4 +59,42 @@ export default class ModalSearch extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    // justifyContent: "center",
+    backgroundColor: "#F2F2F2",
+    paddingTop: "20%",
+  },
+  wrap: {
+    width: "90%",
+  },
+  input: {
+    fontFamily: "raleway",
+    height: 60,
+    borderWidth: 1.5,
+    borderColor: "#48B9D0",
+    paddingLeft: 6,
+    borderRadius: 7,
+    backgroundColor: "#FFF",
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 7
+    },
+    shadowRadius: 7,
+    shadowOpacity: 0.2
+  },
+  text: {
+    fontFamily: "raleway-blackitalic",
+    fontSize: 18,
+    marginVertical: 20,
+    color: '#333',
+    textAlign: "center"
+  },
+  iconBlue: {
+    color: "#48B9D0",
+    backgroundColor: "transparent",
+    textAlign: "center"
+  },
 });

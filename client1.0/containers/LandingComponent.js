@@ -90,7 +90,7 @@ export default class Landing extends React.Component {
         </View>
         <View>
           <TouchableOpacity
-            style={styles.togglecontainer}
+            style={styles.lastTogglecontainer}
             onPress={() => this.refs.modalSearch.refs.modalSearch.open()}
           >
             <Icon
@@ -99,12 +99,6 @@ export default class Landing extends React.Component {
               style={!this.state.collapsed ? styles.iconBlue : styles.iconGrey}
             />
           </TouchableOpacity>
-          <Collapsible style={styles.collapse} collapsed={this.state.collapsed}>
-          <TextInput
-            style={styles.input}
-            placeholder={"Type the kind of food that you want to eat"}
-          />
-        </Collapsible>
         </View>
 
       </View>
@@ -267,6 +261,20 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     zIndex: 1,
     padding: 0
+  },
+  lastTogglecontainer: {
+    backgroundColor: "white",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    left: 10,
+    top: 30,
+    height: 50,
+    width: 50,
+    alignSelf: "flex-start",
+    zIndex: 1,
+    padding: 0,
+    marginRight: 20,
   },
   image_text_container: {
     display: "flex",

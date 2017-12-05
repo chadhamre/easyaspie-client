@@ -73,7 +73,6 @@ export default class Map extends React.Component {
     if (!delta) delta = 0.015;
     console.log(this.state.initial)
     if (!pagetoken && this.state.initial) {
-      console.log("getPlaces", lat, long, delta, pagetoken, food)
       const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${
         lat
       },${long}&radius=${delta * 50000}&type=restaurant&keyword=${food}&key=${
@@ -97,6 +96,7 @@ export default class Map extends React.Component {
       fetch(url, { method: "GET" })
         .then(data => data.json())
         .then(data => {
+          console.log("data", data.results)
           if (data.results.length !== 0) {
             let old = this.state.restaurants.results;
             this.setState({
