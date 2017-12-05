@@ -37,7 +37,6 @@ export default class Map extends React.Component {
   };
 
   handleButtonClick = async moved => {
-    //|| !this.state.page token below, might be useful?
     if (moved) {
       await this.setState({
         location: this.state.locationChange,
