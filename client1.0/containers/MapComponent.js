@@ -4,6 +4,7 @@ import { MapView, Location, Permissions } from "expo";
 import List from "../components/ListComponent";
 import MarkerList from "../components/MarkerList";
 import RestaurantModal from "./Modal";
+import { GOOGLE_PLACES_API_KEY } from "react-native-dotenv";
 
 export default class Map extends React.Component {
   constructor(props) {
@@ -63,8 +64,9 @@ export default class Map extends React.Component {
     if (!pagetoken && this.state.initial) {
       const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${
         lat
-      },${long}&radius=${delta *
-        50000}&type=restaurant&key=AIzaSyB235UiNw1Uvl6qKDdTQmkpbB4BUuTkX5M`;
+      },${long}&radius=${delta * 50000}&type=restaurant&key=${
+        GOOGLE_PLACES_API_KEY
+      }`;
       fetch(url, { method: "GET" })
         .then(data => data.json())
         .then(data => {
@@ -79,7 +81,7 @@ export default class Map extends React.Component {
         lat
       },${long}&radius=${delta * 50000}&pagetoken=${
         pagetoken
-      }&type=restaurant&key=AIzaSyB235UiNw1Uvl6qKDdTQmkpbB4BUuTkX5M`;
+      }&type=restaurant&key=${GOOGLE_PLACES_API_KEY}`;
       fetch(url, { method: "GET" })
         .then(data => data.json())
         .then(data => {

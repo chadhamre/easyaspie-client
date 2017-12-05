@@ -51,7 +51,6 @@ export default class Landing extends React.Component {
   };
   // render a toggle to swtich to list view
   renderListToggle() {
-
     return !this.state.modal ? (
       <View style={styles.header}>
         <View style={styles.iconContainer}>
@@ -77,7 +76,7 @@ export default class Landing extends React.Component {
             />
           </TouchableOpacity>
         </View>
-        <Image source={require('../assets/logo_easyaspie_blue_small.png')}></Image>
+        {/* <Image source={require('../assets/logo_easyaspie_blue_small.png')}></Image> */}
       </View>
     ) : null;
   }
@@ -142,11 +141,11 @@ const styles = StyleSheet.create({
     flexDirection: "column"
   },
   iconContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    width: '30%',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "row",
+    width: "30%",
+    justifyContent: "space-between",
+    alignItems: "center",
     top: "3%"
   },
   iconGrey: {
@@ -160,19 +159,19 @@ const styles = StyleSheet.create({
   greyBar: {
     width: 2,
     height: 40,
-    top: '25%',
-    left: '20%',
-    backgroundColor: '#f2f2f2',
+    top: "25%",
+    left: "20%",
+    backgroundColor: "#f2f2f2",
     zIndex: 55
   },
   header: {
-    display: 'flex',
-    flexDirection: 'row',
+    display: "flex",
+    flexDirection: "row",
     height: 100,
-    width: '100%',
-    backgroundColor: '#ffffff',
+    width: "100%",
+    backgroundColor: "#ffffff",
     borderBottomWidth: 1.5,
-    borderBottomColor: '#48B9D0'
+    borderBottomColor: "#48B9D0"
   },
   logo: {
     height: 85,
@@ -180,7 +179,7 @@ const styles = StyleSheet.create({
   },
   mapbuttoncontainer: {
     backgroundColor: "white",
-    alignItems: 'center',
+    alignItems: "center",
     position: "absolute",
     minWidth: "33%",
     marginTop: 84,
@@ -193,8 +192,8 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     shadowOpacity: 0.3,
     borderRadius: 7,
-    borderColor: '#48B9D0',
-    borderWidth: 1.5,
+    borderColor: "#48B9D0",
+    borderWidth: 1.5
   },
   togglecontainer: {
     backgroundColor: "white",
@@ -205,7 +204,7 @@ const styles = StyleSheet.create({
     top: 30,
     height: 50,
     width: 50,
-    alignSelf: 'flex-start',
+    alignSelf: "flex-start",
     zIndex: 1,
     padding: 0
   },
