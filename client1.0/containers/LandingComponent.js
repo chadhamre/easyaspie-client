@@ -16,19 +16,11 @@ export default class Landing extends React.Component {
     super(props);
     this.state = {
       moved: false,
-      fontLoaded: false,
       modal: false,
       map: true
     };
   }
 
-  async componentWillMount() {
-    await Font.loadAsync({
-      raleway: require("../assets/fonts/Raleway/Raleway-Regular.ttf"),
-      "raleway-blackitalic": require("../assets/fonts/Raleway/Raleway-BlackItalic.ttf")
-    });
-    this.setState({ fontLoaded: true });
-  }
 
   triggerLogoChange = (moved, end) => {
     this.setState({ moved, end });
@@ -93,7 +85,7 @@ export default class Landing extends React.Component {
       text = "Load More";
     }
     //IF BROKEN, check text below
-    return this.state.fontLoaded && text ? (
+    return text ? (
       <View style={styles.image_text_container}>
         <Text style={styles.text}> {text} </Text>
       </View>
