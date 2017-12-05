@@ -121,6 +121,7 @@ export default class Map extends React.Component {
       return (
         <MapView
           ref="mapRef"
+          provider="google"
           style={styles.map}
           initialRegion={{
             latitude: this.state.location.coords.latitude,
