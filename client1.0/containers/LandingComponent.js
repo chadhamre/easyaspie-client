@@ -160,8 +160,8 @@ const styles = StyleSheet.create({
   greyBar: {
     width: 2,
     height: 40,
-    top: "25%",
-    left: "20%",
+    top: "5%",
+    left: "12%",
     backgroundColor: "#f2f2f2",
     zIndex: 55
   },
