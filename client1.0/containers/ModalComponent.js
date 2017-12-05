@@ -125,17 +125,29 @@ export default class RestaurantModal extends React.Component {
             </Text>
           </LinearGradient>
         </View>
+
         <ScrollView style={styles.scrollview}>
-          <OpenNow open={this.state.open} />
-          <Ratings ratings={this.state.restaurantInfo} />
-          <Price price={this.state.restaurantInfo.price} />
-          <Categories categories={this.state.restaurantInfo.categories} />
-          <View>
+          <View style={styles.callanddirections}>
             <GmapsDirections
               phone={this.state.restaurantInfo.phone}
               destination={this.state.restaurantInfo.location}
             />
           </View>
+          <View style={styles.openprice}>
+            <Price price={this.state.restaurantInfo.price} />
+            <OpenNow open={this.state.open} />
+          </View>
+
+          <Ratings ratings={this.state.restaurantInfo} />
+          {/* <Price price={this.state.restaurantInfo.price} /> */}
+          <Categories categories={this.state.restaurantInfo.categories} />
+
+          {/* <View>
+            <GmapsDirections
+              phone={this.state.restaurantInfo.phone}
+              destination={this.state.restaurantInfo.location}
+            />
+          </View> */}
           {/* <Timetable hours={this.state.restaurantInfo.hours} /> */}
           {/* List of photos component */}
           <PhotoList pictures={this.getPhotoList(this.state.restaurantInfo)} />
@@ -189,6 +201,15 @@ export default class RestaurantModal extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  openprice: {
+    marginTop: 20,
+    width: '100%',
+    flexDirection: "row",
+    justifyContent: "space-around"
+  },
+  gmaps: {
+    marginTop: -40
+  },
   loader__wrap: {
     width: "100%",
     height: "100%",
@@ -200,6 +221,13 @@ const styles = StyleSheet.create({
   loader__image: {
     width: 150,
     height: 75
+  },
+  priceandopen : {
+    flexDirection: "row",
+    backgroundColor: "coral",
+    width: "100%",
+    height: 200
+
   },
   loader__image__smoke: {
     width: 30,
@@ -281,11 +309,9 @@ const styles = StyleSheet.create({
   image__wrapper: {
     position: "relative",
     overflow: "hidden",
-    alignSelf: "flex-start",
-    height: "35%",
-    width: "100%",
-    borderBottomWidth: 5,
-    borderBottomColor: "#FFF"
+    flexDirection: "column",
+    height: "50%",
+    width: "100%"
   },
   main__wrapper: {
     height: "100%",

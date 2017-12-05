@@ -66,56 +66,94 @@ export default class GmapsDirections extends Component {
   render() {
     return (
       <View style={styles.wrapper}>
+        <View style={styles.container}>
+        <View style={styles.first}>
         <TouchableOpacity style={styles.opacities} onPress={this.callThePlace}>
           <Icon
             name="ios-call"
             size={30}
             style={{
-              paddingRight: 10,
-              color: "grey",
+              // paddingRight: 10,
+              color: "black",
               backgroundColor: "transparent"
             }}
           />
-          <Text>Call</Text>
+
         </TouchableOpacity>
+        </View>
+        <View style={styles.second}>
         <TouchableOpacity
           style={styles.opacities}
           onPress={this.handleGetDirections}
         >
           <Icon
-            name="ios-map"
+            name="ios-navigate-outline"
             size={30}
             style={{
-              paddingRight: 10,
-              color: "grey",
+              // paddingRight: 10,
+              color: "black",
               backgroundColor: "transparent"
             }}
           />
-          <Text>Directions</Text>
+
         </TouchableOpacity>
+        </View>
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-    backgroundColor: "#e9e9e9",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    width: "100%",
-    padding: 10
+  first: {
+    justifyContent: "space-around",
+    alignItems: "center",
+    width: "50%",
+    borderStyle: "solid",
+    borderRightWidth: 2,
+    borderColor: "#48B9D0"
   },
-  opacities: {
+  second: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    padding: 5,
-    margin: 5,
-    backgroundColor: "white",
-    width: "45%",
-    borderColor: "#888888",
-    borderWidth: 1
+    width: "50%"
+  },
+  container: {
+    marginTop: 20,
+    borderWidth: 2,
+    borderColor: "#48B9D0",
+    borderRadius: 5,
+    flexDirection: "row",
+    width: "80%",
+    height: "100%",
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 0,
+      height: 1
+    },
+    shadowRadius: 5,
+    shadowOpacity: 0.3
+  },
+  wrapper: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    marginTop: 20,
+
+  },
+  opacities: {
+    flexDirection: "row",
+    alignItems: "center"
   }
+  // opacities: {
+  //   flexDirection: "row",
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  //   width: "50%"
+  //   // borderColor: "#4eb9ce",
+  //   // borderWidth: 2,
+  //   // borderRadius: 5
+  // }
 });

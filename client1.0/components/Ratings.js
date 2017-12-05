@@ -6,6 +6,7 @@ import PercentageCircle from "react-native-percentage-circle";
 import SourceIcons from "./SourceIcons";
 
 export default class Ratings extends Component {
+
   renderIfRatings() {
     if (!this.props.ratings.rating) {
       return (
@@ -18,6 +19,7 @@ export default class Ratings extends Component {
     } else {
       return (
         <View style={styles.rating}>
+          <View style={styles.wrapper}>
           <PercentageCircle
             style={styles.roundthingy}
             radius={60}
@@ -29,6 +31,7 @@ export default class Ratings extends Component {
               {this.props.ratings.rating / 10}
             </Text>
           </PercentageCircle>
+          </View>
         </View>
       );
     }
@@ -48,32 +51,28 @@ export default class Ratings extends Component {
     const hasRating = this.props.ratings.rating;
     return (
       <View style={styles.ratingsList}>
+
         <View style={styles.rating}>{this.renderIfRatings()}</View>
-        <View>
+        <View style={styles.containerboth}>
           <View style={styles.sourcecounts}>
-            <Icon
-              name="ios-arrow-round-back-outline"
-              size={30}
-              style={{
-                paddingRight: 10,
-                color: "grey",
-                backgroundColor: "transparent"
-              }}
-            />
             <Text style={styles.countText}>{count} ratings from</Text>
           </View>
           <View style={styles.sources}>
             <SourceIcons sources={this.props.ratings.ratings} />
           </View>
-        </View>
+          </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  containerboth: {
+    flexDirection: "column"
+  },
   roundthingy: {
-    marginTop: 12
+    alignSelf: "center",
+    justifyContent: "center"
   },
   title: {
     color: "black",
@@ -82,32 +81,36 @@ const styles = StyleSheet.create({
     marginBottom: 12
   },
   rating: {
-    justifyContent: "center",
-    alignItems: "center",
     marginRight: 10
   },
+  wrapper: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginLeft: 12
+  },
   sources: {
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    flexDirection: "row"
+    flexDirection: "row",
+    width: 200,
+    alignItems: "center",
+    justifyContent: "center"
+
   },
   sourcecounts: {
-    display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start"
+    justifyContent: "center",
+    alignItems: "center"
   },
   ratingsList: {
     flexDirection: "row",
-    alignItems: "flex-end",
+    alignItems: "center",
     padding: 20,
-    paddingTop: 0
+    paddingVertical: 12
   },
   easyRating: {
     fontSize: 24
   },
   easyRatingNumber: {
-    color: "#4eb9ce",
+    color: "black",
     fontSize: 40,
     fontFamily: "raleway-blackitalic",
     marginBottom: 8
@@ -117,7 +120,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: -5
   },
   countText: {
-    paddingTop: 5
+    paddingVertical: 6,
+    fontWeight: "bold",
+    fontStyle: "italic",
+    alignSelf: "center"
   },
   icon: {
     height: 20,

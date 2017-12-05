@@ -5,9 +5,11 @@ export default class Categories extends Component {
   // render chips
   renderCategoryChips = () => {
     return this.props.categories.map(cat => (
-      <Text key={cat} style={styles.chip}>
-        {cat}
-      </Text>
+      <View key={cat} style={styles.wrapper}>
+        <Text style={styles.chip}>
+          {cat}
+        </Text>
+      </View>
     ));
   };
 
@@ -21,18 +23,29 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
+    alignItems: "center",
     width: "100%",
-    padding: 10
+    padding: 10,
+    marginBottom: 10,
+    marginTop: 10
+  },
+  wrapper: {
+     borderColor: "#4eb9ce",
+     borderWidth: 2,
+     marginLeft: 12,
+     borderRadius: 6,
+     paddingVertical: 6,
+     paddingHorizontal: 6,
+     shadowColor: '#000000',
+       shadowOffset: {
+         width: 0,
+         height: 2
+       },
+       shadowRadius: 5,
+       shadowOpacity: 0.3
   },
   chip: {
-    color: "#b7b7b7",
-    padding: 10,
-    borderColor: "#b7b7b7",
-    borderWidth: 1,
-    borderRadius: 5,
-    margin: 5,
-    lineHeight: 10,
-    height: 25,
-    color: "#4eb9ce"
+    fontFamily: "raleway-blackitalic",
+    fontStyle: "italic"
   }
 });

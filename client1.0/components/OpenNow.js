@@ -34,23 +34,24 @@ export default class OpenNow extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row"
+    flexDirection: "row",
+    backgroundColor: "white"
   },
   text: {
-    color: "#888888"
+    color: "#333333",
+    fontFamily: "raleway-blackitalic"
   },
   open: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-end",
-    justifyContent: "flex-start",
-    width: "100%",
-    paddingRight: 10
+    // flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 12
+    // paddingRight: 10
   },
   green: {
     width: 10,
     height: 10,
-    backgroundColor: "#4eb9ce",
+    backgroundColor: "#44ad20",
     marginRight: 10,
     borderRadius: 10,
     marginTop: 4

@@ -25,16 +25,18 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    backgroundColor: "#e9e9e9",
-    width: "100%",
+    alignItems: "center",
     padding: 10
   },
   grey: {
-    fontSize: 30,
+    fontSize: 20,
+    fontStyle: "italic",
     color: "#b7b7b7"
   },
   blue: {
-    fontSize: 30,
-    color: "#4eb9ce"
+    fontSize: 20,
+    fontWeight: "bold",
+    fontStyle: "italic",
+    color: "#5C91CA"
   }
 });
