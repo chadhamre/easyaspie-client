@@ -76,7 +76,9 @@ export default class Landing extends React.Component {
             />
           </TouchableOpacity>
         </View>
-        {/* <Image source={require('../assets/logo_easyaspie_blue_small.png')}></Image> */}
+        <View style={{marginLeft: '21%', marginTop:'7%'}}>
+          <Image style={styles.topLogo} source={require('../assets/logo_easyaspie_blue.png')}></Image>
+        </View>
       </View>
     ) : null;
   }
@@ -139,6 +141,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "column"
+  },
+  topLogo: {
+    position: 'absolute',
+    alignSelf: 'center',
+    width: 70,
+    height: 50,
+    zIndex: 20
   },
   iconContainer: {
     display: "flex",
