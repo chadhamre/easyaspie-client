@@ -11,10 +11,16 @@ export default class RestoList extends React.Component {
       restaurants: []
     };
   }
-  // sort data
+
   componentWillMount() {
+    this.listRestaurants();
+  }
+
+  // sort data
+  listRestaurants = (restaurantsInitial = this.props.restaurants) => {
     // calculate distance for each location, and get opening times
-    this.props.restaurants.results.forEach(item => {
+    let restaurants = [];
+    restaurantsInitial.results.forEach(item => {
       // console.log('============', item.photos[0].photo_reference)
       item.distance = Math.round(
         100 *
@@ -40,12 +46,13 @@ export default class RestoList extends React.Component {
         item.description = "Opening Hours Not Available";
         item.line2Style = styles.line2Unknown;
       }
-      this.state.restaurants.push(item);
+      restaurants.push(item);
     });
     // sort array by distance
-    this.state.restaurants.sort((a, b) => {
+    restaurants.sort((a, b) => {
       return a.distance - b.distance;
     });
+    this.setState({restaurants})
   }
   //
   subtitleLines = item => {
@@ -58,6 +65,7 @@ export default class RestoList extends React.Component {
   };
   // handle press event
   pressed = id => this.props.handelPress(id);
+
   // final render -------------------------------------------------------------
   render() {
     return (

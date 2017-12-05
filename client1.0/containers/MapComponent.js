@@ -36,9 +36,19 @@ export default class Map extends React.Component {
     );
   };
 
-  handleButtonClick = async moved => {
+  handleButtonClick = async (moved, food) => {
     //|| !this.state.page token below, might be useful?
-    if (moved) {
+    if (food || food === "") {
+      await this.setState({initial: true});
+      this.getPlaces(
+        this.state.location.coords.latitude,
+        this.state.location.coords.longitude,
+        this.state.location.coords.latitudeDelta,
+        undefined,
+        food
+      );
+    }
+    else if (moved) {
       await this.setState({
         location: this.state.locationChange,
         initial: true
@@ -59,12 +69,14 @@ export default class Map extends React.Component {
     }
   };
 
-  getPlaces = async (lat, long, delta, pagetoken) => {
+  getPlaces = async (lat, long, delta, pagetoken, food = '') => {
     if (!delta) delta = 0.015;
+    console.log(this.state.initial)
     if (!pagetoken && this.state.initial) {
+      console.log("getPlaces", lat, long, delta, pagetoken, food)
       const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${
         lat
-      },${long}&radius=${delta * 50000}&type=restaurant&key=${
+      },${long}&radius=${delta * 50000}&type=restaurant&keyword=${food}&key=${
         GOOGLE_PLACES_API_KEY
       }`;
       fetch(url, { method: "GET" })
@@ -81,7 +93,7 @@ export default class Map extends React.Component {
         lat
       },${long}&radius=${delta * 50000}&pagetoken=${
         pagetoken
-      }&type=restaurant&key=${GOOGLE_PLACES_API_KEY}`;
+      }&type=restaurant&keyword=${food}&key=${GOOGLE_PLACES_API_KEY}`;
       fetch(url, { method: "GET" })
         .then(data => data.json())
         .then(data => {
@@ -144,6 +156,7 @@ export default class Map extends React.Component {
     } else {
       return (
         <List
+          ref={"list"}
           style={styles.container}
           restaurants={this.state.restaurants}
           location={this.state.location}
