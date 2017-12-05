@@ -1,9 +1,8 @@
-import React from 'react';
-import { View } from 'react-native';
+import React from "react";
+import { View } from "react-native";
 import { Font } from "expo";
 
-import Landing from './containers/LandingComponent.js'
-import RestaurantModal from './containers/Modal'
+import Landing from "./containers/LandingComponent";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -20,11 +19,9 @@ export default class App extends React.Component {
   }
 
   renderApp = () => {
-    return this.state.fontLoaded ? <Landing /> : <View />
-  }
+    return this.state.fontLoaded ? <Landing /> : <View />;
+  };
   render() {
-    return (
-        this.renderApp()
-    );
+    return this.renderApp();
   }
 }

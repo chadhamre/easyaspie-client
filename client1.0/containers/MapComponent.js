@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { MapView, Location, Permissions } from "expo";
-import List from "../components/ListComponent";
+import List from "./ListComponent";
+import RestaurantModal from "./ModalComponent";
 import MarkerList from "../components/MarkerList";
-import RestaurantModal from "./Modal";
 import { GOOGLE_PLACES_API_KEY } from "react-native-dotenv";
 
 export default class Map extends React.Component {
