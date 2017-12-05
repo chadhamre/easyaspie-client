@@ -90,6 +90,21 @@ export default class RestaurantModal extends React.Component {
     return "http://chcdigital.com/wp-content/uploads/2015/02/Screen-Shot-2015-02-09-at-5.49.57.png";
   }
 
+  getPhotoList(data) {
+    if (data.photos && data.photos.length > 3) return data.photos;
+    if (data.google_photos.length > 0) {
+      let photosArray = [];
+      data.google_photos.forEach(item =>
+        photosArray.push({
+          uri: `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${
+            item.photo_reference
+          }&key=${GOOGLE_PLACES_API_KEY}`
+        })
+      );
+      return photosArray;
+    }
+  }
+
   renderModal = () => {
     return this.state.restaurantInfo ? (
       <View style={styles.main__wrapper}>
@@ -123,7 +138,7 @@ export default class RestaurantModal extends React.Component {
           </View>
           {/* <Timetable hours={this.state.restaurantInfo.hours} /> */}
           {/* List of photos component */}
-          <PhotoList pictures={this.state.restaurantInfo.photos} />
+          <PhotoList pictures={this.getPhotoList(this.state.restaurantInfo)} />
         </ScrollView>
       </View>
     ) : (
@@ -273,7 +288,6 @@ const styles = StyleSheet.create({
     borderBottomColor: "#FFF"
   },
   main__wrapper: {
-    paddingTop: 20,
     height: "100%",
     width: "100%"
   },
