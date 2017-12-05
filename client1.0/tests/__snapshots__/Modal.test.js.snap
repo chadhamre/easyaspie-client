@@ -8,7 +8,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <RestaurantModal
     foo="bar"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -30,76 +30,76 @@ ShallowWrapper {
       "backdropPressToClose": true,
       "children": <View
         style={
-                Object {
-                        "alignItems": "center",
-                        "display": "flex",
-                        "height": "100%",
-                        "justifyContent": "center",
-                        "position": "relative",
-                        "width": "100%",
-                      }
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "height": "100%",
+            "justifyContent": "center",
+            "position": "relative",
+            "width": "100%",
+          }
         }
->
+      >
         <withAnimatable(View)
-                animation={
-                        Object {
-                                "0": Object {
-                                  "bottom": 0,
-                                  "opacity": 1,
-                                },
-                                "1": Object {
-                                  "bottom": 10,
-                                  "opacity": 0,
-                                },
-                              }
-                }
-                delay={0}
-                direction="alternate"
-                duration={undefined}
-                easing={undefined}
-                iterationCount="infinite"
-                onAnimationBegin={[Function]}
-                onAnimationEnd={[Function]}
-                style={undefined}
-                transition={undefined}
-                useNativeDriver={false}
+          animation={
+            Object {
+              "0": Object {
+                "bottom": 0,
+                "opacity": 1,
+              },
+              "1": Object {
+                "bottom": 10,
+                "opacity": 0,
+              },
+            }
+          }
+          delay={0}
+          direction="alternate"
+          duration={undefined}
+          easing={undefined}
+          iterationCount="infinite"
+          onAnimationBegin={[Function]}
+          onAnimationEnd={[Function]}
+          style={undefined}
+          transition={undefined}
+          useNativeDriver={false}
         >
-                <Image
-                        source={1}
-                        style={
-                                Object {
-                                        "height": 29,
-                                        "marginBottom": 6,
-                                        "width": 30,
-                                      }
-                        }
-                />
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 29,
+                "marginBottom": 6,
+                "width": 30,
+              }
+            }
+          />
         </withAnimatable(View)>
         <Image
-                source={1}
-                style={
-                        Object {
-                                "height": 75,
-                                "width": 150,
-                              }
-                }
+          source={1}
+          style={
+            Object {
+              "height": 75,
+              "width": 150,
+            }
+          }
         />
         <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-                style={
-                        Object {
-                                "color": "#4eb9ce",
-                                "fontFamily": "raleway",
-                                "marginTop": 12,
-                              }
-                }
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#4eb9ce",
+              "fontFamily": "raleway",
+              "marginTop": 12,
+            }
+          }
         >
-                baking ...
+          baking ...
         </Text>
-</View>,
+      </View>,
       "coverScreen": false,
       "easing": [Function],
       "keyboardTopOffset": 22,
@@ -127,16 +127,16 @@ ShallowWrapper {
         "children": Array [
           <withAnimatable(View)
             animation={
-                        Object {
-                                    "0": Object {
-                                      "bottom": 0,
-                                      "opacity": 1,
-                                    },
-                                    "1": Object {
-                                      "bottom": 10,
-                                      "opacity": 0,
-                                    },
-                                  }
+              Object {
+                "0": Object {
+                  "bottom": 0,
+                  "opacity": 1,
+                },
+                "1": Object {
+                  "bottom": 10,
+                  "opacity": 0,
+                },
+              }
             }
             delay={0}
             direction="alternate"
@@ -148,42 +148,42 @@ ShallowWrapper {
             style={undefined}
             transition={undefined}
             useNativeDriver={false}
->
+          >
             <Image
-                        source={1}
-                        style={
-                                    Object {
-                                                "height": 29,
-                                                "marginBottom": 6,
-                                                "width": 30,
-                                              }
-                        }
+              source={1}
+              style={
+                Object {
+                  "height": 29,
+                  "marginBottom": 6,
+                  "width": 30,
+                }
+              }
             />
-</withAnimatable(View)>,
+          </withAnimatable(View)>,
           <Image
             source={1}
             style={
-                        Object {
-                                    "height": 75,
-                                    "width": 150,
-                                  }
+              Object {
+                "height": 75,
+                "width": 150,
+              }
             }
-/>,
+          />,
           <Text
             accessible={true}
             allowFontScaling={true}
             disabled={false}
             ellipsizeMode="tail"
             style={
-                        Object {
-                                    "color": "#4eb9ce",
-                                    "fontFamily": "raleway",
-                                    "marginTop": 12,
-                                  }
+              Object {
+                "color": "#4eb9ce",
+                "fontFamily": "raleway",
+                "marginTop": 12,
+              }
             }
->
+          >
             baking ...
-</Text>,
+          </Text>,
         ],
         "style": Object {
           "alignItems": "center",
@@ -214,13 +214,13 @@ ShallowWrapper {
             "children": <Image
               source={1}
               style={
-                            Object {
-                                          "height": 29,
-                                          "marginBottom": 6,
-                                          "width": 30,
-                                        }
+                Object {
+                  "height": 29,
+                  "marginBottom": 6,
+                  "width": 30,
+                }
               }
-/>,
+            />,
             "delay": 0,
             "direction": "alternate",
             "duration": undefined,
@@ -306,76 +306,76 @@ ShallowWrapper {
         "backdropPressToClose": true,
         "children": <View
           style={
-                    Object {
-                              "alignItems": "center",
-                              "display": "flex",
-                              "height": "100%",
-                              "justifyContent": "center",
-                              "position": "relative",
-                              "width": "100%",
-                            }
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "height": "100%",
+              "justifyContent": "center",
+              "position": "relative",
+              "width": "100%",
+            }
           }
->
+        >
           <withAnimatable(View)
-                    animation={
-                              Object {
-                                        "0": Object {
-                                          "bottom": 0,
-                                          "opacity": 1,
-                                        },
-                                        "1": Object {
-                                          "bottom": 10,
-                                          "opacity": 0,
-                                        },
-                                      }
-                    }
-                    delay={0}
-                    direction="alternate"
-                    duration={undefined}
-                    easing={undefined}
-                    iterationCount="infinite"
-                    onAnimationBegin={[Function]}
-                    onAnimationEnd={[Function]}
-                    style={undefined}
-                    transition={undefined}
-                    useNativeDriver={false}
+            animation={
+              Object {
+                "0": Object {
+                  "bottom": 0,
+                  "opacity": 1,
+                },
+                "1": Object {
+                  "bottom": 10,
+                  "opacity": 0,
+                },
+              }
+            }
+            delay={0}
+            direction="alternate"
+            duration={undefined}
+            easing={undefined}
+            iterationCount="infinite"
+            onAnimationBegin={[Function]}
+            onAnimationEnd={[Function]}
+            style={undefined}
+            transition={undefined}
+            useNativeDriver={false}
           >
-                    <Image
-                              source={1}
-                              style={
-                                        Object {
-                                                  "height": 29,
-                                                  "marginBottom": 6,
-                                                  "width": 30,
-                                                }
-                              }
-                    />
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 29,
+                  "marginBottom": 6,
+                  "width": 30,
+                }
+              }
+            />
           </withAnimatable(View)>
           <Image
-                    source={1}
-                    style={
-                              Object {
-                                        "height": 75,
-                                        "width": 150,
-                                      }
-                    }
+            source={1}
+            style={
+              Object {
+                "height": 75,
+                "width": 150,
+              }
+            }
           />
           <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    disabled={false}
-                    ellipsizeMode="tail"
-                    style={
-                              Object {
-                                        "color": "#4eb9ce",
-                                        "fontFamily": "raleway",
-                                        "marginTop": 12,
-                                      }
-                    }
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#4eb9ce",
+                "fontFamily": "raleway",
+                "marginTop": 12,
+              }
+            }
           >
-                    baking ...
+            baking ...
           </Text>
-</View>,
+        </View>,
         "coverScreen": false,
         "easing": [Function],
         "keyboardTopOffset": 22,
@@ -403,16 +403,16 @@ ShallowWrapper {
           "children": Array [
             <withAnimatable(View)
               animation={
-                            Object {
-                                          "0": Object {
-                                            "bottom": 0,
-                                            "opacity": 1,
-                                          },
-                                          "1": Object {
-                                            "bottom": 10,
-                                            "opacity": 0,
-                                          },
-                                        }
+                Object {
+                  "0": Object {
+                    "bottom": 0,
+                    "opacity": 1,
+                  },
+                  "1": Object {
+                    "bottom": 10,
+                    "opacity": 0,
+                  },
+                }
               }
               delay={0}
               direction="alternate"
@@ -424,42 +424,42 @@ ShallowWrapper {
               style={undefined}
               transition={undefined}
               useNativeDriver={false}
->
+            >
               <Image
-                            source={1}
-                            style={
-                                          Object {
-                                                        "height": 29,
-                                                        "marginBottom": 6,
-                                                        "width": 30,
-                                                      }
-                            }
+                source={1}
+                style={
+                  Object {
+                    "height": 29,
+                    "marginBottom": 6,
+                    "width": 30,
+                  }
+                }
               />
-</withAnimatable(View)>,
+            </withAnimatable(View)>,
             <Image
               source={1}
               style={
-                            Object {
-                                          "height": 75,
-                                          "width": 150,
-                                        }
+                Object {
+                  "height": 75,
+                  "width": 150,
+                }
               }
-/>,
+            />,
             <Text
               accessible={true}
               allowFontScaling={true}
               disabled={false}
               ellipsizeMode="tail"
               style={
-                            Object {
-                                          "color": "#4eb9ce",
-                                          "fontFamily": "raleway",
-                                          "marginTop": 12,
-                                        }
+                Object {
+                  "color": "#4eb9ce",
+                  "fontFamily": "raleway",
+                  "marginTop": 12,
+                }
               }
->
+            >
               baking ...
-</Text>,
+            </Text>,
           ],
           "style": Object {
             "alignItems": "center",
@@ -490,13 +490,13 @@ ShallowWrapper {
               "children": <Image
                 source={1}
                 style={
-                                Object {
-                                                "height": 29,
-                                                "marginBottom": 6,
-                                                "width": 30,
-                                              }
+                  Object {
+                    "height": 29,
+                    "marginBottom": 6,
+                    "width": 30,
+                  }
                 }
-/>,
+              />,
               "delay": 0,
               "direction": "alternate",
               "duration": undefined,
@@ -585,7 +585,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <RestaurantModal
     foo="bar"
     random="prop"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -607,76 +607,76 @@ ShallowWrapper {
       "backdropPressToClose": true,
       "children": <View
         style={
-                Object {
-                        "alignItems": "center",
-                        "display": "flex",
-                        "height": "100%",
-                        "justifyContent": "center",
-                        "position": "relative",
-                        "width": "100%",
-                      }
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "height": "100%",
+            "justifyContent": "center",
+            "position": "relative",
+            "width": "100%",
+          }
         }
->
+      >
         <withAnimatable(View)
-                animation={
-                        Object {
-                                "0": Object {
-                                  "bottom": 0,
-                                  "opacity": 1,
-                                },
-                                "1": Object {
-                                  "bottom": 10,
-                                  "opacity": 0,
-                                },
-                              }
-                }
-                delay={0}
-                direction="alternate"
-                duration={undefined}
-                easing={undefined}
-                iterationCount="infinite"
-                onAnimationBegin={[Function]}
-                onAnimationEnd={[Function]}
-                style={undefined}
-                transition={undefined}
-                useNativeDriver={false}
+          animation={
+            Object {
+              "0": Object {
+                "bottom": 0,
+                "opacity": 1,
+              },
+              "1": Object {
+                "bottom": 10,
+                "opacity": 0,
+              },
+            }
+          }
+          delay={0}
+          direction="alternate"
+          duration={undefined}
+          easing={undefined}
+          iterationCount="infinite"
+          onAnimationBegin={[Function]}
+          onAnimationEnd={[Function]}
+          style={undefined}
+          transition={undefined}
+          useNativeDriver={false}
         >
-                <Image
-                        source={1}
-                        style={
-                                Object {
-                                        "height": 29,
-                                        "marginBottom": 6,
-                                        "width": 30,
-                                      }
-                        }
-                />
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 29,
+                "marginBottom": 6,
+                "width": 30,
+              }
+            }
+          />
         </withAnimatable(View)>
         <Image
-                source={1}
-                style={
-                        Object {
-                                "height": 75,
-                                "width": 150,
-                              }
-                }
+          source={1}
+          style={
+            Object {
+              "height": 75,
+              "width": 150,
+            }
+          }
         />
         <Text
-                accessible={true}
-                allowFontScaling={true}
-                disabled={false}
-                ellipsizeMode="tail"
-                style={
-                        Object {
-                                "color": "#4eb9ce",
-                                "fontFamily": "raleway",
-                                "marginTop": 12,
-                              }
-                }
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#4eb9ce",
+              "fontFamily": "raleway",
+              "marginTop": 12,
+            }
+          }
         >
-                baking ...
+          baking ...
         </Text>
-</View>,
+      </View>,
       "coverScreen": false,
       "easing": [Function],
       "keyboardTopOffset": 22,
@@ -704,16 +704,16 @@ ShallowWrapper {
         "children": Array [
           <withAnimatable(View)
             animation={
-                        Object {
-                                    "0": Object {
-                                      "bottom": 0,
-                                      "opacity": 1,
-                                    },
-                                    "1": Object {
-                                      "bottom": 10,
-                                      "opacity": 0,
-                                    },
-                                  }
+              Object {
+                "0": Object {
+                  "bottom": 0,
+                  "opacity": 1,
+                },
+                "1": Object {
+                  "bottom": 10,
+                  "opacity": 0,
+                },
+              }
             }
             delay={0}
             direction="alternate"
@@ -725,42 +725,42 @@ ShallowWrapper {
             style={undefined}
             transition={undefined}
             useNativeDriver={false}
->
+          >
             <Image
-                        source={1}
-                        style={
-                                    Object {
-                                                "height": 29,
-                                                "marginBottom": 6,
-                                                "width": 30,
-                                              }
-                        }
+              source={1}
+              style={
+                Object {
+                  "height": 29,
+                  "marginBottom": 6,
+                  "width": 30,
+                }
+              }
             />
-</withAnimatable(View)>,
+          </withAnimatable(View)>,
           <Image
             source={1}
             style={
-                        Object {
-                                    "height": 75,
-                                    "width": 150,
-                                  }
+              Object {
+                "height": 75,
+                "width": 150,
+              }
             }
-/>,
+          />,
           <Text
             accessible={true}
             allowFontScaling={true}
             disabled={false}
             ellipsizeMode="tail"
             style={
-                        Object {
-                                    "color": "#4eb9ce",
-                                    "fontFamily": "raleway",
-                                    "marginTop": 12,
-                                  }
+              Object {
+                "color": "#4eb9ce",
+                "fontFamily": "raleway",
+                "marginTop": 12,
+              }
             }
->
+          >
             baking ...
-</Text>,
+          </Text>,
         ],
         "style": Object {
           "alignItems": "center",
@@ -791,13 +791,13 @@ ShallowWrapper {
             "children": <Image
               source={1}
               style={
-                            Object {
-                                          "height": 29,
-                                          "marginBottom": 6,
-                                          "width": 30,
-                                        }
+                Object {
+                  "height": 29,
+                  "marginBottom": 6,
+                  "width": 30,
+                }
               }
-/>,
+            />,
             "delay": 0,
             "direction": "alternate",
             "duration": undefined,
@@ -883,76 +883,76 @@ ShallowWrapper {
         "backdropPressToClose": true,
         "children": <View
           style={
-                    Object {
-                              "alignItems": "center",
-                              "display": "flex",
-                              "height": "100%",
-                              "justifyContent": "center",
-                              "position": "relative",
-                              "width": "100%",
-                            }
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "height": "100%",
+              "justifyContent": "center",
+              "position": "relative",
+              "width": "100%",
+            }
           }
->
+        >
           <withAnimatable(View)
-                    animation={
-                              Object {
-                                        "0": Object {
-                                          "bottom": 0,
-                                          "opacity": 1,
-                                        },
-                                        "1": Object {
-                                          "bottom": 10,
-                                          "opacity": 0,
-                                        },
-                                      }
-                    }
-                    delay={0}
-                    direction="alternate"
-                    duration={undefined}
-                    easing={undefined}
-                    iterationCount="infinite"
-                    onAnimationBegin={[Function]}
-                    onAnimationEnd={[Function]}
-                    style={undefined}
-                    transition={undefined}
-                    useNativeDriver={false}
+            animation={
+              Object {
+                "0": Object {
+                  "bottom": 0,
+                  "opacity": 1,
+                },
+                "1": Object {
+                  "bottom": 10,
+                  "opacity": 0,
+                },
+              }
+            }
+            delay={0}
+            direction="alternate"
+            duration={undefined}
+            easing={undefined}
+            iterationCount="infinite"
+            onAnimationBegin={[Function]}
+            onAnimationEnd={[Function]}
+            style={undefined}
+            transition={undefined}
+            useNativeDriver={false}
           >
-                    <Image
-                              source={1}
-                              style={
-                                        Object {
-                                                  "height": 29,
-                                                  "marginBottom": 6,
-                                                  "width": 30,
-                                                }
-                              }
-                    />
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 29,
+                  "marginBottom": 6,
+                  "width": 30,
+                }
+              }
+            />
           </withAnimatable(View)>
           <Image
-                    source={1}
-                    style={
-                              Object {
-                                        "height": 75,
-                                        "width": 150,
-                                      }
-                    }
+            source={1}
+            style={
+              Object {
+                "height": 75,
+                "width": 150,
+              }
+            }
           />
           <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    disabled={false}
-                    ellipsizeMode="tail"
-                    style={
-                              Object {
-                                        "color": "#4eb9ce",
-                                        "fontFamily": "raleway",
-                                        "marginTop": 12,
-                                      }
-                    }
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#4eb9ce",
+                "fontFamily": "raleway",
+                "marginTop": 12,
+              }
+            }
           >
-                    baking ...
+            baking ...
           </Text>
-</View>,
+        </View>,
         "coverScreen": false,
         "easing": [Function],
         "keyboardTopOffset": 22,
@@ -980,16 +980,16 @@ ShallowWrapper {
           "children": Array [
             <withAnimatable(View)
               animation={
-                            Object {
-                                          "0": Object {
-                                            "bottom": 0,
-                                            "opacity": 1,
-                                          },
-                                          "1": Object {
-                                            "bottom": 10,
-                                            "opacity": 0,
-                                          },
-                                        }
+                Object {
+                  "0": Object {
+                    "bottom": 0,
+                    "opacity": 1,
+                  },
+                  "1": Object {
+                    "bottom": 10,
+                    "opacity": 0,
+                  },
+                }
               }
               delay={0}
               direction="alternate"
@@ -1001,42 +1001,42 @@ ShallowWrapper {
               style={undefined}
               transition={undefined}
               useNativeDriver={false}
->
+            >
               <Image
-                            source={1}
-                            style={
-                                          Object {
-                                                        "height": 29,
-                                                        "marginBottom": 6,
-                                                        "width": 30,
-                                                      }
-                            }
+                source={1}
+                style={
+                  Object {
+                    "height": 29,
+                    "marginBottom": 6,
+                    "width": 30,
+                  }
+                }
               />
-</withAnimatable(View)>,
+            </withAnimatable(View)>,
             <Image
               source={1}
               style={
-                            Object {
-                                          "height": 75,
-                                          "width": 150,
-                                        }
+                Object {
+                  "height": 75,
+                  "width": 150,
+                }
               }
-/>,
+            />,
             <Text
               accessible={true}
               allowFontScaling={true}
               disabled={false}
               ellipsizeMode="tail"
               style={
-                            Object {
-                                          "color": "#4eb9ce",
-                                          "fontFamily": "raleway",
-                                          "marginTop": 12,
-                                        }
+                Object {
+                  "color": "#4eb9ce",
+                  "fontFamily": "raleway",
+                  "marginTop": 12,
+                }
               }
->
+            >
               baking ...
-</Text>,
+            </Text>,
           ],
           "style": Object {
             "alignItems": "center",
@@ -1067,13 +1067,13 @@ ShallowWrapper {
               "children": <Image
                 source={1}
                 style={
-                                Object {
-                                                "height": 29,
-                                                "marginBottom": 6,
-                                                "width": 30,
-                                              }
+                  Object {
+                    "height": 29,
+                    "marginBottom": 6,
+                    "width": 30,
+                  }
                 }
-/>,
+              />,
               "delay": 0,
               "direction": "alternate",
               "duration": undefined,
