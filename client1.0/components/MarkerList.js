@@ -1,17 +1,23 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableHighlight } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableHighlight
+} from "react-native";
 import { MapView, Location, Permissions } from "expo";
 
 export default class MarkerList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
+      id: null
     };
   }
   render() {
     let list = this.props.restaurants ? (
-      this.props.restaurants.results.map(el => {
+      this.props.restaurants.results.filter(item => item.photos).map(el => {
         let latlong = {
           latitude: el.geometry.location.lat,
           longitude: el.geometry.location.lng
@@ -25,15 +31,15 @@ export default class MarkerList extends React.Component {
           open = false;
           styleCallout = styles.descriptionClosed;
         } else {
-          description ="Opening Hours Not Available";
-          open = 'Unknown';
+          description = "Opening Hours Not Available";
+          open = "Unknown";
           styleCallout = styles.descriptionUnknown;
         }
         return (
           <MapView.Marker
-            image={require('../assets/pin-easyaspie-final.png')}
+            image={require("../assets/pin-easyaspie-final.png")}
             identifier={`${el.place_id} ${open}`}
-            open = {open}
+            open={open}
             key={el.id}
             title={el.name}
             coordinate={latlong}
@@ -42,10 +48,13 @@ export default class MarkerList extends React.Component {
               let array = e.nativeEvent.id.split(" ");
               let id = array[0];
               let open = array[1];
-              this.setState({ id, open })}}
+              this.setState({ id, open });
+            }}
           >
             <MapView.Callout
-              onPress={e => this.props.handelMarkerPress(this.state.id, this.state.open)}
+              onPress={e =>
+                this.props.handelMarkerPress(this.state.id, this.state.open)
+              }
               tooltip={false}
             >
               <View style={styles.callout}>
@@ -66,12 +75,12 @@ const styles = StyleSheet.create({
   callout: {
     padding: 12,
     maxWidth: 150,
-    backgroundColor: '#ffffff',
+    backgroundColor: "#ffffff"
   },
   calloutPressed: {
     padding: 12,
     maxWidth: 150,
-    backgroundColor: '#ffffff'
+    backgroundColor: "#ffffff"
   },
   title: {
     fontFamily: "raleway-blackitalic",
@@ -81,18 +90,18 @@ const styles = StyleSheet.create({
     fontFamily: "raleway",
     fontSize: 12,
     marginTop: 3,
-    color: '#4eb9ce',
+    color: "#4eb9ce"
   },
   descriptionClosed: {
     fontFamily: "raleway",
     fontSize: 12,
     marginTop: 3,
-    color: '#b44316'
+    color: "#b44316"
   },
   descriptionUnknown: {
     fontFamily: "raleway",
     fontSize: 12,
     marginTop: 3,
-    color: '#888888'
+    color: "#888888"
   }
 });

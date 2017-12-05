@@ -3,6 +3,7 @@ import Button from "react-native-button";
 import Modal from "react-native-modalbox";
 import { LinearGradient } from "expo";
 import Icon from "react-native-vector-icons/Ionicons";
+import { GOOGLE_PLACES_API_KEY } from "react-native-dotenv";
 
 import Ratings from "../components/Ratings";
 import Timetable from "../components/Timetable";
@@ -39,7 +40,7 @@ export default class RestaurantModal extends React.Component {
       sliderValue: 0.3,
       restaurantInfo: null,
       id: null,
-      open: false,
+      open: false
     };
   }
 
@@ -51,12 +52,12 @@ export default class RestaurantModal extends React.Component {
     this.setState({ restaurantInfo: null });
     this.props.triggerModal();
   };
-  getId = (id,open) => {
+  getId = (id, open) => {
     this.setState({ id, open });
   };
 
   getRestaurant(id) {
-    fetch(`https://easy-as-pie-api.herokuapp.com/api/v1/places/${id}`, {
+    fetch(`http://192.168.0.83:4000/api/v1/places/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -74,6 +75,21 @@ export default class RestaurantModal extends React.Component {
       });
   }
 
+  getModalPhoto(data) {
+    if (
+      data.google_photos &&
+      data.google_photos.length > 0 &&
+      data.google_photos[0]
+    ) {
+      return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${
+        data.google_photos[0].photo_reference
+      }&key=${GOOGLE_PLACES_API_KEY}`;
+    }
+    if (data.bestPhoto) return data.bestPhoto;
+    if (data.cover) return data.cover;
+    return "http://chcdigital.com/wp-content/uploads/2015/02/Screen-Shot-2015-02-09-at-5.49.57.png";
+  }
+
   renderModal = () => {
     return this.state.restaurantInfo ? (
       <View style={styles.main__wrapper}>
@@ -81,10 +97,7 @@ export default class RestaurantModal extends React.Component {
           <Image
             style={styles.image}
             source={{
-              uri:
-                this.state.restaurantInfo.bestPhoto === null
-                  ? "http://chcdigital.com/wp-content/uploads/2015/02/Screen-Shot-2015-02-09-at-5.49.57.png"
-                  : this.state.restaurantInfo.bestPhoto
+              uri: this.getModalPhoto(this.state.restaurantInfo)
             }}
           />
           <LinearGradient

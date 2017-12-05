@@ -72,33 +72,35 @@ export default class RestoList extends React.Component {
             borderColor: "#F2F2F2"
           }}
         >
-          {this.state.restaurants.map((item, key) => (
-            <ListItem
-              containerStyle={styles.listItemContainer}
-              avatar={
-                <Avatar
-                  rounded
-                  large
-                  source={
-                    item.photos
-                      ? {
-                          uri: `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${
-                            item.photos[0].photo_reference
-                          }&key=${GOOGLE_PLACES_API_KEY}`
-                        }
-                      : require("../assets/logo_easyaspie_bw.png")
-                  }
-                />
-              }
-              avatarStyle={styles.avatar}
-              onPress={() => this.pressed(item.place_id)}
-              key={key}
-              title={item.name}
-              titleStyle={styles.title}
-              subtitle={this.subtitleLines(item)}
-              subtitleNumberOfLines={2}
-            />
-          ))}
+          {this.state.restaurants
+            .filter(item => item.photos)
+            .map((item, key) => (
+              <ListItem
+                containerStyle={styles.listItemContainer}
+                avatar={
+                  <Avatar
+                    rounded
+                    large
+                    source={
+                      item.photos
+                        ? {
+                            uri: `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${
+                              item.photos[0].photo_reference
+                            }&key=${GOOGLE_PLACES_API_KEY}`
+                          }
+                        : require("../assets/logo_easyaspie_bw.png")
+                    }
+                  />
+                }
+                avatarStyle={styles.avatar}
+                onPress={() => this.pressed(item.place_id)}
+                key={key}
+                title={item.name}
+                titleStyle={styles.title}
+                subtitle={this.subtitleLines(item)}
+                subtitleNumberOfLines={2}
+              />
+            ))}
         </List>
       </ScrollView>
     );
