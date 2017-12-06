@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		2C1548D9E4CB1AEFA5CCAE6D /* Pods-condensed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-condensed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-condensed/Pods-condensed.debug.xcconfig"; sourceTree = "<group>"; };
+		9CA1BC9F1FD7204F00DB9075 /* condensed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = condensed.entitlements; sourceTree = "<group>"; };
 		A47FE4D7F70906B7DC8CE39B /* Pods-condensed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-condensed.release.xcconfig"; path = "Pods/Target Support Files/Pods-condensed/Pods-condensed.release.xcconfig"; sourceTree = "<group>"; };
 		B501732A1DC01252003445D9 /* EXShell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EXShell.plist; sourceTree = "<group>"; };
 		B56386411DB9693800A0598C /* condensed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = condensed.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +90,7 @@
 		B56386431DB9693800A0598C /* condensed */ = {
 			isa = PBXGroup;
 			children = (
+				9CA1BC9F1FD7204F00DB9075 /* condensed.entitlements */,
 				B56386471DB9693800A0598C /* AppDelegate.h */,
 				B56386481DB9693800A0598C /* AppDelegate.m */,
 				B56386501DB9693800A0598C /* Assets.xcassets */,
@@ -148,13 +150,17 @@
 				TargetAttributes = {
 					B56386401DB9693800A0598C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = DUPGQA46HP;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
 			buildConfigurationList = B563863C1DB9693800A0598C /* Build configuration list for PBXProject "condensed" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
