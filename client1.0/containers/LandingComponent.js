@@ -32,10 +32,8 @@ export default class Landing extends React.Component {
     this.refs.map.handleButtonClick(this.state.moved);
   };
   triggerFilter = async food => {
-    console.log("TRIGGER FILTER:", food);
     await this.refs.map.handleButtonClick(false, food);
     if (this.refs.map.refs.list) {
-      // console.log(this.refs.map.state.restaurants)
       this.refs.map.refs.list.listRestaurants(this.refs.map.state.restaurants);
     }
   };

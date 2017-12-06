@@ -38,8 +38,6 @@ export default class Map extends React.Component {
   };
 
   handleButtonClick = async (moved, food) => {
-    console.log("HANDLE BUTTON CLICK:", food);
-    //|| !this.state.page token below, might be useful?
     if (food || food === "") {
       await this.setState({ initial: true });
       this.getPlaces(
@@ -71,9 +69,7 @@ export default class Map extends React.Component {
   };
 
   getPlaces = async (lat, long, delta, pagetoken, food = "") => {
-    console.log("GET PLACES:", food);
     if (!delta) delta = 0.015;
-    //console.log(this.state.initial)
     if (!pagetoken && this.state.initial) {
       const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${
         lat
@@ -98,7 +94,6 @@ export default class Map extends React.Component {
       fetch(url, { method: "GET" })
         .then(data => data.json())
         .then(data => {
-          //console.log("data", data.results)
           if (data.results.length !== 0) {
             let old = this.state.restaurants.results;
             this.setState({
@@ -132,11 +127,6 @@ export default class Map extends React.Component {
     this.refs.mapRef.animateToRegion(this.state.location.coords);
   };
   renderMapOrList() {
-    console.log(
-      "RENDER MAP OR LIST:",
-      this.props.renderWhat ? "MAP" : "LIST",
-      this.state.restaurants ? this.state.restaurants.results.length : 0
-    );
     if (this.props.renderWhat === true) {
       return (
         <MapView
@@ -161,10 +151,6 @@ export default class Map extends React.Component {
         </MapView>
       );
     } else {
-      console.log(
-        "RENDER LIST:",
-        this.state.restaurants ? this.state.restaurants.results.length : 0
-      );
       return (
         <List
           ref={"list"}

@@ -41,6 +41,9 @@ export default class ModalSearch extends React.Component {
         onClosed={() => console.log("CLOSED")}
         onOpened={() => console.log("OPENED")}
       >
+        <View style={styles.pullerHolder}>
+          <View style={styles.puller} />
+        </View>
         <View style={styles.wrap}>
           <Icon name={"ios-search"} size={50} style={styles.iconBlue} />
           <Text style={styles.text}>what kind of food do you feel like?</Text>
@@ -95,5 +98,28 @@ const styles = StyleSheet.create({
     color: "#48B9D0",
     backgroundColor: "transparent",
     textAlign: "center"
+  },
+  pullerHolder: {
+    zIndex: 999,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    position: "absolute",
+    height: 25,
+    width: "100%"
+  },
+  puller: {
+    backgroundColor: "transparent",
+    width: "30%",
+    borderColor: "rgba(255,255,255,.9)",
+    borderWidth: 2,
+    borderRadius: 4,
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 0.8
+    },
+    shadowRadius: 1,
+    shadowOpacity: 0.5
   }
 });

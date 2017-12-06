@@ -108,6 +108,9 @@ export default class RestaurantModal extends React.Component {
   renderModal = () => {
     return this.state.restaurantInfo ? (
       <View style={styles.main__wrapper}>
+        <View style={styles.pullerHolder}>
+          <View style={styles.puller} />
+        </View>
         <View style={styles.image__wrapper}>
           <Image
             style={styles.image}
@@ -323,6 +326,29 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0
+  },
+  pullerHolder: {
+    zIndex: 999,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    position: "absolute",
+    height: 25,
+    width: "100%"
+  },
+  puller: {
+    backgroundColor: "transparent",
+    width: "30%",
+    borderColor: "rgba(255,255,255,.9)",
+    borderWidth: 2,
+    borderRadius: 4,
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 0.8
+    },
+    shadowRadius: 1,
+    shadowOpacity: 0.5
   }
 });
 
