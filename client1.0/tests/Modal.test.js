@@ -2,7 +2,11 @@ import React from "react";
 import renderer from "react-test-renderer";
 import { shallow } from "enzyme";
 
+<<<<<<< HEAD
 import RestaurantModal from "../containers/ModalComponent.js";
+=======
+import RestaurantModal from '../containers/ModalComponent.js'
+>>>>>>> search
 
 const restaurantModal = renderer.create(<RestaurantModal />);
 const RestaurantModalInstance = restaurantModal.root;
@@ -83,8 +87,12 @@ const placeHolderData = {
   prices: {
     foursquare: 9999
   },
+<<<<<<< HEAD
   rating: 11,
   ratings: {
     google: 0
   }
 };
+=======
+}
+>>>>>>> search

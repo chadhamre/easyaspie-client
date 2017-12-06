@@ -4,12 +4,15 @@ import {
   Text,
   View,
   Image,
+  TextInput,
   TouchableHighlight,
   TouchableOpacity
 } from "react-native";
 import Map from "./MapComponent";
+import ModalSearch from "./ModalSearch";
 import { MapView, Font } from "expo";
 import Icon from "react-native-vector-icons/Ionicons";
+import Collapsible from "react-native-collapsible";
 
 export default class Landing extends React.Component {
   constructor(props) {
@@ -17,16 +20,24 @@ export default class Landing extends React.Component {
     this.state = {
       moved: false,
       modal: false,
-      map: true
+      map: true,
+      collapsed: true
     };
   }
-
 
   triggerLogoChange = (moved, end) => {
     this.setState({ moved, end });
   };
   triggerRerender = () => {
     this.refs.map.handleButtonClick(this.state.moved);
+  };
+  triggerFilter = async food => {
+    console.log("TRIGGER FILTER:", food);
+    await this.refs.map.handleButtonClick(false, food);
+    if (this.refs.map.refs.list) {
+      // console.log(this.refs.map.state.restaurants)
+      this.refs.map.refs.list.listRestaurants(this.refs.map.state.restaurants);
+    }
   };
 
   // show list view
@@ -41,6 +52,11 @@ export default class Landing extends React.Component {
   triggerModal = () => {
     this.setState({ modal: !this.state.modal });
   };
+
+  triggerModalSearch = () => {
+    this.setState({ modalSearch: !this.state.modalSearch });
+  };
+
   // render a toggle to swtich to list view
   renderListToggle() {
     return !this.state.modal ? (
@@ -63,13 +79,28 @@ export default class Landing extends React.Component {
           >
             <Icon
               name={"ios-pin"}
-              size={30}
+              size={40}
               style={this.state.map ? styles.iconBlue : styles.iconGrey}
             />
           </TouchableOpacity>
         </View>
-        <View style={{marginLeft: '21%', marginTop:'7%'}}>
-          <Image style={styles.topLogo} source={require('../assets/logo_easyaspie_blue.png')}></Image>
+        <View style={styles.topLogo}>
+          <Image
+            style={styles.topLogoImg}
+            source={require("../assets/logo_easyaspie_blue.png")}
+          />
+        </View>
+        <View>
+          <TouchableOpacity
+            style={styles.lastTogglecontainer}
+            onPress={() => this.refs.modalSearch.refs.modalSearch.open()}
+          >
+            <Icon
+              name={"ios-search"}
+              size={40}
+              style={!this.state.collapsed ? styles.iconBlue : styles.iconGrey}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     ) : null;
@@ -110,6 +141,7 @@ export default class Landing extends React.Component {
         ref="map"
         triggerLogoChange={this.triggerLogoChange}
         triggerModal={this.triggerModal}
+        triggerModalSearch={this.triggerModalSearch}
         renderWhat={this.state.map}
       />
     );
@@ -121,12 +153,27 @@ export default class Landing extends React.Component {
         {this.renderListToggle()}
         {this.renderMapButtonContainer()}
         {this.renderMainContent()}
+        <ModalSearch ref={"modalSearch"} triggerFilter={this.triggerFilter} />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  input: {
+    height: 50,
+    width: 200,
+    backgroundColor: "lime"
+  },
+  collapse: {
+    position: "absolute",
+    zIndex: 60,
+    left: 0,
+    top: 0,
+    width: 200,
+    height: 200,
+    backgroundColor: "red"
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -135,11 +182,15 @@ const styles = StyleSheet.create({
     flexDirection: "column"
   },
   topLogo: {
-    position: 'absolute',
-    alignSelf: 'center',
+    position: "absolute",
+    zIndex: 20,
+    left: "50%",
+    top: "50%",
+    transform: [{ translateX: -35 }, { translateY: -20 }]
+  },
+  topLogoImg: {
     width: 70,
-    height: 50,
-    zIndex: 20
+    height: 50
   },
   iconContainer: {
     display: "flex",
@@ -172,7 +223,8 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "#ffffff",
     borderBottomWidth: 1.5,
-    borderBottomColor: "#48B9D0"
+    borderBottomColor: "#48B9D0",
+    justifyContent: "space-between"
   },
   logo: {
     height: 85,
@@ -208,6 +260,20 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     zIndex: 1,
     padding: 0
+  },
+  lastTogglecontainer: {
+    backgroundColor: "white",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    left: 10,
+    top: 30,
+    height: 50,
+    width: 50,
+    alignSelf: "flex-start",
+    zIndex: 1,
+    padding: 0,
+    marginRight: 20
   },
   image_text_container: {
     display: "flex",
