@@ -12,7 +12,7 @@ import Map from "./MapComponent";
 import ModalSearch from "./ModalSearch";
 import { MapView, Font } from "expo";
 import Icon from "react-native-vector-icons/Ionicons";
-import Collapsible from 'react-native-collapsible';
+import Collapsible from "react-native-collapsible";
 
 export default class Landing extends React.Component {
   constructor(props) {
@@ -21,10 +21,9 @@ export default class Landing extends React.Component {
       moved: false,
       modal: false,
       map: true,
-      collapsed: true,
+      collapsed: true
     };
   }
-
 
   triggerLogoChange = (moved, end) => {
     this.setState({ moved, end });
@@ -33,12 +32,13 @@ export default class Landing extends React.Component {
     this.refs.map.handleButtonClick(this.state.moved);
   };
   triggerFilter = async food => {
-    await this.refs.map.handleButtonClick(false, food)
+    console.log("TRIGGER FILTER:", food);
+    await this.refs.map.handleButtonClick(false, food);
     if (this.refs.map.refs.list) {
-      console.log(this.refs.map.state.restaurants)
+      // console.log(this.refs.map.state.restaurants)
       this.refs.map.refs.list.listRestaurants(this.refs.map.state.restaurants);
     }
-  }
+  };
 
   // show list view
   toggleList = () => {
@@ -59,8 +59,7 @@ export default class Landing extends React.Component {
 
   // render a toggle to swtich to list view
   renderListToggle() {
-    return !this.state.modal
-      ? (
+    return !this.state.modal ? (
       <View style={styles.header}>
         <View style={styles.iconContainer}>
           <TouchableOpacity
@@ -86,7 +85,10 @@ export default class Landing extends React.Component {
           </TouchableOpacity>
         </View>
         <View style={styles.topLogo}>
-          <Image style={styles.topLogoImg} source={require('../assets/logo_easyaspie_blue.png')}></Image>
+          <Image
+            style={styles.topLogoImg}
+            source={require("../assets/logo_easyaspie_blue.png")}
+          />
         </View>
         <View>
           <TouchableOpacity
@@ -100,11 +102,8 @@ export default class Landing extends React.Component {
             />
           </TouchableOpacity>
         </View>
-
       </View>
-    )
-    :
-    null;
+    ) : null;
   }
   // render map action button
   renderMapButton(moved, end) {
@@ -164,16 +163,16 @@ const styles = StyleSheet.create({
   input: {
     height: 50,
     width: 200,
-    backgroundColor: "lime",
+    backgroundColor: "lime"
   },
   collapse: {
-    position: 'absolute',
+    position: "absolute",
     zIndex: 60,
     left: 0,
     top: 0,
     width: 200,
     height: 200,
-    backgroundColor: 'red',
+    backgroundColor: "red"
   },
   container: {
     flex: 1,
@@ -183,15 +182,15 @@ const styles = StyleSheet.create({
     flexDirection: "column"
   },
   topLogo: {
-    position: 'absolute',
+    position: "absolute",
     zIndex: 20,
-    left: '50%',
-    top: '50%',
-    transform: [{translateX: -35}, {translateY: -20}]
+    left: "50%",
+    top: "50%",
+    transform: [{ translateX: -35 }, { translateY: -20 }]
   },
   topLogoImg: {
     width: 70,
-    height: 50,
+    height: 50
   },
   iconContainer: {
     display: "flex",
@@ -274,7 +273,7 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     zIndex: 1,
     padding: 0,
-    marginRight: 20,
+    marginRight: 20
   },
   image_text_container: {
     display: "flex",

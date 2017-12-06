@@ -23,13 +23,13 @@ export default class ModalSearch extends React.Component {
       locationChange: null
     };
   }
-  onOpened = () => {
-  }
-  triggerFilter = (food) => {
+  onOpened = () => {};
+
+  triggerFilter = food => {
+    console.log("TRIGGER FILTER:", food);
     this.props.triggerFilter(food);
     this.refs.modalSearch.close();
-  }
-
+  };
 
   // final render --------------------------------------------------------------
   render() {
@@ -44,17 +44,18 @@ export default class ModalSearch extends React.Component {
         onClosingState={this.onClosingState}
       >
         <View style={styles.wrap}>
-          <Icon
-            name={"ios-search"}
-            size={50}
-            style={styles.iconBlue}
+          <Icon name={"ios-search"} size={50} style={styles.iconBlue} />
+          <Text style={styles.text}>what kind of food do you feel like?</Text>
+          <TextInput
+            style={styles.input}
+            placeholder={"Type here"}
+            onSubmitEditing={e => {
+              this.triggerFilter(e.nativeEvent.text);
+            }}
           />
-          <Text style={styles.text}>Type the kind of food that you would like to eat</Text>
-          <TextInput  style={styles.input} placeholder={"Type here"} onSubmitEditing={(e) => {this.triggerFilter(e.nativeEvent.text)}}></TextInput>
         </View>
       </Modal>
-
-    )
+    );
   }
 }
 
@@ -64,10 +65,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     // justifyContent: "center",
     backgroundColor: "#F2F2F2",
-    paddingTop: "20%",
+    paddingTop: "20%"
   },
   wrap: {
-    width: "90%",
+    width: "90%"
   },
   input: {
     fontFamily: "raleway",
@@ -89,12 +90,12 @@ const styles = StyleSheet.create({
     fontFamily: "raleway-blackitalic",
     fontSize: 18,
     marginVertical: 20,
-    color: '#333',
+    color: "#333",
     textAlign: "center"
   },
   iconBlue: {
     color: "#48B9D0",
     backgroundColor: "transparent",
     textAlign: "center"
-  },
+  }
 });

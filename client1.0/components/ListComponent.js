@@ -13,7 +13,16 @@ export default class RestoList extends React.Component {
   }
 
   componentWillMount() {
+    console.log("COMPONENT WILL MOUNT:", this.props.restaurants.results.length);
     this.listRestaurants();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(
+      "COMPONENT WILL RECEIVE PROPS:",
+      nextProps.restaurants.results.length
+    );
+    this.listRestaurants(nextProps.restaurants);
   }
 
   // sort data
@@ -52,8 +61,8 @@ export default class RestoList extends React.Component {
     restaurants.sort((a, b) => {
       return a.distance - b.distance;
     });
-    this.setState({restaurants})
-  }
+    this.setState({ restaurants });
+  };
   //
   subtitleLines = item => {
     return (
