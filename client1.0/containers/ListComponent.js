@@ -14,15 +14,10 @@ export default class RestoList extends React.Component {
 
   componentWillMount() {
     // modalSearch.close();
-    console.log("COMPONENT WILL MOUNT:", this.props.restaurants.results.length);
     this.listRestaurants();
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(
-      "COMPONENT WILL RECEIVE PRPS:",
-      nextProps.restaurants.results.length
-    );
     this.listRestaurants(nextProps.restaurants);
   }
 
@@ -31,7 +26,6 @@ export default class RestoList extends React.Component {
     // calculate distance for each location, and get opening times
     let restaurants = [];
     restaurantsInitial.results.forEach(item => {
-      // console.log('============', item.photos[0].photo_reference)
       item.distance = Math.round(
         100 *
           geodist(

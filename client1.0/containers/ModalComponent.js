@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
   puller: {
     backgroundColor: "transparent",
     width: "30%",
-    borderColor: "rgba(255,255,255,.8)",
+    borderColor: "rgba(255,255,255,.9)",
     borderWidth: 2,
     borderRadius: 4,
     shadowColor: "#000000",
