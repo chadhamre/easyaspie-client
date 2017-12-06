@@ -1,15 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { MapView, Location, Permissions } from "expo";
-<<<<<<< HEAD
 import List from "./ListComponent";
 import RestaurantModal from "./ModalComponent";
 import MarkerList from "../components/MarkerList";
-=======
-import List from "../containers/ListComponent";
-import MarkerList from "../components/MarkerList";
-import RestaurantModal from "./ModalComponent";
->>>>>>> search
+
 import { GOOGLE_PLACES_API_KEY } from "react-native-dotenv";
 
 export default class Map extends React.Component {
@@ -42,10 +37,6 @@ export default class Map extends React.Component {
     );
   };
 
-<<<<<<< HEAD
-  handleButtonClick = async moved => {
-    if (moved) {
-=======
   handleButtonClick = async (moved, food) => {
     console.log("HANDLE BUTTON CLICK:", food);
     //|| !this.state.page token below, might be useful?
@@ -59,7 +50,6 @@ export default class Map extends React.Component {
         food
       );
     } else if (moved) {
->>>>>>> search
       await this.setState({
         location: this.state.locationChange,
         initial: true
