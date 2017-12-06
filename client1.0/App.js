@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { Font } from "expo";
 
 import Landing from './containers/LandingComponent.js'
-import RestaurantModal from './containers/Modal'
+import RestaurantModal from './containers/ModalComponent'
 
 export default class App extends React.Component {
   constructor(props) {

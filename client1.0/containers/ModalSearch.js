@@ -26,8 +26,8 @@ export default class ModalSearch extends React.Component {
   onOpened = () => {};
 
   triggerFilter = food => {
-    console.log("TRIGGER FILTER:", food);
     this.props.triggerFilter(food);
+    console.log("Here")
     this.refs.modalSearch.close();
   };
 

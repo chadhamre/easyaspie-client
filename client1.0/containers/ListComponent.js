@@ -13,13 +13,14 @@ export default class RestoList extends React.Component {
   }
 
   componentWillMount() {
+    // modalSearch.close();
     console.log("COMPONENT WILL MOUNT:", this.props.restaurants.results.length);
     this.listRestaurants();
   }
 
   componentWillReceiveProps(nextProps) {
     console.log(
-      "COMPONENT WILL RECEIVE PROPS:",
+      "COMPONENT WILL RECEIVE PRPS:",
       nextProps.restaurants.results.length
     );
     this.listRestaurants(nextProps.restaurants);
