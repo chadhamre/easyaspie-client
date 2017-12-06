@@ -31,7 +31,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Map
     foo="bar"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -50,12 +50,12 @@ ShallowWrapper {
           allowFontScaling={true}
           disabled={false}
           ellipsizeMode="tail"
->
+        >
            Loading 
-</Text>,
+        </Text>,
         <RestaurantModal
           triggerModal={undefined}
-/>,
+        />,
       ],
       "style": Object {
         "alignItems": "center",
@@ -109,12 +109,12 @@ ShallowWrapper {
             allowFontScaling={true}
             disabled={false}
             ellipsizeMode="tail"
->
+          >
              Loading 
-</Text>,
+          </Text>,
           <RestaurantModal
             triggerModal={undefined}
-/>,
+          />,
         ],
         "style": Object {
           "alignItems": "center",
@@ -174,7 +174,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Map
     foo="bar"
     random="prop"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -193,12 +193,12 @@ ShallowWrapper {
           allowFontScaling={true}
           disabled={false}
           ellipsizeMode="tail"
->
+        >
            Loading 
-</Text>,
+        </Text>,
         <RestaurantModal
           triggerModal={undefined}
-/>,
+        />,
       ],
       "style": Object {
         "alignItems": "center",
@@ -252,12 +252,12 @@ ShallowWrapper {
             allowFontScaling={true}
             disabled={false}
             ellipsizeMode="tail"
->
+          >
              Loading 
-</Text>,
+          </Text>,
           <RestaurantModal
             triggerModal={undefined}
-/>,
+          />,
         ],
         "style": Object {
           "alignItems": "center",
