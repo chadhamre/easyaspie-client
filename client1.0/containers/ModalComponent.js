@@ -143,7 +143,9 @@ export default class RestaurantModal extends React.Component {
 
           <Ratings ratings={this.state.restaurantInfo} />
           {/* <Price price={this.state.restaurantInfo.price} /> */}
-          <Categories categories={this.state.restaurantInfo.categories} />
+          <ScrollView horizontal={true} scrollEnabled={true}>
+            <Categories categories={this.state.restaurantInfo.categories} />
+          </ScrollView>
 
           {/* <View>
             <GmapsDirections

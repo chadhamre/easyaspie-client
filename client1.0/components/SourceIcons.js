@@ -9,7 +9,7 @@ export default class SourceIcons extends Component {
         return (
           <Image
             key={i}
-            style={{ width: 40, height: 40, marginRight: 3}}
+            style={{ width: 40, height: 40, marginRight: 3 }}
             source={require("../assets/logos/fb.png")}
           />
         );
@@ -17,7 +17,7 @@ export default class SourceIcons extends Component {
         return (
           <Image
             key={i}
-            style={{ width: 40, height: 40, marginRight: 3}}
+            style={{ width: 40, height: 40, marginRight: 3 }}
             source={require("../assets/logos/fs.png")}
           />
         );
@@ -25,7 +25,7 @@ export default class SourceIcons extends Component {
         return (
           <Image
             key={i}
-            style={{ width: 40, height: 40, marginRight: 3}}
+            style={{ width: 40, height: 40, marginRight: 3 }}
             source={require("../assets/logos/hc.png")}
           />
         );
@@ -33,7 +33,7 @@ export default class SourceIcons extends Component {
         return (
           <Image
             key={i}
-            style={{ width: 40, height: 40, marginRight: 3}}
+            style={{ width: 40, height: 40, marginRight: 3 }}
             source={require("../assets/logos/ta.png")}
           />
         );
@@ -41,7 +41,7 @@ export default class SourceIcons extends Component {
         return (
           <Image
             key={i}
-            style={{ width: 40, height: 40, marginRight: 3}}
+            style={{ width: 40, height: 40, marginRight: 3 }}
             source={require("../assets/logos/yp.png")}
           />
         );
