@@ -23,12 +23,12 @@ export default class ModalSearch extends React.Component {
       locationChange: null
     };
   }
-  onOpened = () => {};
 
-  triggerFilter = food => {
-    this.props.triggerFilter(food);
-    console.log("Here")
-    this.refs.modalSearch.close();
+  triggerFilter = async food => {
+    await this.props.triggerFilter(food);
+    setTimeout(() => {
+      this.refs.modalSearch.close();
+    }, 700);
   };
 
   // final render --------------------------------------------------------------
@@ -37,11 +37,9 @@ export default class ModalSearch extends React.Component {
       <Modal
         style={styles.modal}
         ref={"modalSearch"}
-        swipeToClose={this.state.swipeToClose}
-        onClosed={this.onClosed}
         swipeArea={250}
-        onOpened={this.onOpened}
-        onClosingState={this.onClosingState}
+        onClosed={() => console.log("CLOSED")}
+        onOpened={() => console.log("OPENED")}
       >
         <View style={styles.wrap}>
           <Icon name={"ios-search"} size={50} style={styles.iconBlue} />
