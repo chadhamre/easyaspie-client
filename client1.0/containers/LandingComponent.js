@@ -14,20 +14,26 @@ import { MapView, Font } from "expo";
 import Icon from "react-native-vector-icons/Ionicons";
 import Collapsible from "react-native-collapsible";
 
+import OwnHeader from './OwnHeader.js'
+
 export default class Landing extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+    //boolean, has swiped around the screen more than a predetermined size
       moved: false,
+    //boolean, wether modal or map is up
       modal: false,
       map: true,
       collapsed: true
     };
   }
 
+  //changes the button text when a user moves around the map
   triggerLogoChange = (moved, end) => {
     this.setState({ moved, end });
   };
+  //reRenders the pins only when the user clicks to either search a new area or load more restaurants
   triggerRerender = () => {
     this.refs.map.handleButtonClick(this.state.moved);
   };
@@ -47,6 +53,7 @@ export default class Landing extends React.Component {
     }
   };
 
+  //opens or closes the modal
   triggerModal = () => {
     this.setState({ modal: !this.state.modal });
   };
@@ -56,51 +63,14 @@ export default class Landing extends React.Component {
   };
 
   // render a toggle to swtich to list view
-  renderListToggle() {
+  renderHeader() {
     return !this.state.modal ? (
-      <View style={styles.header}>
-        <View style={styles.iconContainer}>
-          <TouchableOpacity
-            style={styles.togglecontainer}
-            onPress={this.state.map ? this.toggleList : null}
-          >
-            <Icon
-              name={"ios-list-outline"}
-              size={30}
-              style={!this.state.map ? styles.iconBlue : styles.iconGrey}
-            />
-          </TouchableOpacity>
-          <View style={styles.greyBar} />
-          <TouchableOpacity
-            style={styles.togglecontainer}
-            onPress={!this.state.map ? this.toggleList : null}
-          >
-            <Icon
-              name={"ios-pin"}
-              size={40}
-              style={this.state.map ? styles.iconBlue : styles.iconGrey}
-            />
-          </TouchableOpacity>
-        </View>
-        <View style={styles.topLogo}>
-          <Image
-            style={styles.topLogoImg}
-            source={require("../assets/logo_easyaspie_blue.png")}
-          />
-        </View>
-        <View>
-          <TouchableOpacity
-            style={styles.lastTogglecontainer}
-            onPress={() => this.refs.modalSearch.refs.modalSearch.open()}
-          >
-            <Icon
-              name={"ios-search"}
-              size={40}
-              style={!this.state.collapsed ? styles.iconBlue : styles.iconGrey}
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <OwnHeader
+        map={this.state.map}
+        toggleList={this.toggleList}
+        collapsed={this.state.collapsed}
+        modalSearch={this.refs.modalSearch ? this.refs.modalSearch.refs.modalSearch : null }
+      />
     ) : null;
   }
   // render map action button
@@ -148,7 +118,7 @@ export default class Landing extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.renderListToggle()}
+        {this.renderHeader()}
         {this.renderMapButtonContainer()}
         {this.renderMainContent()}
         <ModalSearch ref={"modalSearch"} triggerFilter={this.triggerFilter} />
@@ -158,75 +128,12 @@ export default class Landing extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  input: {
-    height: 50,
-    width: 200,
-    backgroundColor: "lime"
-  },
-  collapse: {
-    position: "absolute",
-    zIndex: 60,
-    left: 0,
-    top: 0,
-    width: 200,
-    height: 200,
-    backgroundColor: "red"
-  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "column"
-  },
-  topLogo: {
-    position: "absolute",
-    zIndex: 20,
-    left: "50%",
-    top: "50%",
-    transform: [{ translateX: -35 }, { translateY: -20 }]
-  },
-  topLogoImg: {
-    width: 70,
-    height: 50
-  },
-  iconContainer: {
-    display: "flex",
-    flexDirection: "row",
-    width: "30%",
-    justifyContent: "space-between",
-    alignItems: "center",
-    top: "3%"
-  },
-  iconGrey: {
-    color: "#888888",
-    backgroundColor: "transparent"
-  },
-  iconBlue: {
-    color: "#48B9D0",
-    backgroundColor: "transparent"
-  },
-  greyBar: {
-    width: 2,
-    height: 40,
-    top: "5%",
-    left: "12%",
-    backgroundColor: "#f2f2f2",
-    zIndex: 55
-  },
-  header: {
-    display: "flex",
-    flexDirection: "row",
-    height: 100,
-    width: "100%",
-    backgroundColor: "#ffffff",
-    borderBottomWidth: 1.5,
-    borderBottomColor: "#48B9D0",
-    justifyContent: "space-between"
-  },
-  logo: {
-    height: 85,
-    width: 85
   },
   mapbuttoncontainer: {
     backgroundColor: "white",
@@ -245,33 +152,6 @@ const styles = StyleSheet.create({
     borderRadius: 7,
     borderColor: "#48B9D0",
     borderWidth: 1.5
-  },
-  togglecontainer: {
-    backgroundColor: "white",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    left: 10,
-    top: 30,
-    height: 50,
-    width: 50,
-    alignSelf: "flex-start",
-    zIndex: 1,
-    padding: 0
-  },
-  lastTogglecontainer: {
-    backgroundColor: "white",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    left: 10,
-    top: 30,
-    height: 50,
-    width: 50,
-    alignSelf: "flex-start",
-    zIndex: 1,
-    padding: 0,
-    marginRight: 20
   },
   image_text_container: {
     display: "flex",

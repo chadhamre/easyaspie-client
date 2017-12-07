@@ -38,8 +38,6 @@ export default class ModalSearch extends React.Component {
         style={styles.modal}
         ref={"modalSearch"}
         swipeArea={250}
-        onClosed={() => console.log("CLOSED")}
-        onOpened={() => console.log("OPENED")}
       >
         <View style={styles.pullerHolder}>
           <View style={styles.puller} />
