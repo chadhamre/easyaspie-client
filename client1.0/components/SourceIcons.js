@@ -45,14 +45,6 @@ export default class SourceIcons extends Component {
             source={require("../assets/logos/yp.png")}
           />
         );
-      // if (el === "google" && this.props.ratings.rating)
-      //   return (
-      //     <Image
-      //       key={i}
-      //       style={{ width: 35, height: 35 }}
-      //       source={require("../assets/logos/go.png")}
-      //     />
-      //   );
     });
   }
 }
