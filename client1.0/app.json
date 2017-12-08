@@ -2,7 +2,7 @@
   "expo": {
     "name": "Condensed",
     "icon": "./assets/logo__easyaspie.png",
-    "version": "1.0.2",
+    "version": "1.4.0",
     "description": "Restaurant ratings condensed from the cosmos",
     "slug": "condensed",
     "sdkVersion": "22.0.0",
@@ -18,8 +18,10 @@
     "isDetached": true,
     "detach": {
       "scheme": "exp2b0649cc4d774fddabcacf15d78e9774",
-      "iosExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/ios-v2.0.4-sdk22.0.0-10110e7c-e9b1-43e6-b7e0-8a0e971480e8.tar.gz",
-      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v2.0.0-sdk22.0.0-7432f75c-05a1-4826-a456-02875e338222.tar.gz"
+      "iosExpoViewUrl":
+        "https://s3.amazonaws.com/exp-exponent-view-code/ios-v2.0.4-sdk22.0.0-10110e7c-e9b1-43e6-b7e0-8a0e971480e8.tar.gz",
+      "androidExpoViewUrl":
+        "https://s3.amazonaws.com/exp-exponent-view-code/android-v2.0.0-sdk22.0.0-7432f75c-05a1-4826-a456-02875e338222.tar.gz"
     }
   }
 }
