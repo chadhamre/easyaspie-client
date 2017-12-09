@@ -16,7 +16,7 @@ Have you ever been traveling, and wondered what app will give you the most accur
 ### Screenshots
 
 Map View |  List View | Restaurant View
-:---:|:---:|:---:|:---:
+---|---|---
 ![Alt mapview ](/art/screenshots/map.png?raw=true) | ![Alt listview ](/art/screenshots/list.png?raw=true) | ![Alt restaurant ](/art/screenshots/single.png?raw=true)
 
 ### Tech Stack
