@@ -1,27 +1,30 @@
 # easyaspie-client
 
-## Introduction
+### Introduction
+
+This is a react-native front-end for a restaurant ratings app.
+
+### Product Overview
 
 Have you ever been traveling, and wondered what app will give you the most accurate restaurant reviews? Easy As Pie solve this problem! It is a React Native Project in which we aggregate information from the world's most famous restaurant rating websites and present it in an easy to use and convenient manner. Available on the AppStore as "Condensed" and on the Google Play Store as Easy As Pie.
 
-## Screenshots
+### To Run Locally
 
-Map view: 
+- navigate to client1.0 and run `yarn install`
+- run `yarn run dev`
 
-![Alt text](/client1.0/assets/map.png?raw=true)
+### Screenshots
 
-List View: 
+| Map View |  List View | Restaurant View |
+|---
+| ![Alt mapview ](/art/screenshots/map.png?raw=true) | ![Alt listview ](/art/screenshots/list.png?raw=true) | ![Alt restaurant ](/art/screenshots/single.png?raw=true)
 
-![Alt text](/client1.0/assets/list.png?raw=true)
+---
 
-Single restaurant view: 
-
-![Alt text](/client1.0/assets/single.png?raw=true)
-
-## Tech Stack
+### Tech Stack
 
 [React Native](https://facebook.github.io/react-native/)
 
-## Usage
+### Distribution
 
-To use this app, simply download it from the google PlayStore (Easy As Pie) or from the AppStore (Condensed), wait until you're hungry and look for a restaurant!
+To use this app is currently live in the iOS App Store (under the name Condensed) and the Google Play store (under the name EasyAsPie)
